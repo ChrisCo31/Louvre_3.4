@@ -1,0 +1,15 @@
+app_booking_homepage:
+    path:     /
+    defaults: { _controller: AppBundle:Booking:index }
+
+app_booking_organisation:
+    path:    /organisation
+    defaults: { _controller: AppBundle:Booking:organize }
+
+app_booking_identification:
+    path:    /identification
+    defaults: { _controller: AppBundle:Booking:identification }
+
+app_booking_payment:
+    path:    /payment
+    defaults: { _controller: AppBundle:Booking:payment }

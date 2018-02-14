@@ -13,9 +13,13 @@ use Symfony\Component\HttpFoundation\Response;
 
 class BookingController extends Controller
 {
+    /**
+     * @return Response
+     */
     public function indexAction()
     {
-        return new Response("La page du choix de la langue");
+        $content = $this->get('templating')->render('AppBundle:Booking:index.html.twig');
+        return new Response ($content);
     }
 
 }

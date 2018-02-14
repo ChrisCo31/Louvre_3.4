@@ -1,2 +1,3 @@
-booking:
-    resource: "@AppBundle/Resources/config/routing.yml"
+app:
+    resource: '@AppBundle/Resources/config/routing.yml'
+    prefix:    /{_locale}/booking

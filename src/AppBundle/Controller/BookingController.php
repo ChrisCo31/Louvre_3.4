@@ -8,8 +8,14 @@
 
 namespace AppBundle\Controller;
 
+use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Symfony\Component\HttpFoundation\Response;
 
-class BookingController
+class BookingController extends Controller
 {
+    public function indexAction()
+    {
+        return new Response("La page du choix de la langue");
+    }
 
 }

@@ -1,0 +1,35 @@
+#l'accueil
+booking_home:
+    path:    /booking
+    controller: AppBundle:Booking:index
+
+# un article en particulier
+booking_article:
+    path:    /booking/show/{id}
+    defaults:
+        _controller: AppBundle:Booking:show
+    requirements:
+        id: \d+
+
+# ajout d'un article
+booking_add:
+    path:    /booking/add
+    defaults:
+        _controller: AppBundle:Booking:add
+
+
+# modification d'un article
+booking_edit:
+    path:    /booking/edit/{id}
+    defaults:
+        _controller: AppBundle:Booking:edit
+    requirements:
+        id: \d+
+
+# suppression d'un article
+booking_delete:
+    path:    /booking/delete/{id}
+    defaults:
+        _controller: AppBundle:Booking:delete
+    requirements:
+        id: \d+

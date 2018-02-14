@@ -1,2 +1,2 @@
 booking:
-    resource: "@AppBundle/Resources/config/routing.yml
+    resource: "@AppBundle/Resources/config/routing.yml"

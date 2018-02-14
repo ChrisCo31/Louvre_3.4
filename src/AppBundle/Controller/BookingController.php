@@ -14,8 +14,7 @@ class BookingController
     public function indexAction()
     {
         // appel du template
-        $content = $this->get('templating')->render('AppBundle:Blog:index.html.twig', array('listArticle' => array()
-        ));
+        $content = $this->get('templating')->render('AppBundle:Blog:index.html.twig');
         return new Response($content);
     }
 }

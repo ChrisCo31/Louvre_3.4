@@ -43,7 +43,6 @@ class BookingController extends Controller
 
             if($form->isValid())
             {
-                $langue = $form['langue']->getData();
                 // ouverture d'une session
                 // redirection vers la page "organize"
                 return $this->redirectToRoute('booking_organisation');

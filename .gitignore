@@ -16,3 +16,4 @@ var/cache/.gitkeep
 /vendor/
 /web/bundles/
 .idea
+/bin/*

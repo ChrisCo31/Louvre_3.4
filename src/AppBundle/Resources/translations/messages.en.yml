@@ -2,4 +2,8 @@ Booking :
   Index :
     Accueil : Welcome
     Language : Choice of language
-    Message.intro : Welcome to the Louvre! Please click on the following link to access the "Reservation" page of the site
+    Message.intro : Welcome to the online reservation site of the Louvre Museum! Please choose your language:
+  Organize:
+    Accueil : Reservation
+    Visit: Organizing your visit
+    Message.Intro : please complete all fields

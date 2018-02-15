@@ -35,18 +35,31 @@ class BookingController extends Controller
             ))
             ->add('send', submitType::class, array('label'=>'Acheter mes billets en ligne'))
             ->getForm();
-        // Traitement des donnees du form avec methode handleRequest
-        $form->handleRequest($request);
-        if($form->isValid())
+        // si la requete est en POST
+        if($request->isMethod('POST'))
         {
-            $langue = $form['langue']->getData();
+            // Traitement des donnees du form avec methode handleRequest
+            $form->handleRequest($request);
+
+            if($form->isValid())
+            {
+                $langue = $form['langue']->getData();
+                // ouverture d'une session
+                // redirection vers la page "organize"
+                return $this->redirectToRoute('booking_organisation');
+            }
         }
-        // ouverture d'une session
-        // redirection vers la page "organize"
-        // Informe la vue que l'on passe un formulaire
-        return $this->render('AppBundle:Booking:index.html.twig', array('form' => $form -> createView(),
-                                                                              'langue' => $langue,
-        ));
+            // Informe la vue que l'on passe un formulaire
+            return $this->render('AppBundle:Booking:index.html.twig', ['form' => $form -> createView(),
+                                                                                 'langue' => $langue,
+            ]);
     }
 
+    /**
+     * @return Response
+     */
+    public function organizeAction()
+    {
+        return $this->render('AppBundle:Booking:organize.html.twig');
+    }
 }

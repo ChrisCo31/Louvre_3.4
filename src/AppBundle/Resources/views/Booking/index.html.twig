@@ -1,14 +1,12 @@
-<!DOCTYPE html>
-<html>
-    <head>
+{% extends "AppBundle::layout.html.twig" %}
+{% block title %}
         <title>{{ 'Booking.Index.Accueil'|trans }} </title>
-    </head>
-    <body>
+{% endblock %}
+{% block booking_body %}
             <h1>{{ 'Booking.Index.Language'|trans }} </h1>
             <p> {{ 'Booking.Index.Message.intro'|trans }}</p>
             {{ form(form) }}
             <p> test :</p>
             langue : {{ langue }}
-    </body>
-</html>
+{% endblock %}
 

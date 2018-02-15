@@ -23,21 +23,30 @@ class BookingController extends Controller
      */
     public function indexAction(Request $request)
     {
-        // créer le formulaire de choix de la langue 
+        // Création d'une variable $langue
+        $langue = NULL;
+        // création du formulaire de choix de la langue
         $form = $this->createFormBuilder()
             ->add('langue', ChoiceType::class, array(
-                'choices' => array(
+                'choices' => [
                     'english'=>'en',
                     'français' => 'fr',
-                )
+                ]
             ))
             ->add('send', submitType::class, array('label'=>'Acheter mes billets en ligne'))
             ->getForm();
-        // pour traiter les donnees du form j'appelle la methode handleRequest
+        // Traitement des donnees du form avec methode handleRequest
+        $form->handleRequest($request);
+        if($form->isValid())
+        {
+            $langue = $form['langue']->getData();
+        }
         // ouverture d'une session
         // redirection vers la page "organize"
-
-        return $this->render('AppBundle:Booking:index.html.twig', array('form'=>$form->createView()));
+        // Informe la vue que l'on passe un formulaire
+        return $this->render('AppBundle:Booking:index.html.twig', array('form' => $form -> createView(),
+                                                                              'langue' => $langue,
+        ));
     }
 
 }

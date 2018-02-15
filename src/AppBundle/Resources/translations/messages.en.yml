@@ -1,4 +1,16 @@
+<<<<<<< HEAD
 # src/CC/BookingBundle/Resources/translations/messages.en.yml
 Accueil : Home
 Language : Choice of language
 Message.intro : Welcome to the Louvre! Please click on the following link to access the "Reservation" page of the site
+=======
+Booking :
+  Index :
+    Accueil : Welcome
+    Language : Choice of language
+    Message.intro : Welcome to the online reservation site of the Louvre Museum! Please choose your language:
+  Organize:
+    Accueil : Reservation
+    Visit: Organizing your visit
+    Message.Intro : Please complete all fields
+>>>>>>> test

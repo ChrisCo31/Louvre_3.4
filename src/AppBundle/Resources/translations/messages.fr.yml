@@ -1,6 +1,9 @@
+Layout :
+  Base :
+    Title : Musee du Louvre
 Booking :
   Index :
-    Accueil : Accueil
+    Title : Vente de Billets en ligne
     Language : Choix de la langue
     Message.intro : Bienvenue sur le site de reservation en ligne du musée du Louvre ! Veuillez choisir votre langue :
   Organize :

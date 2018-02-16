@@ -16,10 +16,9 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 
 
-
 class BookingController extends Controller
 {
-     /**
+    /**
      * Matches /
      * @route("/", name="booking_home")
      */

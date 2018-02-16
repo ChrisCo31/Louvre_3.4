@@ -4,7 +4,7 @@ booking:
     prefix:   /{_locale}/booking
 =======
 app:
-    resource: '@AppBundle/Resources/config/routing.yml'
+    resource: '@AppBundle/Controller'
     prefix:    /{_locale}/booking
     requirements:
         _locale: en|fr

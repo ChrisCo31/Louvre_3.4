@@ -1,9 +1,3 @@
-<<<<<<< HEAD
-# src/CC/BookingBundle/Resources/translations/messages.en.yml
-Accueil : Home
-Language : Choice of language
-Message.intro : Welcome to the Louvre! Please click on the following link to access the "Reservation" page of the site
-=======
 Booking :
   Index :
     Accueil : Welcome
@@ -13,4 +7,4 @@ Booking :
     Accueil : Reservation
     Visit: Organizing your visit
     Message.Intro : Please complete all fields
->>>>>>> test
+

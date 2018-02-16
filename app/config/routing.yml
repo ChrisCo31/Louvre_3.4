@@ -1,11 +1,5 @@
-<<<<<<< HEAD
-booking:
-    resource: "@AppBundle/Resources/config/routing.yml"
-    prefix:   /{_locale}/booking
-=======
 app:
     resource: '@AppBundle/Controller'
     prefix:    /{_locale}/booking
     requirements:
         _locale: en|fr
->>>>>>> test

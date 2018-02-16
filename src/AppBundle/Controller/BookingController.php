@@ -13,40 +13,20 @@
 namespace AppBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
-<<<<<<< HEAD
-<<<<<<< HEAD
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
-=======
-=======
 use Symfony\Component\Routing\Annotation\Route;
->>>>>>> draft
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
-use Symfony\Component\HttpFoundation\Request;
-use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 
 
->>>>>>> test
 
 class BookingController extends Controller
 {
-<<<<<<< HEAD
-    /**
-<<<<<<< HEAD
-     * @param Request $request
-     * @return Response
-     */
-    public function indexAction()
-    {
-        return $this->render('AppBundle:Booking:index.html.twig');
-=======
-     * @return Response
-=======
+
      /**
      * Matches /
      * @route("/", name="booking_home")
->>>>>>> draft
      */
     public function indexAction(Request $request)
     {
@@ -79,7 +59,6 @@ class BookingController extends Controller
             return $this->render('AppBundle:Booking:index.html.twig', ['form' => $form -> createView(),
                                                                                  'langue' => $langue,
             ]);
->>>>>>> test
     }
     /**
      * Matches /organisation
@@ -89,39 +68,21 @@ class BookingController extends Controller
     {
         return $this->render('AppBundle:Booking:organize.html.twig');
     }
-<<<<<<< HEAD
-<<<<<<< HEAD
-
-    /**
-     * @return Response
-=======
     /**
      * Matches /identification
      * @route("/identification", name="booking_identification")
->>>>>>> draft
      */
     public function identificationAction()
     {
         return new Response ("la page d'identification des futures visiteurs et la détermination du prix");
     }
-<<<<<<< HEAD
-
-=======
     /**
      * Matches /payment
      * @route("/payment", name="booking_payment")
      */
->>>>>>> draft
     public function paymentAction()
     {
         return new Response ("la page de recap et d'appel de Stripe");
     }
-<<<<<<< HEAD
-}
-=======
-}
->>>>>>> test
-=======
 
-}
->>>>>>> draft
+  }

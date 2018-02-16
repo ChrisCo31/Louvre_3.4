@@ -19,11 +19,7 @@ framework:
     csrf_protection: ~
     validation: { enable_annotations: true }
     #serializer: { enable_annotations: true }
-<<<<<<< HEAD
-    templating: # ajouter pour que le service Twig soit appeler
-=======
     templating: # ajout pour que le service Twig soit appele
->>>>>>> test
             engines: ['twig']
     default_locale: '%locale%'
     trusted_hosts: ~

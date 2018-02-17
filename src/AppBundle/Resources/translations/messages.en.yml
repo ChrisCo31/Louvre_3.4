@@ -1,8 +1,20 @@
+Layout :
+  Base :
+    Title : Louvre museum
+    Billet : Ticketing
+    Exposition : Exposition
+    Footer : Chrisco31 - 2018
+    Langue : Language
 Booking :
   Index :
-    Accueil : Welcome
-    Language : Choice of language
-    Message.intro : Welcome to the online reservation site of the Louvre Museum! Please choose your language:
+    Title : Online Ticket Sale
+    Bienvenue : Welcome to the online reservation site of the Louvre Museum!
+    Message.Intro : Open every day from 9h to 18h except Tuesday. Closed on May 1st, November 1st and December 25th.
+    Message.Pratique : The museum offers several types of price:
+    Message.1 : A "normal" price from 12 years old to 16 €
+    Message.2 : A "child" price from 4 years old and up to 12 years old, at 8 € (admission is free for children under 4 years old)
+    Message.3 : A "senior" price from 60 years old for 12 €
+    Message.4 : A "reduced" price of 10 € granted under certain conditions (student, museum employee, department of the Ministry of Culture, military ...)
   Organize:
     Accueil : Reservation
     Visit: Organizing your visit

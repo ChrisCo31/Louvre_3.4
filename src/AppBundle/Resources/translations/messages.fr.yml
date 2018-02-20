@@ -1,8 +1,21 @@
+Layout :
+  Base :
+    Title : Musee du Louvre
+    Billet : Billetterie
+    Exposition : Exposition
+    Footer : Chrisco31 - 2018
+    Langue : Langue
 Booking :
   Index :
-    Accueil : Accueil
-    Language : Choix de la langue
-    Message.intro : Bienvenue sur le site de reservation en ligne du musée du Louvre ! Veuillez choisir votre langue :
+    Title : Vente de Billets en ligne
+    Bienvenue : Bienvenue sur le site de reservation en ligne du musée du Louvre !
+    Message.Intro : Ouvert tous les jours de 9h à 18h sauf le mardi. Fermeture les 1er mai, 1er novembre et 25 décembre.
+    Message.Pratique : Le musée propose plusieurs types de tarifs :
+    Message.1 : Un tarif « normal » à partir de 12 ans à 16 €
+    Message.2 : Un tarif « enfant » à partir de 4 ans et jusqu’à 12 ans, à 8 € (l’entrée est gratuite pour les enfants de moins de 4 ans)
+    Message.3 : Un tarif « senior » à partir de 60 ans pour 12  €
+    Message.4 : Un tarif « réduit » de 10 € accordé dans certaines conditions (étudiant, employé du musée, d’un service du Ministère de la Culture, militaire…)
+    Message.Bouton : Reservez maintenant !
   Organize :
     Accueil : Reservation
     Visit : Organisation de votre visite

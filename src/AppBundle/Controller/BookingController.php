@@ -12,6 +12,7 @@
 
 namespace AppBundle\Controller;
 
+use AppBundle\Form\ReservationType;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -20,52 +21,24 @@ use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 
 
-
 class BookingController extends Controller
 {
-     /**
+    /**
      * Matches /
      * @route("/", name="booking_home")
      */
     public function indexAction(Request $request)
     {
-        // Création d'une variable $langue
-        $langue = NULL;
-        // création du formulaire de choix de la langue
-        $form = $this->createFormBuilder()
-            ->add('langue', ChoiceType::class, array(
-                'choices' => [
-                    'english'=>'en',
-                    'français' => 'fr',
-                ]
-            ))
-            ->add('send', submitType::class, array('label'=>'Acheter mes billets en ligne'))
-            ->getForm();
-        // si la requete est en POST
-        if($request->isMethod('POST'))
-        {
-            // Traitement des donnees du form avec methode handleRequest
-            $form->handleRequest($request);
-
-            if($form->isValid())
-            {
-                // ouverture d'une session
-                // redirection vers la page "organize"
-                return $this->redirectToRoute('booking_organisation');
-            }
-        }
-            // Informe la vue que l'on passe un formulaire
-            return $this->render('AppBundle:Booking:index.html.twig', ['form' => $form -> createView(),
-                                                                                 'langue' => $langue,
-            ]);
+        return $this->render('AppBundle:Booking:index.html.twig');
     }
     /**
      * Matches /organisation
      * @route("/organisation", name="booking_organisation")
      */
-    public function organizeAction()
+    public function organizeAction(Request $request)
     {
-        return $this->render('AppBundle:Booking:organize.html.twig');
+        $form = $this->get('form.factory')->create(ReservationType::class);
+        return $this->render('AppBundle:Booking:organize.html.twig', ['form'=> $form->createView()]);
     }
     /**
      * Matches /identification

@@ -1,28 +1,15 @@
-<<<<<<< HEAD
-{# src/AppBundle/Resources/view/Booking/organize.html.twig #}
+{% extends "::layout.html.twig" %}
 
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Organisation de la visite</title>
-</head>
-<body>
-<h1>Formulaire</h1>
-<p> choix de  date</p>
-</body>
-</html>
-=======
-<!DOCTYPE html>
-<html>
-    <head>
-        <title>{{ 'Booking.Organize.Accueil'|trans }}</title>
-    </head>
-    <body>
+{% block title %}
+    {{ 'Booking.Index.Title'|trans }}
+{% endblock %}
+{% block booking_body %}
+
         <h1>{{ 'Booking.Organize.Visit'|trans }} </h1>
         <p> {{ 'Booking.Organize.Message.Intro'|trans }}</p>
-    </body>
-</html>
+        <div class="well">
+            {{ form(form) }}
+        </div>
+{% endblock %}
 
 
-
->>>>>>> test

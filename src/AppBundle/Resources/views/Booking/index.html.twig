@@ -1,14 +1,22 @@
+{% extends "::layout.html.twig" %}
 
-{# src/AppBundle/Resources/view/Booking/index.html.twig #}
-
-{% extends "AppBundle::layout.html.twig" %}
 {% block title %}
-         {{ 'Booking.Index.Accueil'|trans }}
+     {{ 'Booking.Index.Title'|trans }}
 {% endblock %}
 {% block booking_body %}
-            <h1>{{ 'Booking.Index.Language'|trans }} </h1>
-            <p> {{ 'Booking.Index.Message.intro'|trans }}</p>
-            {{ form(form) }}
-            <p> test :</p>
-            langue : {{ langue }}
+    </br></br>
+            <h1>{{ 'Booking.Index.Bienvenue'|trans }} </h1>
+            <p> {{ 'Booking.Index.Message.Intro'|trans }}</p>
+            <ul> {{ 'Booking.Index.Message.Pratique'|trans }}
+                <li> {{ 'Booking.Index.Message.1'|trans }}</li>
+                <li> {{ 'Booking.Index.Message.2'|trans }}</li>
+                <li> {{ 'Booking.Index.Message.3'|trans }}</li>
+                <li> {{ 'Booking.Index.Message.4'|trans }}</li>
+            </ul>
+    </br>
+    <p>
+        <a class="btn btn-primary btn-lg" href="{{ path('booking_organisation') }}">
+         {{'Booking.Index.Message.Bouton'|trans }}
+        </a>
+    </p>
 {% endblock %}

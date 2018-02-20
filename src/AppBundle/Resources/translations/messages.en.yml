@@ -15,6 +15,7 @@ Booking :
     Message.2 : A "child" price from 4 years old and up to 12 years old, at 8 € (admission is free for children under 4 years old)
     Message.3 : A "senior" price from 60 years old for 12 €
     Message.4 : A "reduced" price of 10 € granted under certain conditions (student, museum employee, department of the Ministry of Culture, military ...)
+    Message.Bouton : Reserve now !
   Organize:
     Accueil : Reservation
     Visit: Organizing your visit

@@ -8,6 +8,7 @@
 
 namespace AppBundle\Controller;
 
+use AppBundle\Form\ReservationType;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
@@ -24,16 +25,16 @@ class BookingController extends Controller
      */
     public function indexAction(Request $request)
     {
-        //$locale = $request->getLocale();
         return $this->render('AppBundle:Booking:index.html.twig');
     }
     /**
      * Matches /organisation
      * @route("/organisation", name="booking_organisation")
      */
-    public function organizeAction()
+    public function organizeAction(Request $request)
     {
-        return $this->render('AppBundle:Booking:organize.html.twig');
+        $form = $this->get('form.factory')->create(ReservationType::class);
+        return $this->render('AppBundle:Booking:organize.html.twig', ['form'=> $form->createView()]);
     }
     /**
      * Matches /identification

@@ -16,6 +16,7 @@ Booking :
     Message.3 : Un tarif « senior » à partir de 60 ans pour 12  €
     Message.4 : Un tarif « réduit » de 10 € accordé dans certaines conditions (étudiant, employé du musée, d’un service du Ministère de la Culture, militaire…)
     Message.Bouton : Reservez maintenant !
+    Message.Langue: le site en francais
   Organize :
     Accueil : Reservation
     Visit : Organisation de votre visite

@@ -16,6 +16,7 @@ Booking :
     Message.3 : A "senior" price from 60 years old for 12 €
     Message.4 : A "reduced" price of 10 € granted under certain conditions (student, museum employee, department of the Ministry of Culture, military ...)
     Message.Bouton : Reserve now !
+    Message.Langue: the website in english
   Organize:
     Accueil : Reservation
     Visit: Organizing your visit

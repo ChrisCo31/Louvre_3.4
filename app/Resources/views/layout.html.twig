@@ -13,28 +13,19 @@
             <nav class="navbar navbar-inverse">
                 <div class="container">
                     <div class="navbar-header">
-                         <a class="navbar-brand" href="#">Musée du Louvre</a>
-
+                    <a class="navbar-brand" href="#">Musée du Louvre</a>
                     </div>
                     <div id="navbar" class="navbar-collapse collapse">
-                        <ul class="nav navbar-nav">
-                            <div class="dropdown">
-                                <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true" >
-                                    {{ 'Layout.Base.Langue'|trans }}
-                                    <span class="caret"></span>
-                                </button>
-                                
-                                <ul class="dropdown-menu"  role="menu" aria-labelledby="dLabel" style="display: inline-block;">
-                                    <li><a href="{{ path(app.request.get('_route'), app.request.get('_route_params')|merge({'_locale': 'fr'})) }}" >Fr</a></li>
-                                    <li role="separator" class="divider"></li>
-                                    <li><a href="{{ path(app.request.get('_route'), app.request.get('_route_params')|merge({'_locale': 'en'})) }}" >En</a></li>
-                                </ul>
+                        <div class="btn-group">
+                            <button type="button" class="btn btn-danger dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                {{ 'Layout.Base.Langue'|trans }}
+                            </button>
+                            <div class="dropdown-menu">
+                                <a class="dropdown-item" href="{{ path(app.request.get('_route'), app.request.get('_route_params')|merge({'_locale': 'fr'})) }}"> Fr</a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="{{ path(app.request.get('_route'), app.request.get('_route_params')|merge({'_locale': 'en'})) }}"> En</a>
                             </div>
-                        </ul>
-                            <ul class="nav navbar-nav navbar-nav navbar-right">
-                                <li><a href="{{ path('booking_organisation') }}">{{ 'Layout.Base.Billet'|trans }}</a></li>
-                                <li><a href="{{ path('booking_payment') }}">{{ 'Layout.Base.Exposition'|trans }}</a></li>
-                            </ul>
+                        </div>
                     </div>
                 </div>
             </nav>
@@ -50,6 +41,10 @@
             </footer>
         </div>
     {% block javascripts %}
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+        <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
     {% endblock %}
     </body>
 </html>
+{# https://symfony.com/doc/3.4/templating/app_variable.html + cours + utilisation du filtre merge : #}
+{#http://v4-alpha.getbootstrap.com/components/dropdowns/#}

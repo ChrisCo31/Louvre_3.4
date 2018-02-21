@@ -70,6 +70,12 @@ class Reservation
      */
     private $priceToPay;
 
+    public function __construct()
+    {
+        $this->dateReservation = new \Datetime();
+        $this->token = '0';
+        $this->priceToPay = 100;
+    }
 
     /**
      * Get id

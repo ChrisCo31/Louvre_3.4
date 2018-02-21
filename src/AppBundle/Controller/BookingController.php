@@ -17,6 +17,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\Session\Session;
+use AppBundle\Entity\Reservation;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
@@ -39,22 +40,22 @@ class BookingController extends Controller
      */
     public function organizeAction(Request $request)
     {
+        $reservation = new Reservation();
+        $form =$this->get('form.factory')->create(ReservationType :: class, $reservation);
+
         //  1. Verification que la requete est de type POST
         if($request->isMethod('POST'))
         {
             //  2. Recuperation des valeurs pour hydrater l'objet
-            //$form->handleRequest($this->getRequest());
+            $form->handleRequest($request);
 
             // 3. Verification des valeurs et validation de l'objet
-            //if($form->isValid() && $form->isSubmitted())
+            if($form->isValid())
             {
+                $em = $this->getDoctrine()->getManager();
+                $em->persist($reservation);
+                $em->flush();
                 //ouverture d'une session et on garde les infos en session
-                $session = new Session();
-                $session->set('info', array());
-                var_dump($session);
-                exit();
-
-
                 //redirection vers la page d'identification
                 return $this->redirectToRoute('booking_identification');
             }

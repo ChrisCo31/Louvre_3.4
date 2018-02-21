@@ -14,6 +14,7 @@ use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\Extension\Core\Type\DateType;
 use Symfony\Component\Form\Extension\Core\Type\EmailType;
 use Symfony\Component\Form\Extension\Core\Type\IntegerType;
+use Symfony\Component\Form\Extension\Core\Type\RepeatedType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 
@@ -36,12 +37,14 @@ class ReservationType extends AbstractType
                     'Billet journée complète' => false,
                 ]
             ])
-            ->add('email', EmailType::class, [
-                'label' => 'votre adresse mail'
+            ->add('email', RepeatedType::class, [
+                'type' => EmailType::class,
+                'invalid_message' => 'The email fields must match',
+                'options' => array('attr' =>array('class' =>'email-field')),
+                'required' => true,
+                'first_options' =>array('label' =>'email'),
+                'second_options'=>array('label' =>'Repeat email'),
             ])
-            ->add('verifyEmail', EmailType::class)
             ->add('save', SubmitType::class);
     }
-
-
 }

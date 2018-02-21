@@ -14,11 +14,9 @@
                 <li> {{ 'Booking.Index.Message.4'|trans }}</li>
             </ul>
     </br>
-<div class="col-xs-offset-2 col-xs-8 drapeaux">
-    <p><a class="flag flag-fr"  href="{{ path('booking_home', {'_locale': 'fr'}) }}">{{'Booking.Index.Message.Langue'|trans }}</a></p>
-    <p><a class="flag flag-en"  href="{{ path('booking_home', {'_locale': 'en'}) }}">{{'Booking.Index.Message.Langue'|trans }}</a></p>
-    </br> </br>
-</div>
+
+    <p><a href="{{ path('booking_home', {'_locale': 'fr'}) }}"/> fr</a></p>
+    <p><a href="{{ path('booking_home', {'_locale': 'en'}) }}"/> en</a></p>
     <p>
         <a class="btn btn-primary btn-lg" href="{{ path('booking_organisation') }}">
          {{'Booking.Index.Message.Bouton'|trans }}

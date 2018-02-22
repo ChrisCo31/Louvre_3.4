@@ -52,10 +52,8 @@ class BookingController extends Controller
             // 3. Verification des valeurs et validation de l'objet
             if($form->isValid())
             {
-                $em = $this->getDoctrine()->getManager();
-                $em->persist($reservation);
-                $em->flush();
                 //ouverture d'une session et on garde les infos en session
+                $this->get('session')->set('reservation', $reservation);
                 //redirection vers la page d'identification
                 return $this->redirectToRoute('booking_identification');
             }
@@ -68,9 +66,16 @@ class BookingController extends Controller
      * Matches /identification
      * @route("/identification", name="booking_identification")
      */
-    public function identificationAction()
+    public function identificationAction(Request $request)
     {
-        return new Response ("la page d'identification des futures visiteurs et la détermination du prix");
+        $reservation = $request->getSession()->get('reservation');
+        $email = $reservation->getEmail();
+        $nbTicket = $reservation->getNbTicket();
+
+        return $this->render('AppBundle:Booking:identification.html.twig', [
+            'email' => $email,
+            'nbTicket' => $nbTicket,
+        ]);
     }
     /**
      * Matches /payment

@@ -8,28 +8,41 @@
 
 namespace AppBundle\Form;
 
-use Symfony\Bundle\FrameworkBundle\Tests\Fixtures\Validation\Category;
+
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\Extension\Core\Type\DateType;
 use Symfony\Component\Form\Extension\Core\Type\EmailType;
+use Symfony\Component\Form\Extension\Core\Type\HiddenType;
 use Symfony\Component\Form\Extension\Core\Type\IntegerType;
 use Symfony\Component\Form\Extension\Core\Type\RepeatedType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
+use Symfony\Component\Validator\Constraints as Assert;
 
 class ReservationType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('nbTicket', IntegerType::class, [
-                'label' => 'Combien de ticket'
-                ]
-            )
+            // mettre un cadre : entre 1 et 10 tickets
+            ->add('nbTicket', IntegerType::class, array(
+                'label' => 'Nombre de billets',
+                 'attr' => ['placeholder' =>"Vous pouvez reserver jusqu'a 10 tickets"],
+                 'required' => true,
+                 'constraints' => [
+                    new Assert\Range(array(
+                        'min' => 1,
+                        'max' => 10,
+                    ))
+                ],
+                ))
+
+            // integrer le date picker et les controle de vacances feries et 1000 tickets
             ->add ('dateVisit', DateType::class, [
                 'label' => 'Date de visite souhaitée :'
             ])
+            // 0 = demi journee et 1 journee
             ->add('duration', ChoiceType::class,  [
                 'label' => 'Désirez-vous un billet journée ou demi-journée ?',
                 'choices' => [
@@ -37,6 +50,7 @@ class ReservationType extends AbstractType
                     'Billet journée complète' => false,
                 ]
             ])
+            // verification des emails
             ->add('email', RepeatedType::class, [
                 'type' => EmailType::class,
                 'invalid_message' => 'The email fields must match',
@@ -45,6 +59,10 @@ class ReservationType extends AbstractType
                 'first_options' =>array('label' =>'email'),
                 'second_options'=>array('label' =>'Repeat email'),
             ])
-            ->add('save', SubmitType::class);
+            ->add('save', SubmitType::class)
+            // Generer un token
+            ->add('token', HiddenType::class, [
+            'data' =>'abcdef'
+    ]);
     }
 }

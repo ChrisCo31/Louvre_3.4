@@ -6,6 +6,8 @@
 {% block body %}
 
     <h2> Recapitulatif </h2>
-   <p> {{ email }} </p>
+   <p> {{ dump(reservation) }} </p>
     <p> {{ nbTicket }} </p>
+    {{ reservation.email }}
+    {{ reservation.dateVisit|date('Y-d') }}
 {% endblock %}

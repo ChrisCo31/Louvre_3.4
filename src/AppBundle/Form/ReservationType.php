@@ -32,7 +32,7 @@ class ReservationType extends AbstractType
                  'required' => true,
                 ))
 
-            // integrer le date picker et les controle de vacances feries et 1000 tickets
+            // integrer le date picker et les controles de vacances, feries et 1000 tickets
             ->add ('dateVisit', DateType::class, [
                 'label' => 'Date de visite souhaitée :'
             ])

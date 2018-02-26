@@ -28,14 +28,8 @@ class ReservationType extends AbstractType
             // mettre un cadre : entre 1 et 10 tickets
             ->add('nbTicket', IntegerType::class, array(
                 'label' => 'Nombre de billets',
-                 'attr' => ['placeholder' =>"Vous pouvez reserver jusqu'a 10 tickets"],
+                 'attr' => ['placeholder' =>"Vous pouvez réserver jusqu'à 10 tickets",  'min' => 1, 'max' => 10],
                  'required' => true,
-                 'constraints' => [
-                    new Assert\Range(array(
-                        'min' => 1,
-                        'max' => 10,
-                    ))
-                ],
                 ))
 
             // integrer le date picker et les controle de vacances feries et 1000 tickets

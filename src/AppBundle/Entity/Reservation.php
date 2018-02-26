@@ -3,6 +3,8 @@
 namespace AppBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
+
 
 /**
  * Reservation
@@ -51,14 +53,18 @@ class Reservation
 
     /**
      * @var int
-     *
+     * @Assert\Range(
+     *     min = 1,
+     *     max = 10,
+     *     minMessage = "Vous devez réserver au moins un ticket",
+     *     maxMessage = "Pour reserver plus de 10 ticket, veuillez contactez notre service 'visite de groupe'"
+     * )
      * @ORM\Column(name="nbTicket", type="integer")
      */
     private $nbTicket;
 
     /**
      * @var string
-     *
      * @ORM\Column(name="token", type="string", length=255)
      */
     private $token;
@@ -73,10 +79,8 @@ class Reservation
     public function __construct()
     {
         $this->dateReservation = new \Datetime();
-        $this->token = '0';
-        $this->priceToPay = 100;
+        $this->priceToPay = 0;
     }
-
     /**
      * Get id
      *
@@ -254,5 +258,6 @@ class Reservation
     {
         return $this->priceToPay;
     }
+
 }
 

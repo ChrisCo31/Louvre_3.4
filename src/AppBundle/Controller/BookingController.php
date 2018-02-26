@@ -53,6 +53,9 @@ class BookingController extends Controller
             if($form->isValid())
             {
                 //ouverture d'une session et on garde les infos en session
+                $reservation = $form->getData();
+                var_dump($reservation);
+
                 $this->get('session')->set('reservation', $reservation);
                 //redirection vers la page d'identification
                 return $this->redirectToRoute('booking_identification');
@@ -69,12 +72,11 @@ class BookingController extends Controller
     public function identificationAction(Request $request)
     {
         $reservation = $request->getSession()->get('reservation');
-        $email = $reservation->getEmail();
-        $nbTicket = $reservation->getNbTicket();
+
 
         return $this->render('AppBundle:Booking:identification.html.twig', [
-            'email' => $email,
-            'nbTicket' => $nbTicket,
+            'reservation' => $reservation,
+
         ]);
     }
     /**

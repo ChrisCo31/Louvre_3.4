@@ -6,8 +6,12 @@
 {% block body %}
 
     <h2> {{ 'Booking.Identification.Recap'|trans }} </h2>
-   <p> {{ dump(reservation) }} </p>
+    <p> {{ dump(reservation) }} </p>
 
     {{ reservation.email }}
     {{ reservation.dateVisit|date('Y-d') }}
+
+    <div class="well">
+        {{ form(form) }}
+    </div>
 {% endblock %}

@@ -263,40 +263,5 @@ class Reservation
         return $this->priceToPay;
     }
 
-
-    /**
-     * Add ticket
-     *
-     * @param \AppBundle\Entity\Ticket $ticket
-     *
-     * @return Reservation
-     */
-    public function addTicket(\AppBundle\Entity\Ticket $ticket)
-    {
-        $this->tickets[] = $ticket;
-        // lie le ticket à la candidature
-        $ticket->setReservation($this);
-
-        return $this;
-    }
-
-    /**
-     * Remove ticket
-     *
-     * @param \AppBundle\Entity\Ticket $ticket
-     */
-    public function removeTicket(\AppBundle\Entity\Ticket $ticket)
-    {
-        $this->tickets->removeElement($ticket);
-    }
-
-    /**
-     * Get tickets
-     *
-     * @return \Doctrine\Common\Collections\Collection
-     */
-    public function getTickets()
-    {
-        return $this->tickets;
-    }
 }
+

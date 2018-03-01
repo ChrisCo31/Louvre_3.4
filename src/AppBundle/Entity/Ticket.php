@@ -12,6 +12,12 @@ use Doctrine\ORM\Mapping as ORM;
  */
 class Ticket
 {
+    // C'est le cote many d'une relation qui est proprietaire : plusieurs tickets par reservation donc l'entite ticket est le proprietaire
+    //joincolumn a false pour interdire la creation de ticket sans reservation
+    /**
+     * @ORM\ManyToOne(targetEntity="App\Entity\Booking")
+     * @ORM\JoinColumn(nullable=false)
+     */
     /**
      * @var int
      *

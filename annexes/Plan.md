@@ -38,7 +38,7 @@ centralise tout ce qui touche à la recuperation des entites, requete SQL
     - mailer
     - translator
     - validator 
-    - service Stripe ?
+    - service Stripe 
     
 5. views :
     - layout

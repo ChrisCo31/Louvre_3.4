@@ -5,9 +5,9 @@
 {% endblock %}
 {% block body %}
 
-    <h2> Recapitulatif </h2>
+    <h2> {{ 'Booking.Identification.Recap'|trans }} </h2>
    <p> {{ dump(reservation) }} </p>
-    <p> {{ nbTicket }} </p>
+
     {{ reservation.email }}
     {{ reservation.dateVisit|date('Y-d') }}
 {% endblock %}

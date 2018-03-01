@@ -1,0 +1,9 @@
+{% extends "::layout.html.twig" %}
+
+{% block title %}
+    {{ 'Booking.Index.Title'|trans }}
+{% endblock %}
+{% block body %}
+    <p> {{ dump(reservation) }} </p>
+    <p> {{ dump(ticket) }} </p>
+{% endblock %}

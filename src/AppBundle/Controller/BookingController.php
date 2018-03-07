@@ -44,16 +44,23 @@ class BookingController extends Controller
     {
         $reservation = new Reservation();
         $form =$this->get('form.factory')->create(ReservationType :: class, $reservation);
+        // recuperation du service
+        $closingDay= $this->container->get('app.closing.day');
         //  1. Verification que la requete est de type POST
         if($request->isMethod('POST'))
         {
             //  2. Recuperation des valeurs pour hydrater l'objet
             $form->handleRequest($request);
+            $dateVisit = $reservation->getDateVisit();
+            var_dump($dateVisit);
+            if($closingDay->isTuesday($dateVisit)) {
+                throw new \Exception('Reservation Impossible');
+            }
             // 3. Verification des valeurs et validation de l'objet
             if($form->isValid())
-            {
-                //ouverture d'une session et on garde les infos en session
+            {   //ouverture d'une session et on garde les infos en session
                 $reservation = $form->getData();
+                var_dump($reservation);
                 $this->get('session')->set('reservation', $reservation);
                 //redirection vers la page d'identification
                 return $this->redirectToRoute('booking_identification');

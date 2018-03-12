@@ -7,13 +7,21 @@
 
     </br></br>
             <h1>{{ 'Booking.Index.Bienvenue'|trans }} </h1>
-            <p> {{ 'Booking.Index.Message.Intro'|trans }}</p>
+    <div class="panel panel-primary">
+        <div class ="panel-heading">
+            <strong> {{ 'Booking.Index.Message.Intro'|trans }}</strong></br>
+        </div>
+        <div class=""panel-body">
+
             <ul> {{ 'Booking.Index.Message.Pratique'|trans }}
-                <li> {{ 'Booking.Index.Message.1'|trans }}</li>
-                <li> {{ 'Booking.Index.Message.2'|trans }}</li>
-                <li> {{ 'Booking.Index.Message.3'|trans }}</li>
-                <li> {{ 'Booking.Index.Message.4'|trans }}</li>
+                </br>
+                <li> {{ 'Booking.Index.Message.1'|trans }}</li></br>
+                <li> {{ 'Booking.Index.Message.2'|trans }}</li></br>
+                <li> {{ 'Booking.Index.Message.3'|trans }}</li></br>
+                <li> {{ 'Booking.Index.Message.4'|trans }}</li></br>
             </ul>
+        </div>
+    </div>
     </br>
 
     <p><a href="{{ path('booking_home', {'_locale': 'fr'}) }}"/> fr</a></p>

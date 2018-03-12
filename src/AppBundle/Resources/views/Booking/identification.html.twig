@@ -9,7 +9,7 @@
     <p> {{ dump(reservation) }} </p>
 
     {{ reservation.email }}
-    {{ reservation.dateVisit|date('Y-d') }}
+    {{ reservation.dateVisit|date('D M Y') }}
 
     <div class="well">
         {{ form(form) }}

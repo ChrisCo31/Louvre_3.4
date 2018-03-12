@@ -7,10 +7,13 @@
  */
 namespace AppBundle\Services;
 
+
+
 class ClosingDay
 {
     /**
      * @param $dateVisit
+     * @return bool
      */
     public function isTuesday($dateVisit)
     {

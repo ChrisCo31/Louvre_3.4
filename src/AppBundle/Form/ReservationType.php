@@ -18,6 +18,7 @@ use Symfony\Component\Form\Extension\Core\Type\IntegerType;
 use Symfony\Component\Form\Extension\Core\Type\RepeatedType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
+use Symfony\Component\Validator\Constraints as Assert;
 
 
 class ReservationType extends AbstractType
@@ -34,8 +35,10 @@ class ReservationType extends AbstractType
 
             // integrer le date picker et les controles de vacances, feries et 1000 tickets
             ->add ('dateVisit', DateType::class, [
-                'label' => 'Date de visite souhaitée :'
-            ])
+                'label' => 'Date de visite :',
+                'widget' => 'single_text',
+                ]
+            )
             // 0 = demi journee et 1 journee
             ->add('duration', ChoiceType::class,  [
                 'label' => 'Désirez-vous un billet journée ou demi-journée ?',

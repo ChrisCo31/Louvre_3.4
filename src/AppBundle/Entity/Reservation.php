@@ -5,7 +5,6 @@ namespace AppBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Validator\Constraints as Assert;
 
-
 /**
  * Reservation
  *
@@ -36,15 +35,14 @@ class Reservation
 
     /**
      * @var \DateTime
-     *
-     * @ORM\Column(name="dateVisit", type="datetimetz")
+     * @ORM\Column(name="dateVisit", type="datetime")
      */
     private $dateVisit;
 
     /**
      * @var \DateTime
-     *
-     * @ORM\Column(name="dateReservation", type="datetimetz")
+     * @Assert\NotBlank()
+     * @ORM\Column(name="dateReservation", type="datetime")
      */
     private $dateReservation;
 

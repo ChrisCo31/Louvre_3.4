@@ -16,13 +16,11 @@ use AppBundle\Form\ReservationType;
 use AppBundle\Form\TicketType;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
-use Symfony\Component\HttpFoundation\Response;
-use Symfony\Component\HttpFoundation\Session\Session;
 use AppBundle\Entity\Reservation;
 use AppBundle\Entity\Ticket;
 use Symfony\Component\Routing\Annotation\Route;
-use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
-use Symfony\Component\Form\Extension\Core\Type\SubmitType;
+use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\HttpFoundation\Session\Session;
 
 
 class BookingController extends Controller
@@ -45,7 +43,7 @@ class BookingController extends Controller
         $reservation = new Reservation();
         $form =$this->get('form.factory')->create(ReservationType :: class, $reservation);
         // recuperation du service
-        $closingDay= $this->container->get('app.closing.day');
+        $dateValidate = $this->get('app.dateValidator');
         //  1. Verification que la requete est de type POST
         if($request->isMethod('POST'))
         {
@@ -53,9 +51,9 @@ class BookingController extends Controller
             $form->handleRequest($request);
             $dateVisit = $reservation->getDateVisit();
             var_dump($dateVisit);
-            if($closingDay->isTuesday($dateVisit)) {
-                throw new \Exception('Reservation Impossible');
-            }
+
+            $dateValidate->validate($dateVisit);
+
             // 3. Verification des valeurs et validation de l'objet
             if($form->isValid())
             {   //ouverture d'une session et on garde les infos en session

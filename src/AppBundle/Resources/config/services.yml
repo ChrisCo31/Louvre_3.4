@@ -1,3 +1,8 @@
 services:
     app.closing.day:
         class: AppBundle\Services\ClosingDay
+
+    app.dateValidator:                              #le nom du service
+        class: AppBundle\Validator\DateValidator    #la classe du service
+        arguments:                                  # les parametres ie les services liés aux contraintes de date
+            - "@app.closing.day"

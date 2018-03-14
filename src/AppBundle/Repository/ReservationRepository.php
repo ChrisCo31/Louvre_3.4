@@ -10,4 +10,17 @@ namespace AppBundle\Repository;
  */
 class ReservationRepository extends \Doctrine\ORM\EntityRepository
 {
+    /**
+     * @param $dateVisit
+     */
+    public function countTicketSold($dateVisit)
+    {
+        $queryBuilder = $this->createQueryBuilder('r');
+        $queryBuilder
+            ->select('count(r.nbTicket)')
+            ->where('r.dateVisit=:dateVisit');
+
+        return $queryBuilder->getQuery()->getScalarResult();
+
+    }
 }

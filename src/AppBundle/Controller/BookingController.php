@@ -54,16 +54,17 @@ class BookingController extends Controller
             $dateVisit = $reservation->getDateVisit();
             var_dump($dateVisit);
 
-            if($closingDay->isClosing($dateVisit)) {
+            if($closingDay->isClosing($dateVisit))
+            {
                 throw new \Exception('Reservation Impossible');
-          }
+            }
             if($closingDay->isPast($dateVisit)) {
                 throw new \Exception('la date choisi est deja passé');
             }
-
             if($closingDay->isHalfDay($reservation)) {
                 throw new \Exception('demi journee only');
             }
+
             // 3. Verification des valeurs et validation de l'objet
             if($form->isValid())
             {   //ouverture d'une session et on garde les infos en session

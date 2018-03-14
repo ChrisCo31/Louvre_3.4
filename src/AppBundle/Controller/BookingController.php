@@ -34,16 +34,18 @@ class BookingController extends Controller
         $locale = $request->getLocale();
         return $this->render('AppBundle:Booking:index.html.twig', array('locale' =>$locale));
     }
+
     /**
      * Matches /organisation
      * @route("/organisation", name="booking_organisation")
+     * @throws \Exception
      */
     public function organizeAction(Request $request)
     {
         $reservation = new Reservation();
         $form =$this->get('form.factory')->create(ReservationType :: class, $reservation);
         // recuperation du service
-        $dateValidate = $this->get('app.dateValidator');
+        $closingDay = $this->get('app.InvalidBookingDate');
         //  1. Verification que la requete est de type POST
         if($request->isMethod('POST'))
         {
@@ -52,8 +54,16 @@ class BookingController extends Controller
             $dateVisit = $reservation->getDateVisit();
             var_dump($dateVisit);
 
-            $dateValidate->validate($dateVisit);
+            if($closingDay->isClosing($dateVisit)) {
+                throw new \Exception('Reservation Impossible');
+          }
+            if($closingDay->isPast($dateVisit)) {
+                throw new \Exception('la date choisi est deja passé');
+            }
 
+            if($closingDay->isHalfDay($reservation)) {
+                throw new \Exception('demi journee only');
+            }
             // 3. Verification des valeurs et validation de l'objet
             if($form->isValid())
             {   //ouverture d'une session et on garde les infos en session

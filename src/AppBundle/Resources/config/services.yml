@@ -2,3 +2,9 @@ services:
     app.InvalidBookingDate:
         class: AppBundle\Services\InvalidBookingDate
 
+    app.MaxTicketSold:
+        class: AppBundle\Services\MaxTicketSold
+        arguments:
+            - "@doctrine.orm.entity_manager"
+
+

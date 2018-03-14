@@ -8,7 +8,8 @@
 
 namespace AppBundle\Services;
 
-use AppBundle\Entity\Reservation;
+
+
 
 class InvalidBookingDate
 {
@@ -95,23 +96,6 @@ class InvalidBookingDate
             {
                 return true;
             }
-        }
-    }
-    /**
-     * @param $dateVisit
-     * @param $nbTicket
-     * @return bool
-     */
-    public function maxTicket($dateVisit, $nbTicket)
-    {
-        //SQL SELECT COUNT(nbTicket) FROM reservation WHERE dateVisit = $dateVisit
-        $nbTicketSold = $this->em->getRepository('AppBundle:Reservation')->countTicketSold($dateVisit);
-        $nbTicketWanted = $nbTicket ;
-        if(($nbTicketSold + $nbTicketWanted) > 1000)
-        {
-            return true;
-        } else {
-            return false;
         }
     }
 

@@ -17,11 +17,13 @@ class ReservationRepository extends \Doctrine\ORM\EntityRepository
     {
         // on recupere le querybuilder en utilisant la methode createQueryBuilder() avec l'alias en argument(=raccourci de l'entity)
         $queryBuilder = $this->createQueryBuilder('r');
-        $queryBuilder                         // on utilise les methodes du querybuilder pour construire notre requete
-            ->select('count($r.nbTicket)')
+         return $queryBuilder                         // on utilise les methodes du querybuilder pour construire notre requete
+            ->select('count(r.nbTicket)')
             ->where('r.dateVisit=:dateVisit')
             ->setParameter('dateVisit', $dateVisit)
-            ->getQuery();
-        return $queryBuilder->getSingleScalarResult();
+            ->getQuery()
+             ->getSingleScalarResult();
+
+
     }
 }

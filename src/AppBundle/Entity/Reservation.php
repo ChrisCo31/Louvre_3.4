@@ -2,6 +2,7 @@
 
 namespace AppBundle\Entity;
 
+use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Validator\Constraints as Assert;
 
@@ -14,7 +15,7 @@ use Symfony\Component\Validator\Constraints as Assert;
 class Reservation
 {
     /**
-     * @ORM\OneToMany(targetEntity="AppBundle\Entity\Ticket", mappedBy = "Reservation")
+     * @ORM\OneToMany(targetEntity="AppBundle\Entity\Ticket", mappedBy ="Reservation", cascade={"all"})
      */
     private $tickets;
     /**
@@ -78,10 +79,14 @@ class Reservation
      */
     private $priceToPay;
 
+    /**
+     * Reservation constructor.
+     */
     public function __construct()
     {
         $this->dateReservation = new \Datetime();
         $this->priceToPay = 0;
+        $this->tickets = new ArrayCollection();
     }
     /**
      * Get id
@@ -272,7 +277,7 @@ class Reservation
     public function addTicket(\AppBundle\Entity\Ticket $ticket)
     {
         $this->tickets[] = $ticket;
-        // lie le ticket à la candidature
+        // lie la reservation au ticket
         $ticket->setReservation($this);
 
         return $this;
@@ -287,7 +292,6 @@ class Reservation
     {
         $this->tickets->removeElement($ticket);
     }
-
     /**
      * Get tickets
      *

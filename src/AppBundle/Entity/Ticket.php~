@@ -15,7 +15,7 @@ class Ticket
     // C'est le cote many d'une relation qui est proprietaire : plusieurs tickets par reservation donc l'entite ticket est le proprietaire
     //joincolumn a false pour interdire la creation de ticket sans reservation
     /**
-     * @ORM\ManyToOne(targetEntity="AppBundle\Entity\Reservation", inversedBy="tickets")
+     * @ORM\ManyToOne(targetEntity="App\Entity\Booking", inversedBy="tickets")
      * @ORM\JoinColumn(nullable=false)
      */
     private $reservation;
@@ -224,28 +224,5 @@ class Ticket
     {
         return $this->price;
     }
-
-    /**
-     * Set reservation
-     *
-     * @param \AppBundle\Entity\Reservation $reservation
-     *
-     * @return Ticket
-     */
-    public function setReservation(\AppBundle\Entity\Reservation $reservation)
-    {
-        $this->reservation = $reservation;
-
-        return $this;
-    }
-
-    /**
-     * Get reservation
-     *
-     * @return \AppBundle\Entity\Reservation
-     */
-    public function getReservation()
-    {
-        return $this->reservation;
-    }
 }
+

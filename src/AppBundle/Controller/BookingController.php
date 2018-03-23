@@ -43,16 +43,30 @@ class BookingController extends Controller
     public function organizeAction(Request $request)
     {
         $reservation = new Reservation();
+
+
         $form =$this->get('form.factory')->create(ReservationType :: class, $reservation);
         // recuperation du service
         $closingDay = $this->get('app.InvalidBookingDate');
+        $max = $this->get('app.MaxTicketSold');
+        $dateVisit = $reservation->getDateVisit();
+        $nbTicket = $reservation->getNbTicket();
+
+        if($max->MaxTicket($dateVisit, $nbTicket)) {
+            throw new \Exception('trop de tickets vendu');
+        }else
+        {
+            echo "good";
+        }
+
+
         //  1. Verification que la requete est de type POST
         if($request->isMethod('POST'))
         {
             //  2. Recuperation des valeurs pour hydrater l'objet
             $form->handleRequest($request);
             $dateVisit = $reservation->getDateVisit();
-            var_dump($dateVisit);
+
 
             if($closingDay->isClosing($dateVisit))
             {
@@ -65,11 +79,11 @@ class BookingController extends Controller
                 throw new \Exception('demi journee only');
             }
 
+
             // 3. Verification des valeurs et validation de l'objet
             if($form->isValid())
             {   //ouverture d'une session et on garde les infos en session
                 $reservation = $form->getData();
-                var_dump($reservation);
                 $this->get('session')->set('reservation', $reservation);
                 //redirection vers la page d'identification
                 return $this->redirectToRoute('booking_identification');
@@ -86,9 +100,12 @@ class BookingController extends Controller
     {
         //recuperation des info de la page precedente
         $reservation = $request->getSession()->get('reservation');
-        //formulaire ticket
+        //formulaire ticket a remplir
         $ticket = new Ticket();
+        // on lie reservation a ticket
+        $reservation->addTicket($ticket);
         $form=$this->get('form.factory')->create(TicketType::class, $ticket);
+        //formulaire ticket rempli
         if($request->isMethod('POST'))
         {
             $form->handleRequest($request);

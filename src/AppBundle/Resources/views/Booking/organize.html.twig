@@ -8,7 +8,9 @@
         <h1>{{ 'Booking.Organize.Visit'|trans }} </h1>
         <p> {{ 'Booking.Organize.Message.Intro'|trans }}</p>
         <div class="well">
-            {{ form(form) }}
+            {{ form_start(form) }}
+            {{ form_widget(form) }}
+            {{ form_end(form) }}
         </div>
     </body>
 {% endblock %}

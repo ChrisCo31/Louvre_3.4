@@ -8,10 +8,14 @@
     <h2> {{ 'Booking.Identification.Recap'|trans }} </h2>
     <p> {{ dump(reservation) }} </p>
 
-    {{ reservation.email }}
-    {{ reservation.dateVisit|date('D M Y') }}
+    <ul>
+        {% for tickets in reservation %}
+            <li><em>Ok</em></li>
 
-    <div class="well">
-        {{ form(form) }}
-    </div>
+        {% else %}
+            <li><em>Pas OK</em></li>
+        {% endfor %}
+    </ul>
+
+
 {% endblock %}

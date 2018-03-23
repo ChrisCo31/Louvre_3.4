@@ -5,12 +5,7 @@
  * Date: 13/03/2018
  * Time: 15:29
  */
-
 namespace AppBundle\Services;
-
-
-
-
 class InvalidBookingDate
 {
     /**

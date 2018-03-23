@@ -10,6 +10,7 @@ namespace AppBundle\Services;
 
 use AppBundle\Entity\Reservation;
 use Doctrine\ORM\EntityManagerInterface;
+use AppBundle\Repository\ReservationRepository;
 
 class MaxTicketSold
 {
@@ -31,13 +32,12 @@ class MaxTicketSold
     {
         //SQL SELECT COUNT(nbTicket) FROM reservation WHERE dateVisit = $dateVisit
         $nbTicketSold = $this->em->getRepository('AppBundle:Reservation')->countTicketSold($dateVisit);
-        if(($nbTicketSold + $nbTicket) > 1000)
+        $nbTicketWanted = $nbTicket ;
+        if(($nbTicketSold + $nbTicketWanted) > 1000)
         {
             return true;
         } else {
             return false;
         }
     }
-
-
 }

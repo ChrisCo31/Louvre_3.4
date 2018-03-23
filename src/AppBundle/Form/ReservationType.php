@@ -11,6 +11,7 @@ namespace AppBundle\Form;
 
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
+use Symfony\Component\Form\Extension\Core\Type\CollectionType;
 use Symfony\Component\Form\Extension\Core\Type\DateType;
 use Symfony\Component\Form\Extension\Core\Type\EmailType;
 use Symfony\Component\Form\Extension\Core\Type\HiddenType;
@@ -18,11 +19,16 @@ use Symfony\Component\Form\Extension\Core\Type\IntegerType;
 use Symfony\Component\Form\Extension\Core\Type\RepeatedType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
+use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Validator\Constraints as Assert;
 
 
 class ReservationType extends AbstractType
 {
+    /**
+     * @param FormBuilderInterface $builder
+     * @param array $options
+     */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
@@ -56,10 +62,26 @@ class ReservationType extends AbstractType
                 'first_options' =>array('label' =>'email'),
                 'second_options'=>array('label' =>'Repeat email'),
             ])
-            ->add('save', SubmitType::class)
             // Generer un token
             ->add('token', HiddenType::class, [
             'data' =>'abcdef'
-    ]);
+    ])
+            ->add('tickets', CollectionType::class, [
+                'entry_type' => TicketType ::class,
+                'label_attr' => ['class'=>'hidden'],
+                'allow_add' => true
+
+            ])
+            ->add('save', SubmitType::class);
     }
+
+    /**
+     * @param OptionsResolver $resolver
+     */
+    public function configureOptions(OptionsResolver $resolver)
+        {
+            $resolver->setDefaults([
+                'data_class' => 'AppBundle\Entity\Reservation'
+            ]);
+        }
 }

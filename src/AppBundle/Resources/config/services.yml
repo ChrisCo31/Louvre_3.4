@@ -6,4 +6,8 @@ services:
         class: AppBundle\Services\MaxTicketSold
         arguments: ["@doctrine.orm.entity_manager"]
 
+    app.GenerateTicket:
+        class: AppBundle\Services\GenerateTicket
+        arguments: ["@doctrine.orm.entity_manager"]
+
 

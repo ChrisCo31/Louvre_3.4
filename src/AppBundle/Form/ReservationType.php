@@ -11,7 +11,6 @@ namespace AppBundle\Form;
 
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
-use Symfony\Component\Form\Extension\Core\Type\CollectionType;
 use Symfony\Component\Form\Extension\Core\Type\DateType;
 use Symfony\Component\Form\Extension\Core\Type\EmailType;
 use Symfony\Component\Form\Extension\Core\Type\HiddenType;
@@ -20,8 +19,6 @@ use Symfony\Component\Form\Extension\Core\Type\RepeatedType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\OptionsResolver\OptionsResolver;
-use Symfony\Component\Validator\Constraints as Assert;
-
 
 class ReservationType extends AbstractType
 {
@@ -41,8 +38,8 @@ class ReservationType extends AbstractType
 
             // integrer le date picker et les controles de vacances, feries et 1000 tickets
             ->add ('dateVisit', DateType::class, [
-                'label' => 'Date de visite :',
-                'widget' => 'single_text',
+                    'label' => 'Date de visite :',
+                    'widget' => 'single_text',
                 ]
             )
             // 0 = demi journee et 1 journee
@@ -66,12 +63,7 @@ class ReservationType extends AbstractType
             ->add('token', HiddenType::class, [
             'data' =>'abcdef'
     ])
-            ->add('tickets', CollectionType::class, [
-                'entry_type' => TicketType ::class,
-                'label_attr' => ['class'=>'hidden'],
-                'allow_add' => true
 
-            ])
             ->add('save', SubmitType::class);
     }
 

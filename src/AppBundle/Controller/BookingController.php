@@ -12,6 +12,7 @@
 
 namespace AppBundle\Controller;
 
+use AppBundle\Form\ReservationIdentifyType;
 use AppBundle\Form\ReservationType;
 use AppBundle\Form\TicketType;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
@@ -45,7 +46,8 @@ class BookingController extends Controller
         $reservation = new Reservation();
 
 
-        $form =$this->get('form.factory')->create(ReservationType :: class, $reservation);
+        $form =$this->createForm(ReservationType :: class, $reservation);
+
         // recuperation du service
         $closingDay = $this->get('app.InvalidBookingDate');
         $max = $this->get('app.MaxTicketSold');
@@ -101,10 +103,8 @@ class BookingController extends Controller
         //recuperation des info de la page precedente
         $reservation = $request->getSession()->get('reservation');
         //formulaire ticket a remplir
-        $ticket = new Ticket();
-        // on lie reservation a ticket
-        $reservation->addTicket($ticket);
-        $form=$this->get('form.factory')->create(TicketType::class, $ticket);
+        if(!$reservation->hasAllTicket()) $this->get('app.GenerateTicket')->generateTicket($reservation);
+        $form = $this->createForm(ReservationIdentifyType::class, $reservation);
         //formulaire ticket rempli
         if($request->isMethod('POST'))
         {

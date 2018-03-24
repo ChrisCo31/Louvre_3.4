@@ -266,6 +266,16 @@ class Reservation
         return $this->priceToPay;
     }
 
+    /**
+     * chek if the reservation has all tickets
+     * @return bool
+     */
+    public function hasAllTicket()
+    {
+        if (count($this->getTickets()) == $this->getNbTicket() ) return true;
+        return false;
+    }
+
 
     /**
      * Add ticket

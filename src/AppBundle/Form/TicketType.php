@@ -50,8 +50,8 @@ class TicketType extends AbstractType
             'label' => 'tarif reduit',
             'required' => false
         ))
-        ->add('price', TextType::class)
-        ->add('Ajouter', SubmitType::class);
+        ->add('price', TextType::class);
+
 
     }
 

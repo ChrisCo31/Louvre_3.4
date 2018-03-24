@@ -9,9 +9,10 @@
     <p> {{ dump(reservation) }} </p>
 
     <ul>
-        {% for tickets in reservation %}
-            <li><em>Ok</em></li>
-
+        {% for tickets in form.tickets %}
+            <div class="well">
+                {{ form(form) }}
+            </div>
         {% else %}
             <li><em>Pas OK</em></li>
         {% endfor %}

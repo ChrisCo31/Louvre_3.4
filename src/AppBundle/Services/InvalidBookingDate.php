@@ -6,6 +6,8 @@
  * Time: 15:29
  */
 namespace AppBundle\Services;
+
+
 class InvalidBookingDate
 {
     /**
@@ -75,22 +77,6 @@ class InvalidBookingDate
             return true;
         } else {
             return false;
-        }
-    }
-    /**
-     * @param $reservation
-     * @return bool
-     */
-    Public function isHalfDay($reservation)
-    {
-        //on va chercher l'atribut dateVisit de l'objet reservation et on le compare à $today (jour d'aujourd'hui) si c'est le cas, on regarde l'heure
-        $today = New \DateTime('now');
-        if($today->format('Y-m-d') == $reservation->getDateVisit()->format('Y-m-d'))
-        {
-            if ($today->format('H') >= 14)
-            {
-                return true;
-            }
         }
     }
 

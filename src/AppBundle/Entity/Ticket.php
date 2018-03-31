@@ -3,6 +3,7 @@
 namespace AppBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * Ticket
@@ -247,5 +248,18 @@ class Ticket
     public function getReservation()
     {
         return $this->reservation;
+    }
+
+    /**
+     * @return string
+     */
+    public function getAge($birthDate) // calcul de l'age par ticket
+    {
+        //$birthDate = $this->getBirthDate(); // renvoi null
+        $today = new \DateTime(); // renvoi un objet(dateTime)
+        // php.net/manual/fr/datetime.diff.php
+        $delta = $birthDate->diff($today);
+        $age = $delta->format('%Y%');
+        return $age ;
     }
 }

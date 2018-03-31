@@ -14,6 +14,7 @@ use Symfony\Component\Form\Extension\Core\Type\CollectionType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\FormBuilderInterface;
 
+
 class ReservationIdentifyType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options)
@@ -24,5 +25,4 @@ class ReservationIdentifyType extends AbstractType
             )
             ->add('Ajouter', SubmitType::class);
     }
-
 }

@@ -49,9 +49,7 @@ class TicketType extends AbstractType
         ->add('discount', CheckboxType::class, array(
             'label' => 'tarif reduit',
             'required' => false
-        ))
-        ->add('price', TextType::class);
-
+        ));
 
     }
 

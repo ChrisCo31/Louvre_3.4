@@ -5,22 +5,34 @@
 {% endblock %}
 {% block body %}
 
-    </br></br>
-            <h1>{{ 'Booking.Index.Bienvenue'|trans }} </h1>
-    <div class="panel panel-primary">
-        <div class ="panel-heading">
-            <strong> {{ 'Booking.Index.Message.Intro'|trans }}</strong></br>
-        </div>
-        <div class=""panel-body">
+        {% block titre %}
+            <h1 class="text-center text-uppercase">{{ 'Booking.Index.Bienvenue'|trans }} </h1>
+        {% endblock %}
+            <h2 class="text-center"> {{ 'Booking.Index.Heure'|trans }} {{ "now"|date('d/m/Y H:i:s') }}</h2>
 
-            <ul> {{ 'Booking.Index.Message.Pratique'|trans }}
-                </br>
+
+
+                        <h3>  {{ 'Booking.Index.Message.Hebdo'|trans }}</h3>
+                        <h3>  {{ 'Booking.Index.Message.Ferie'|trans }}</h3>
+                        <h3>  {{ 'Booking.Index.Message.Reservation'|trans }}</h3>
+
+
+
+    <div class="panel panel-primary">
+
+        <div class ="panel-heading">
+            {{ 'Booking.Index.Message.Pratique'|trans }}
+        </div>
+        <div class="panel-body">
+
+            <ul>
                 <li> {{ 'Booking.Index.Message.1'|trans }}</li></br>
                 <li> {{ 'Booking.Index.Message.2'|trans }}</li></br>
                 <li> {{ 'Booking.Index.Message.3'|trans }}</li></br>
                 <li> {{ 'Booking.Index.Message.4'|trans }}</li></br>
             </ul>
         </div>
+
     </div>
     <p>
         <a class="btn btn-primary btn-lg" href="{{ path('booking_organisation') }}">

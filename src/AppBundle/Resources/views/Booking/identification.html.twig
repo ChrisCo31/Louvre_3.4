@@ -1,22 +1,28 @@
 {% extends "::layout.html.twig" %}
-
 {% block title %}
     {{ 'Booking.Index.Title'|trans }}
 {% endblock %}
 {% block body %}
+    {% block titre %}
+       <h1 class="text-center text-uppercase"> {{ 'Booking.Identification.Title'|trans }}</h1>
+    {% endblock %}
+    {% block recap %}
+            <h2> {{ 'Booking.Identification.Recap'|trans }} </h2>
 
-    <h2> {{ 'Booking.Identification.Recap'|trans }} </h2>
-    <p> {{ dump(reservation) }} </p>
-
-    <ul>
-        {% for tickets in form.tickets %}
-            <div class="well">
-                {{ form(form) }}
-            </div>
-        {% else %}
-            <li><em>Pas OK</em></li>
-        {% endfor %}
-    </ul>
-
-
+            <h3> {{ 'Booking.Identification.NumberTicketChosen'|trans }} {{ reservation.nbTicket }} </h3>
+            <h3> {{  'Booking.Identification.InDateOf'|trans}} {{ reservation.dateVisit|date('d/m/Y')}} </h3>
+            <h3> {{ 'Booking.Identification.Email'|trans }} {{ reservation.email }} </h3>
+            <h3> {{ 'Booking.Identification.Duration'|trans }} {{ reservation.duration }} </h3>
+    {% endblock %}
+    {% block formulaire %}
+        <ul>
+            {% for tickets in form.tickets %}
+                <div class="well">
+                    {{ form(form) }}
+                </div>
+            {% else %}
+                <li><em>Pas OK</em></li>
+            {% endfor %}
+        </ul>
+    {% endblock %}
 {% endblock %}

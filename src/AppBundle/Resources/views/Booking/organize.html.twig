@@ -3,16 +3,31 @@
 {% block title %}
     {{ 'Booking.Index.Title'|trans }}
 {% endblock %}
+
 {% block body %}
-    <body>
-        <h1>{{ 'Booking.Organize.Visit'|trans }} </h1>
-        <p> {{ 'Booking.Organize.Message.Intro'|trans }}</p>
+    {% block li %}
+        <li>
+            {{ 'Quand' }}
+        </li>
+        <li>
+            {{ 'Qui'}}
+        </li>
+        <li>
+        {{ 'Combien' }}
+        </li>
+    {%  endblock %}
+    {% block formulaire %}
+        {{ form_start(form) }}
+        <div class="row">
+            <h1>{{ 'Booking.Organize.Visit'|trans }} </h1>
+        </div>
+        <h2> {{ 'Booking.Organize.Message.Intro'|trans }}</h2>
         <div class="well">
-            {{ form_start(form) }}
+
             {{ form_widget(form) }}
             {{ form_end(form) }}
         </div>
-    </body>
+    {% endblock %}
 {% endblock %}
 
 

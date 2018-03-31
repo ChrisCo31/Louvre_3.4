@@ -10,4 +10,13 @@ services:
         class: AppBundle\Services\GenerateTicket
         arguments: ["@doctrine.orm.entity_manager"]
 
+    app.ValidateDate:
+        class: AppBundle\Services\ValidateDate
+        arguments: ["@app.InvalidBookingDate"]
+
+    app.HalfDay:
+        class: AppBundle\Services\HalfDay
+
+    app.PriceCalculator:
+        class: AppBundle\Services\PriceCalculator
 

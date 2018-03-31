@@ -7,12 +7,10 @@
  */
 
 namespace AppBundle\Services;
-
-
 use AppBundle\Entity\Reservation;
 use AppBundle\Entity\Ticket;
 
-class Price
+class PriceCalculator
 {
     //  Prix afferents aux limites d'ages & reductions
 
@@ -28,24 +26,21 @@ class Price
     const HIGH_AGE_LIMIT_ADULT = 59;
     const LOW_AGE_LIMIT_SENIOR = 60;
 
+    public function __construct()
+    {
+        $ticket = new Ticket();
+        $this->ticket = $ticket;
+    }
 
-    /**
-     * @param $ticket
-     */
-    private function ageCalculation($ticket) // calcul de l'age par ticket
-   {
-       $birthDate = $ticket->getBirthDate();
-       $today = new \DateTime();
-       $delta = $birthDate->diff($today);
-       $age = $delta->format('Y');
-       return $age ;
-   }
     /**
      * @param $age
      * @return int
      */
-    private function pricePerAge($age) // Calcul du prix en fonction de l'age
+    private function pricePerAge($ticket, $birthDate) // Calcul du prix en fonction de l'age
    {
+       $age = $ticket->getAge($birthDate);
+       var_dump($age);
+
        if($age <= self::HIGH_AGE_LIMIT_BABY)
        {
            return self::BABY_PRICE;
@@ -67,34 +62,29 @@ class Price
     /**
      * @param $ticket
      */
-    public function pricePerTicket($ticket) // integration du discount et calcul du prix par ticket
+    public function pricePerTicket($age, $reduction = null) // integration du discount et calcul du prix par ticket
    {
-       if($ticket->getDiscount())
+       /*if($ticket->getDiscount())
        {
            return self::REDUCED_PRICE;
        } else
-       {
-           return $pricePerTicket = $this->pricePerAge($this->ageCalculation($ticket));
-       }
+       {*/
+           return $pricePerTicket = $this->pricePerAge($age);
+
    }
 
     /**
      * @param Reservation $reservation
      */
-    public function pricePerReservation(Reservation $reservation) //calcul du prix par reservation incluant la demi journee
+    public function pricePerReservation($age, $reservation) //calcul du prix par reservation incluant la demi journee
     {
-        $reservation->setPriceToPay(0);
+        $total = $reservation->getPriceToPay();
         foreach($reservation->getTickets() as $ticket)
         {
-            $priceTicket = $this->pricePerTicket($ticket);
-            if($reservation->getDuration())
-            {
-                $priceTicket = self::HALF_DAY;
-            } else
-            {
-
-            }
+            $pricePerTicket = $this->pricePerTicket($age);
+            $total += $pricePerTicket;
+            echo $total;
+            exit();
         }
     }
-
 }

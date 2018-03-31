@@ -9,18 +9,26 @@ Booking :
   Index :
     Title : Vente de Billets en ligne
     Bienvenue : Bienvenue sur le site de reservation en ligne du musée du Louvre !
-    Message.Intro : Ouvert tous les jours de 9h à 18h sauf le mardi. Fermeture les 1er mai, 1er novembre et 25 décembre.
+    Heure : Nous sommes le
+    Message.Hebdo : Ouvert tous les jours de 9h à 18h sauf le mardi.
+    Message.Ferie : Fermeture les 1er mai, 1er novembre et 25 décembre.
+    Message.Reservation : Reservation impossible les dimanche et jours fériés
     Message.Pratique : Le musée propose plusieurs types de tarifs :
     Message.1 : Un tarif « normal » à partir de 12 ans à 16 €
     Message.2 : Un tarif « enfant » à partir de 4 ans et jusqu’à 12 ans, à 8 € (l’entrée est gratuite pour les enfants de moins de 4 ans)
     Message.3 : Un tarif « senior » à partir de 60 ans pour 12  €
     Message.4 : Un tarif « réduit » de 10 € accordé dans certaines conditions (étudiant, employé du musée, d’un service du Ministère de la Culture, militaire…)
     Message.Bouton : Reservez maintenant !
-    Message.Langue: le site en francais
+
   Organize :
     Accueil : Reservation
     Visit : Organisation de votre visite
-    Message.Intro : veuillez remplir tous les champs suivants
+    Message.Intro : veuillez remplir tous les champs
   Identification :
+      Title : Volet identification
       Recap : Votre commande en cours :
+      NumberTicketChosen : Nombre(s) de ticket(s) souhaité(s) :
+      InDateOf : Date de la visite :
+      Email : Votre adresse email de contact :
+      Duration : Vous avez choisi des billets :
 

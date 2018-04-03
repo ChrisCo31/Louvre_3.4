@@ -13,20 +13,6 @@ use Symfony\Component\Validator\Constraints as Assert;
  */
 class Ticket
 {
-    //  Prix afferents aux limites d'ages & reductions
-
-    const BABY_PRICE = 0;
-    const CHILD_PRICE = 8;
-    const ADULT_PRICE = 16;
-    const SENIOR_PRICE = 12;
-    const REDUCED_PRICE = 10;
-    const HALF_DAY = 0.5;
-
-    const HIGH_AGE_LIMIT_BABY = 4;
-    const HIGH_AGE_LIMIT_CHILD = 12;
-    const HIGH_AGE_LIMIT_ADULT = 59;
-    const LOW_AGE_LIMIT_SENIOR = 60;
-
     // C'est le cote many d'une relation qui est proprietaire : plusieurs tickets par reservation donc l'entite ticket est le proprietaire
     //joincolumn a false pour interdire la creation de ticket sans reservation
     /**
@@ -276,61 +262,4 @@ class Ticket
         $age = $delta->format('%Y%');
         return $age ;
     }
-    /**
-     * @param $ticket
-     */
-    public function calculatePricePerTicket($age, $discount = null) // integration du discount et calcul du prix par ticket
-    {
-
-        $discount = $this->getDiscount();
-        $duration = $this->getReservation()->getDuration(); // on utilise la méthode getreservation de l'entité pour accéder à l'entité Réservation et ainsi accéder à ses méthodes
-        if ($duration ==false)
-        {
-            if($discount AND ($age > self::HIGH_AGE_LIMIT_CHILD))
-            {
-                return self::REDUCED_PRICE;
-            } else
-            {
-                return $this->givePriceFromAge($age);
-            }
-
-        }else
-        {
-
-            if($discount AND ($age > self::HIGH_AGE_LIMIT_CHILD))
-            {
-
-                return ((self::REDUCED_PRICE)*(self::HALF_DAY));
-            } else
-            {
-                return (($this->givePriceFromAge($age))*(self::HALF_DAY));
-            }
-        }
-
-
-        }
-    /**
-     * @param $age
-     * @return int
-     */
-    private function givePriceFromAge($age) // Calcul du prix en fonction de l'age
-    {
-        if($age <= self::HIGH_AGE_LIMIT_BABY)
-        {
-            return self::BABY_PRICE;
-
-        } elseif ($age <= self::HIGH_AGE_LIMIT_CHILD)
-        {
-            return self::CHILD_PRICE;
-
-        } elseif ($age <= self::HIGH_AGE_LIMIT_ADULT)
-        {
-            return self::ADULT_PRICE;
-
-        } elseif ($age >= self::LOW_AGE_LIMIT_SENIOR)
-        {
-            return self::SENIOR_PRICE;
-        }
-    }
-
 }

@@ -85,6 +85,7 @@ class Reservation
     public function __construct()
     {
         $this->dateReservation = new \Datetime();
+        $this->priceToPay = 0;
         $this->tickets = new ArrayCollection();
     }
     /**

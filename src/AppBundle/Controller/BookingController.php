@@ -94,45 +94,22 @@ class BookingController extends Controller
      */
     public function identificationAction(Request $request)
     {
-
         //recuperation des info de la page precedente
         $reservation = $request->getSession()->get('reservation');
         //formulaire ticket a remplir
         if(!$reservation->hasAllTicket()) $this->get('app.GenerateTicket')->generateTicket($reservation);
         $form = $this->createForm(ReservationIdentifyType::class, $reservation);
-        //recuperation de tous les tickets
-        $tickets = $reservation->getTickets();
-        foreach ($tickets as $ticket) {
-            $birthDate = $ticket->getbirthDate(); // on va chercher l'objet datetime
-            // on affiche la date dans l'objet datetime
-            $birthDate = $birthDate->format('y-m-d');
-            return $birthDate;
-        }
-
 
         // appel le service PriceCalculator
-        //$price = $this->get('app.PriceCalculator');
+        $totalPrice = $this->get('app.PriceCalculator');
         //formulaire ticket rempli
         if($request->isMethod('POST'))
         {
             $form->handleRequest($request);
-           // $ticket = $form->getData();
-            //var_dump($reservation);
 
-
-            $birthDate = $ticket->getbirthDate(); // j'appelle la methode getAge de la classe ticket
-            $firstName = $ticket->getFirstName();
-            //var_dump($firstName);
-            //var_dump($birthDate);
-
-            $age = $birthDate->getAge($birthDate);
-            $price->pricePerTicket($birthDate, $age);
-            $price->pricePerReservation($birthDate, $price);
-            echo $price;
-
+            $totalPrice = $totalPrice->calculateTotalPrice($reservation);
+            var_dump($totalPrice);
         }
-
-
             if($form->isValid())
             {
 

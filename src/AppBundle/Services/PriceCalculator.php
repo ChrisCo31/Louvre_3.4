@@ -12,14 +12,6 @@ use AppBundle\Entity\Ticket;
 
 class PriceCalculator
 {
-
-/*
-    public function __construct()
-    {
-        $ticket = new Ticket();
-        $this->ticket = $ticket;
-    }
-*/
     /**
      * @param Reservation $reservation
      */
@@ -34,7 +26,7 @@ class PriceCalculator
             // Calcul de l'age
             $age = $ticket->getAge($birthDate); // on appelle la methode getAge de l'entite Ticket avec la date de naissance en parametre
             $price = $ticket->calculatePricePerTicket($age);
-            $truc = $ticket->setPrice($price); // il serait plus judicieux d'hydrater les objets tickets avec leur prix à un autre endroit...
+            $affectPrice = $ticket->setPrice($price); // il serait plus judicieux d'hydrater les objets tickets avec leur prix à un autre endroit...
             $totalPrice = $totalPrice + $price;
         }
         $totalPrice = $reservation->setPriceToPay($totalPrice);

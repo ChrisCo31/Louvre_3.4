@@ -12,6 +12,7 @@
 
 namespace AppBundle\Controller;
 
+use AppBundle\Form\PaymentType;
 use AppBundle\Form\ReservationIdentifyType;
 use AppBundle\Form\ReservationType;
 use AppBundle\Form\TicketType;
@@ -32,12 +33,9 @@ class BookingController extends Controller
      */
     public function indexAction(Request $request)
     {
-
         $locale = $request->getLocale();
         return $this->render('AppBundle:Booking:index.html.twig', array('locale' =>$locale));
-
     }
-
     /**
      * Matches /organisation
      * @route("/organisation", name="booking_organisation")
@@ -46,7 +44,6 @@ class BookingController extends Controller
     public function organizeAction(Request $request)
     {
         $reservation = new Reservation();
-
         $form =$this->createForm(ReservationType :: class, $reservation);
         // recuperation du service qui va checker la date / jours de fermetures
         $closingDay = $this->get('app.ValidateDate');
@@ -65,7 +62,7 @@ class BookingController extends Controller
         {
             //  2. Recuperation des valeurs pour hydrater l'objet
             $form->handleRequest($request);
-           $dateVisit = $reservation->getDateVisit();
+            $dateVisit = $reservation->getDateVisit();
             if(($closingDay->checkDay($dateVisit) == true) )
             {
                echo "reservation impossible";
@@ -73,17 +70,16 @@ class BookingController extends Controller
             } elseif ($half->todayAfternoon($reservation) == true)
             {
                 echo "demijournee only";
-            }else
-                {
-                    // 3. Verification des valeurs et validation de l'objet
-                    if($form->isValid())
-                    {   //ouverture d'une session et on garde les infos en session
-                        $reservation = $form->getData();
-                        $this->get('session')->set('reservation', $reservation);
-                        //redirection vers la page d'identification
-                        return $this->redirectToRoute('booking_identification');
-                    }
+            } else
+            {  // 3. Verification des valeurs et validation de l'objet
+                if($form->isValid())
+                {   //ouverture d'une session et on garde les infos en session
+                    $reservation = $form->getData();
+                    $this->get('session')->set('reservation', $reservation);
+                    //redirection vers la page d'identification
+                    return $this->redirectToRoute('booking_identification');
                 }
+            }
         }
         // Creation du formulaire
         return $this->render('AppBundle:Booking:organize.html.twig', ['form'=> $form->createView()]);
@@ -99,25 +95,25 @@ class BookingController extends Controller
         //formulaire ticket a remplir
         if(!$reservation->hasAllTicket()) $this->get('app.GenerateTicket')->generateTicket($reservation);
         $form = $this->createForm(ReservationIdentifyType::class, $reservation);
-
         // appel le service PriceCalculator
         $totalPrice = $this->get('app.PriceCalculator');
+        // appel du service GenerateToken
+        $token = $this->get('app.GenerateToken');
         //formulaire ticket rempli
         if($request->isMethod('POST'))
         {
             $form->handleRequest($request);
-
+            // utilisation de la methode calculateTotalPrice du service PriceCalculator
             $totalPrice = $totalPrice->calculateTotalPrice($reservation);
-            var_dump($totalPrice);
+            $token = $token->random(10);
+            $token = $reservation->setToken($token);
         }
-            if($form->isValid())
-            {
-
-                $ticket = $form->getData();
-                $this->get('session')->set('ticket', $ticket);
-                return $this->redirectToRoute('booking_payment');
-            }
-
+        if($form->isValid())
+        {
+            $ticket = $form->getData();
+            $this->get('session')->set('ticket', $ticket);
+            return $this->redirectToRoute('booking_payment');
+        }
         return $this->render('AppBundle:Booking:identification.html.twig',
             ['reservation' => $reservation,
              'form'        => $form->createView(),
@@ -131,8 +127,17 @@ class BookingController extends Controller
     public function paymentAction(Request $request)
     {
         $reservation = $request->getSession()->get('reservation');
-        $ticket = $request->getSession()->get('ticket');
+        $tickets = $reservation->getTickets();
+        \Stripe\Stripe::setApiKey("sk_test_qHjRSqkcpdP6N7Y8SfVPM79H");
+
+        \Stripe\Charge::create(array(
+            "amount" => 2000,
+            "currency" => "eur",
+            "source" =>  "tok_visa", // obtained with Stripe.js
+            "description" => "test avec variable de l'email du client"
+        ));
+        $form =$this->createForm(PaymentType:: class);
         return $this->render('AppBundle:Booking:payment.html.twig',[
-            'reservation' => $reservation, 'ticket' => $ticket]);
+            'reservation' => $reservation, 'tickets' => $tickets, 'form'=> $form->createView()]);
     }
   }

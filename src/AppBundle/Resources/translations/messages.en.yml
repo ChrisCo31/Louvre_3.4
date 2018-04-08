@@ -31,4 +31,13 @@ Booking :
     InDateOf : Date of the visit :
     Email : Your contact email address
     Duration : You have chosen tickets :
+  Payment :
+    Token: Number of reservation :
+    IdentityVisitor : Identity of the visitor :
+    FirstName : Firstname :
+    LastName : Lastname :
+    BirthDate : Birthdate :
+    Country : Country :
+    PricePerTicket : Ticketprice :
+    PriceToPay : Total price to pay :
 

@@ -8,7 +8,6 @@
 
 namespace AppBundle\Services;
 
-
 class GenerateToken
 {
     /**
@@ -18,7 +17,8 @@ class GenerateToken
     public function random($length)
     {
         $alphabet = "azertyuiopqsdfghjklmwxcvbnAZERTYUIOPMLKJHGFDSQWXCVBN0123456789";
-        return substr(str_shuffle(str_repeat($alphabet, $length)), 0, $length);
+        $token = substr(str_shuffle(str_repeat($alphabet, $length)), 0, $length);
+        return $token;
     }
 
 }

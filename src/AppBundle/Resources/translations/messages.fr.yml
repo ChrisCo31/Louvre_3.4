@@ -27,8 +27,18 @@ Booking :
   Identification :
       Title : Volet identification
       Recap : Votre commande en cours :
-      NumberTicketChosen : Nombre(s) de ticket(s) souhaité(s) :
+      NumberTicketChosen : Nombre de ticket(s) souhaité(s) :
       InDateOf : Date de la visite :
       Email : Votre adresse email de contact :
       Duration : Vous avez choisi des billets :
+  Payment :
+      Token: Reservation numéro :
+      IdentityVisitor : Identite du visiteur :
+      FirstName : Prenom :
+      LastName : Nom :
+      BirthDate : Date de Naissance :
+      Country : Pays :
+      PricePerTicket : Prix du billet :
+      PriceToPay : Prix total à payer :
+
 

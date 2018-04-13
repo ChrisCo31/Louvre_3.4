@@ -20,42 +20,26 @@
         <h4> {{ 'Booking.Payment.BirthDate'|trans }} {{ ticket.birthDate |date('d/m/Y')}} </h4>
         <h4> {{ 'Booking.Payment.PricePerTicket'|trans }} {{ ticket.price}}  </h4>
         {% endfor %}
+        <h4><strong> {{'Booking.Payment.PriceToPay'|trans }} {{ reservation.priceToPay}} {{ 'euros' }}</strong></h4>
 
-{#        <div class="1">
-            <a class="btn btn-primary btn-lg"data-toggle="modal" data-target="#myModal">
-                {{'Booking.Payment.PriceToPay'|trans }} {{ reservation.priceToPay}} {{ 'euros' }}
-            </a>
-        </div>
-#}
+
     {% endblock %}
     {% block formulaire %}
         <form method="post" id="payment-form">
             <div class="form-row">
-                <label for="card-element">
-                    Credit or debit card
-                </label>
                 <div id="card-element">
-                    <div class="field">
-                        <input type="text" name="name" required placeholder="Votre nom" value="Chris">
-                    </div>
-                    <div class="field">
-                        <input type="email" name="email" required placeholder="votre@email.fr" value="mishima.chris@hotmail.fr">
-                    </div>
-                    <div class="field">
-                        <input type="text" placeholder="Votre code de carte bleu" data-stripe="number" value="4242 4242 4242 4242">
-                    </div>
-                    <div class="field">
-                        <input type="text" placeholder="MM" data-stripe="exp_month" value="10">
-                    </div>
-                    <div class="field">
-                        <input type="text" placeholder="YY" data-stripe="exp_year" value="18">
-                    </div>
-                    <div class="field">
-                        <input type="text" placeholder="CVC" data-stripe="cvc" value="123">
-                    </div>
-                    <p>
-                        <button class="ui button" type="submit">Acheter</button>
-                    </p>
+                        <script
+                                src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+                                data-key="pk_test_sJynCdb1Ux6jCwxVHaSEGE0h"
+                                data-amount="{{ reservation.priceToPay*100}}"
+                                data-name="{{ 'Booking.Payment.Form.Title'|trans }}"
+                                data-email="{{ reservation.email }}"
+                                data-description="{{ 'Booking.Payment.Form.Description'|trans }}"
+                                data-image="https://stripe.com/img/documentation/checkout/marketplace.png"
+                                data-locale="auto"
+                                data-label="{{ 'Booking.Payment.Form.Button'|trans }}"
+                                data-currency="eur">
+                        </script>
                 </div>
                 <!-- Used to display form errors. -->
                 <div id="card-errors" role="alert"></div>
@@ -66,9 +50,7 @@
 {% endblock %}
 {% block javascripts %}
     <script>
-        var stripe = Stripe('pk_test_sJynCdb1Ux6jCwxVHaSEGE0h');
-        var elements = stripe.elements();
-        // Custom styling can be passed to options when creating an Element.
+        // Creation d'une var style qui peut etre transmis aux options lors de leur creation
         var style = {
             base: {
                 // Add your base input styles here. For example:
@@ -77,10 +59,10 @@
             }
         };
 
-        // Create an instance of the card Element.
+        // Creation d'une instance de l'element "card" avec la var style
         var card = elements.create('card', {style: style});
 
-        // Add an instance of the card Element into the `card-element` <div>.
+        // Ajout de l'element "card" dans le "card-element"
         card.mount('#card-element');
         card.addEventListener('change', function(event) {
             var displayError = document.getElementById('card-errors');
@@ -90,18 +72,20 @@
                 displayError.textContent = '';
             }
         });
-        // Create a token or display an error when the form is submitted.
+        // Creation d'un token ou affiche une erreur lorsque le formulaire est envoye
         var form = document.getElementById('payment-form');
         form.addEventListener('submit', function(event) {
+            // empecher la soumission du formulaire à mon serveur
             event.preventDefault();
 
+            // contacte l'api de stripe et demande de creer un token
             stripe.createToken(card).then(function(result) {
                 if (result.error) {
-                    // Inform the customer that there was an error.
+                    // Informe qu'il y a une erreur
                     var errorElement = document.getElementById('card-errors');
                     errorElement.textContent = result.error.message;
                 } else {
-                    // Send the token to your server.
+                    // Envoi le token
                     stripeTokenHandler(result.token);
                 }
             });

@@ -40,5 +40,9 @@ Booking :
       Country : Pays :
       PricePerTicket : Prix du billet :
       PriceToPay : Prix total à payer :
+      Form :
+              Button : Payer
+              Title :  Musée du Louvre
+              Description : Paiement
 
 

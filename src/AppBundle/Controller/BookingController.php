@@ -124,20 +124,39 @@ class BookingController extends Controller
      * Matches /payment
      * @route("/payment", name="booking_payment")
      */
-    public function paymentAction(Request $request)
+    public function paymentAction(Request $request, Response $response = null)
     {
         $reservation = $request->getSession()->get('reservation');
         $tickets = $reservation->getTickets();
-        \Stripe\Stripe::setApiKey("sk_test_qHjRSqkcpdP6N7Y8SfVPM79H");
+        if($request->isMethod('POST')){
+           // 1. Persistance en base des donnees
+            $em = $this->getDoctrine()->getManager();
+            $em->persist($reservation);
+            $em->flush();
 
-        \Stripe\Charge::create(array(
-            "amount" => 2000,
-            "currency" => "eur",
-            "source" =>  "tok_visa", // obtained with Stripe.js
-            "description" => "test avec variable de l'email du client"
-        ));
-        $form =$this->createForm(PaymentType:: class);
+        \Stripe\Stripe::setApiKey("sk_test_qHjRSqkcpdP6N7Y8SfVPM79H");
+            // recuperation du token
+            $token = $_POST['stripeToken'];
+            // creation du client
+            $charge =\Stripe\Charge::create(array(
+                "amount" => $reservation->getPriceToPay()*100,
+                "currency" => "eur",
+                "source" =>  $token, // obtained with Stripe.js
+                "description" =>  $reservation->getEmail()
+            ));
+          $response = new Response();
+          var_dump($response);
+
+
+          $status = (substr($response->getStatusCode(), 0,1));
+          if($status == 2){
+              echo "ok";
+              //afficher message de succes + persistance en base
+          }
+
+          echo $status;
+
+        }
         return $this->render('AppBundle:Booking:payment.html.twig',[
-            'reservation' => $reservation, 'tickets' => $tickets, 'form'=> $form->createView()]);
-    }
-  }
+            'reservation' => $reservation, 'tickets' => $tickets]);
+    }  }

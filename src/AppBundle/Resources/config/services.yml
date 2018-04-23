@@ -23,3 +23,6 @@ services:
     app.GenerateToken:
         class: AppBundle\Services\GenerateToken
 
+    app.SendEmail:
+        class: AppBundle\Services\SendEmail
+        arguments: ["@Swift_Mailer"]

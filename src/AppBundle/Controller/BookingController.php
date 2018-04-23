@@ -16,10 +16,13 @@ use AppBundle\Form\PaymentType;
 use AppBundle\Form\ReservationIdentifyType;
 use AppBundle\Form\ReservationType;
 use AppBundle\Form\TicketType;
+use Swift_Mailer;
+use Swift_SmtpTransport;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use AppBundle\Entity\Reservation;
 use AppBundle\Entity\Ticket;
+use AppBundle\Entity\Transaction;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\Session\Session;
@@ -128,6 +131,8 @@ class BookingController extends Controller
     {
         $reservation = $request->getSession()->get('reservation');
         $tickets = $reservation->getTickets();
+        $transaction = new Transaction();
+        $reservation->setTransaction($transaction);
         if($request->isMethod('POST')){
            // 1. Persistance en base des donnees
             $em = $this->getDoctrine()->getManager();
@@ -145,14 +150,39 @@ class BookingController extends Controller
                 "description" =>  $reservation->getEmail()
             ));
           $response = new Response();
-          var_dump($response);
 
 
+          $statusCode = $transaction->setStatusCode($response->getStatusCode());
+          $charge = \Stripe\Charge::all();
+          $idStripe = $transaction->setIdStripe($charge['data'][0]['id']);
           $status = (substr($response->getStatusCode(), 0,1));
-          if($status == 2){
-              echo "ok";
-              //afficher message de succes + persistance en base
+          if($status == 2) {
+              $sendEmail = $this->get('app.SendEmail');
+
+              $mailer = new Swift_Mailer($transport);
+              $sendEmail->CreateEmail('Josiane', $mailer);
+              $message = $transaction->setMessage("OK"); // Comment recuperer l'attribut StatusText de l'objet Response? (création d'une classe qui herite de la classe Response avec une méthode get StatusText)
           }
+          elseif($status == 4){
+
+              $message = $transaction->setMessage("request issue");
+          }
+
+          elseif($status == 5){
+
+              $message = $transaction->setMessage("server error");
+          }
+
+          else{
+
+              $message = $transaction->setMessage("unknown error");
+          }
+
+              //afficher message de succes + persistance en base
+              $em = $this->getDoctrine()->getManager();
+              $em->persist($reservation);
+              $em->flush();
+
 
           echo $status;
 

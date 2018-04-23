@@ -36,10 +36,19 @@ class TicketTest extends TestCase
     public function testGetAge()
     {
         $ticket = new Ticket();
-        $ticket->setBirthDate("2010-10-10");
-        $ticket->getAge($ticket);
+        $birthDate = new \DateTime(date('2000-10-10'));
+        $ticket->setBirthDate($birthDate);
+        $age = $ticket->getBirthDate();
+        $ticket = $ticket->getAge($age);
 
-        $this->assertEquals("8", $ticket);
+        $this->assertEquals("17", $ticket);
+    }
+
+
+    public function testGivePriceFromAge()
+    {
+
+
+
     }
 }
-

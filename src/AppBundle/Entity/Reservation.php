@@ -15,6 +15,10 @@ use Symfony\Component\Validator\Constraints as Assert;
 class Reservation
 {
     /**
+     * @ORM\OneToOne(targetEntity="AppBundle\Entity\Transaction", cascade={"all"})
+     */
+    private $transaction;
+   /**
      * @ORM\OneToMany(targetEntity="AppBundle\Entity\Ticket", mappedBy ="Reservation", cascade={"all"})
      */
     private $tickets;
@@ -87,6 +91,7 @@ class Reservation
         $this->dateReservation = new \Datetime();
         $this->tickets = new ArrayCollection();
     }
+
     /**
      * Get id
      *
@@ -309,5 +314,29 @@ class Reservation
     public function getTickets()
     {
         return $this->tickets;
+    }
+
+    /**
+     * Set transaction
+     *
+     * @param \AppBundle\Entity\Transaction $transaction
+     *
+     * @return Reservation
+     */
+    public function setTransaction(\AppBundle\Entity\Transaction $transaction = null)
+    {
+        $this->transaction = $transaction;
+
+        return $this;
+    }
+
+    /**
+     * Get transaction
+     *
+     * @return \AppBundle\Entity\Transaction
+     */
+    public function getTransaction()
+    {
+        return $this->transaction;
     }
 }

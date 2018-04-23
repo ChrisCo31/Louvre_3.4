@@ -281,7 +281,6 @@ class Ticket
      */
     public function calculatePricePerTicket($age, $discount = null) // integration du discount et calcul du prix par ticket
     {
-
         $discount = $this->getDiscount();
         $duration = $this->getReservation()->getDuration(); // on utilise la méthode getreservation de l'entité pour accéder à l'entité Réservation et ainsi accéder à ses méthodes
         if ($duration ==false)
@@ -296,7 +295,6 @@ class Ticket
 
         }else
         {
-
             if($discount AND ($age > self::HIGH_AGE_LIMIT_CHILD))
             {
 

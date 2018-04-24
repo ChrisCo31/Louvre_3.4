@@ -3,6 +3,10 @@
     {{ 'Booking.Index.Title'|trans }}
 {% endblock %}
 {% block body %}
+
+    {% for message in app.session.flashbag.get('warning') %}
+        <div class="alert alert-warning">{{ message }}</div>
+    {% endfor %}
     {% block titre %}
        <h1 class="text-center text-uppercase"> {{ 'Booking.Identification.Title'|trans }}</h1>
     {% endblock %}

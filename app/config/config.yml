@@ -65,8 +65,8 @@ doctrine:
 # Swiftmailer Configuration
 swiftmailer:
     transport:        gmail
-    username:         coeuranger.pastel@gmail.com
-    password:         $Ada_Lovelace!2012
+    username:         *******
+    password:         *******
     host:             localhost
     port:             465
     encryption:       ssl

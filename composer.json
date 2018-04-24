@@ -28,6 +28,7 @@
         "sensio/distribution-bundle": "^5.0.19",
         "sensio/framework-extra-bundle": "^5.0.0",
         "stripe/stripe-php": "^6.5",
+        "swiftmailer/swiftmailer": "^5.4",
         "symfony/config": "^3.4",
         "symfony/dependency-injection": "^3.4",
         "symfony/finder": "^3.4",

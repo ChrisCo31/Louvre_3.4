@@ -64,10 +64,16 @@ doctrine:
 
 # Swiftmailer Configuration
 swiftmailer:
-    transport: '%mailer_transport%'
-    encryption: %mailer_encryption%
-    auth_mode:  %mailer_auth_mode%
-    host: '%mailer_host%'
-    username: '%mailer_user%'
-    password: '%mailer_password%'
-    spool: { type: memory }
+    transport:        gmail
+    username:         coeuranger.pastel@gmail.com
+    password:         $Ada_Lovelace!2012
+    host:             localhost
+    port:             465
+    encryption:       ssl
+    auth-mode:        login
+    spool: { type: 'memory' }
+    stream_options:
+        ssl:
+            allow_self_signed: true
+            verify_peer: false
+            verify_peer_name: false

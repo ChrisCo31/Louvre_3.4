@@ -30,7 +30,7 @@ class PayWithStripe
     }
     public function useCharge(Transaction $transaction)
     {
-        $response = new Response($transaction);
+        $response = new Response();
         $statusCode = $transaction->setStatusCode($response->getStatusCode());
         $charge = \Stripe\Charge::all();
         $idStripe = $transaction->setIdStripe($charge['data'][0]['id']);
@@ -43,17 +43,12 @@ class PayWithStripe
             //$this->get('session')->getFlashBag()->add('warning', $this->get('translator')->trans('Warning.Flash.Identification'));
         }
         elseif($status == 4){
-
             $message = $transaction->setMessage("request issue");
         }
-
         elseif($status == 5){
-
             $message = $transaction->setMessage("server error");
         }
-
         else{
-
             $message = $transaction->setMessage("unknown error");
         }
     }

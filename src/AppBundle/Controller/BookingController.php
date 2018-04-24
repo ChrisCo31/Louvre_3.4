@@ -142,41 +142,12 @@ class BookingController extends Controller
             $em->flush();
             $pay = $this->get('app.PayWithStripe');
             $pay->useStripe($reservation);
-          $response = new Response($transaction);
-            $pay->useCharge();
-            exit();
-          $statusCode = $transaction->setStatusCode($response->getStatusCode());
-          $charge = \Stripe\Charge::all();
-          $idStripe = $transaction->setIdStripe($charge['data'][0]['id']);
-          $status = (substr($response->getStatusCode(), 0,1));
-          if($status == 2) {
-              $sendEmail = $this->get('app.SendEmail');
-              $sendEmail->createEmail();
-              exit();
-
-              $message = $transaction->setMessage("OK"); // Comment recuperer l'attribut StatusText de l'objet Response? (création d'une classe qui herite de la
-              //classe Response avec une méthode get StatusText)
-              $this->get('session')->getFlashBag()->add('warning', $this->get('translator')->trans('Warning.Flash.Identification'));
-          }
-          elseif($status == 4){
-
-              $message = $transaction->setMessage("request issue");
-          }
-
-          elseif($status == 5){
-
-              $message = $transaction->setMessage("server error");
-          }
-
-          else{
-
-              $message = $transaction->setMessage("unknown error");
-          }
-
+            $response = new Response();
+            $pay->useCharge($transaction);
               //afficher message de succes + persistance en base
-              $em = $this->getDoctrine()->getManager();
-              $em->persist($reservation);
-              $em->flush();
+            $em = $this->getDoctrine()->getManager();
+            $em->persist($reservation);
+            $em->flush();
         }
         return $this->render('AppBundle:Booking:payment.html.twig',[
             'reservation' => $reservation, 'tickets' => $tickets]);

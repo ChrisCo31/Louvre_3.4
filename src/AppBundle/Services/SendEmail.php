@@ -15,23 +15,10 @@ use Swift_SmtpTransport;
 
 class SendEmail
 {
-    public function CreateEmail($name, \Swift_Mailer $mailer){
-
-        $message = (new \Swift_Message('Hello Email'))
-            ->setFrom('museedulouvre@museedulouvre.com')
-            ->setTo('mishima.chris@hotmail.fr')
-            ->setBody(
-                $this->renderView(
-                // app/Resources/views/Emails/registration.html.twig
-                    'Emails/registration.html.twig',
-                    array('name' => $name)
-                ),
-                'text/html'
-            )
-        ;
-        $mailer->send($message);
-    }
-
+  public function createEmail()
+  {
+      echo "WTF";
+  }
 
 
 }

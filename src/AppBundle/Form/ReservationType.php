@@ -64,7 +64,7 @@ class ReservationType extends AbstractType
             'data' =>'abcdef'
     ])
 
-            ->add('save', SubmitType::class);
+            ->add('suivant', SubmitType::class);
     }
 
     /**

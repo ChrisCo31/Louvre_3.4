@@ -95,6 +95,8 @@ class BookingController extends Controller
     {
         //recuperation des info de la page precedente
         $reservation = $request->getSession()->get('reservation');
+        // Flash Message
+        $this->get('session')->getFlashBag()->add('warning', $this->get('translator')->trans('Warning.Flash.Identification'));
         //formulaire ticket a remplir
         if(!$reservation->hasAllTicket()) $this->get('app.GenerateTicket')->generateTicket($reservation);
         $form = $this->createForm(ReservationIdentifyType::class, $reservation);
@@ -138,30 +140,23 @@ class BookingController extends Controller
             $em = $this->getDoctrine()->getManager();
             $em->persist($reservation);
             $em->flush();
-
-        \Stripe\Stripe::setApiKey("sk_test_qHjRSqkcpdP6N7Y8SfVPM79H");
-            // recuperation du token
-            $token = $_POST['stripeToken'];
-            // creation du client
-            $charge =\Stripe\Charge::create(array(
-                "amount" => $reservation->getPriceToPay()*100,
-                "currency" => "eur",
-                "source" =>  $token, // obtained with Stripe.js
-                "description" =>  $reservation->getEmail()
-            ));
-          $response = new Response();
-
-
+            $pay = $this->get('app.PayWithStripe');
+            $pay->useStripe($reservation);
+          $response = new Response($transaction);
+            $pay->useCharge();
+            exit();
           $statusCode = $transaction->setStatusCode($response->getStatusCode());
           $charge = \Stripe\Charge::all();
           $idStripe = $transaction->setIdStripe($charge['data'][0]['id']);
           $status = (substr($response->getStatusCode(), 0,1));
           if($status == 2) {
               $sendEmail = $this->get('app.SendEmail');
+              $sendEmail->createEmail();
+              exit();
 
-              $mailer = new Swift_Mailer($transport);
-              $sendEmail->CreateEmail('Josiane', $mailer);
-              $message = $transaction->setMessage("OK"); // Comment recuperer l'attribut StatusText de l'objet Response? (création d'une classe qui herite de la classe Response avec une méthode get StatusText)
+              $message = $transaction->setMessage("OK"); // Comment recuperer l'attribut StatusText de l'objet Response? (création d'une classe qui herite de la
+              //classe Response avec une méthode get StatusText)
+              $this->get('session')->getFlashBag()->add('warning', $this->get('translator')->trans('Warning.Flash.Identification'));
           }
           elseif($status == 4){
 
@@ -182,10 +177,6 @@ class BookingController extends Controller
               $em = $this->getDoctrine()->getManager();
               $em->persist($reservation);
               $em->flush();
-
-
-          echo $status;
-
         }
         return $this->render('AppBundle:Booking:payment.html.twig',[
             'reservation' => $reservation, 'tickets' => $tickets]);

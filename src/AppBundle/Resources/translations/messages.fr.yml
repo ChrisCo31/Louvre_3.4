@@ -47,5 +47,12 @@ Booking :
               Button : Payer
               Title :  Musée du Louvre
               Description : Paiement
-
+  Mail:
+      Subject: Reservation pour votre visite du musee du Louvre
+      Title: Musée du Louvre
+      Subtitle: Reservation %codeCommande% pour le %date%
+      Comment1: Vous avez réservé pour les personnes suivantes :
+      Comment2: Le coût total de la visite est de %priceToPay% €.
+      Comment3: Nous vous rappelons que les billets demi-journée sont utilisables à partir de 14h.
+      Comment4: Une pièce d'identité sera demandé à l'entrée du Musée et nous vous rappelons que le tarif réduit est accordé sous reserve de remplir certaines conditions
 

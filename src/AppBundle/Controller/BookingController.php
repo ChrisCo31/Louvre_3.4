@@ -135,16 +135,14 @@ class BookingController extends Controller
         $tickets = $reservation->getTickets();
         $transaction = new Transaction();
         $reservation->setTransaction($transaction);
+
         if($request->isMethod('POST')){
-           // 1. Persistance en base des donnees
             $em = $this->getDoctrine()->getManager();
             $em->persist($reservation);
             $em->flush();
             $pay = $this->get('app.PayWithStripe');
-            $pay->useStripe($reservation);
-            $response = new Response();
-            $pay->useCharge($transaction);
-              //afficher message de succes + persistance en base
+            $pay->useStripe($request,$reservation, $transaction);
+
             $em = $this->getDoctrine()->getManager();
             $em->persist($reservation);
             $em->flush();

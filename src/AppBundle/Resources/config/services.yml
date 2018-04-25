@@ -25,7 +25,9 @@ services:
 
     app.SendEmail:
         class: AppBundle\Services\SendEmail
-        arguments: ["@Swift_Mailer"]
+        arguments: ["@mailer", "@templating", "@translator"]
 
     app.PayWithStripe:
         class: AppBundle\Services\PayWithStripe
+        arguments: ["@app.SendEmail"]
+

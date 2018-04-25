@@ -1,9 +1,28 @@
-{# app/Resources/views/Emails/registration.html.twig #}
-<h3>You did it! You registered!</h3>
 
-Hi {{ name }}! You're successfully registered.
+<h1>{{ 'Mail.Title'|trans }}</h1>
 
-{# example, assuming you have a route named "login" #}
-To login, go to: <a href="{{ url('login') }}">...</a>.
+<h3>{{ 'Mail.Subtitle'|trans({'%codeCommande%': reservation.token, '%date%': reservation.dateVisit|date('d/m/Y')}) }}</h3>
 
-Thanks!
+<p>{{ 'Mail.Comment1'|trans }}</p>
+<table>
+    <td>{{ 'Form.Lastname'|trans }}</td>
+    <tr>
+        <td>{{ 'Form.Firstname'|trans }}</td>
+        <td>{{ 'Form.Birthdate'|trans }}</td>
+        <td>{{ 'Form.Price'|trans }}</td>
+        <td></td>
+    </tr>
+    {% for ticket in tickets %}
+        <tr>
+            <td>{{ ticket.lastname }}</td>
+            <td>{{ ticket.firstName }}</td>
+            <td>{{ ticket.birthDate|date('d/m/Y') }}</td>
+            <td>{{ ticket.price }}</td>
+        </tr>
+    {% endfor %}
+</table>
+<p>{{ 'Mail.Comment2'|trans ({'%price%': reservation.PricetoPay}) }}</p>
+{% if reservation.duration %}
+    <p>{{ 'Mail.Comment3'|trans }}</p>
+{% endif %}
+<p>{{ 'Mail.Comment4'|trans }}</p>

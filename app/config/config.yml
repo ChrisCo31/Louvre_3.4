@@ -65,8 +65,8 @@ doctrine:
 # Swiftmailer Configuration
 swiftmailer:
     transport:        "%mailer_transport%"
-    username:         coeuranger.pastel@gmail.com
-    password:         $Maryam_Mirzakhani!2012
+    username:         "%mailer_user%"
+    password:         "%mailer_password%"
     host:             localhost
     port:             465
     encryption:       ssl

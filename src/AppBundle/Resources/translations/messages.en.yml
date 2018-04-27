@@ -1,55 +1,66 @@
-Warning :
-  Flash :
-    Identification : Please fill in the following fields accurately so that we can offer you the fairest price
-Layout :
-  Base :
-    Title : Louvre museum
-    Billet : Ticketing
-    Exposition : Exposition
-    Footer : Chrisco31 - 2018
-    Langue : Language
-Booking :
-  Index :
-    Title : Online Ticket Sale
-    Bienvenue : Welcome to the online reservation site of the Louvre Museum!
-    Heure : Today's date
-    Message.Hebdo : Open every day from 9h to 18h except Tuesday.
-    Message.Ferie : Closed on May 1st, November 1st and December 25th.
-    Message.Reservation : Can not book on Sundays and public holidays
-    Message.Pratique : The museum offers several types of price:
-    Message.1 : A "normal" price from 12 years old to 16 €
-    Message.2 : A "child" price from 4 years old and up to 12 years old, at 8 € (admission is free for children under 4 years old)
-    Message.3 : A "senior" price from 60 years old for 12 €
-    Message.4 : A "reduced" price of 10 € granted under certain conditions (student, museum employee, department of the Ministry of Culture, military ...)
-    Message.Bouton : Reserve now !
+Warning:
+  Flash:
+    Identification: Please fill in the following fields accurately so that we can offer you the fairest price
+Layout:
+  Base:
+    Title: Louvre museum
+    Billet: Ticketing
+    Exposition: Exposition
+    Footer: Chrisco31 - 2018
+    Langue: Language
+Booking:
+  Index:
+    Title: Online Ticket Sale
+    Bienvenue: Welcome to the online reservation site of the Louvre Museum!
+    Heure: Today's date
+    Message.Hebdo: Open every day from 9h to 18h except Tuesday.
+    Message.Ferie: Closed on May 1st, November 1st and December 25th.
+    Message.Reservation: Can not book on Sundays and public holidays
+    Message.Pratique: The museum offers several types of price:
+    Message.1: A "normal" price from 12 years old to 16 €
+    Message.2: A "child" price from 4 years old and up to 12 years old, at 8 € (admission is free for children under 4 years old)
+    Message.3: A "senior" price from 60 years old for 12 €
+    Message.4: A "reduced" price of 10 € granted under certain conditions (student, museum employee, department of the Ministry of Culture, military ...)
+    Message.Bouton: Reserve now !
   Organize:
-    Accueil : Reservation
+    Accueil: Reservation
     Visit: Organizing your visit
-    Message.Intro : Please complete all fields
+    Message.Intro: Please complete all fields
+    Form.Nbticket: Nombre de billets
+    Ticketmax: 10 tickets maximum
+    Date: Date
+    Duration: Day / half day ticket
+    Email: contact email
+    Email.Rep: Confirm the e-mail
+    Button: Continue
   Identification:
-    Title : identification component
-    Recap : Your order in progress :
-    NumberTicketChosen : Number of ticket(s) desired :
-    InDateOf : Date of the visit :
-    Email : Your contact email address
-    Duration : You have chosen tickets :
-  Payment :
+    Title: identification component
+    Recap: Your order in progress :
+    NumberTicketChosen: Number of ticket(s) desired :
+    InDateOf: Date of the visit :
+    Email: Your contact email address
+    Duration: You have chosen tickets :
+  Payment:
     Token: Number of reservation :
-    IdentityVisitor : Identity of the visitor :
-    FirstName : Firstname :
-    LastName : Lastname :
-    BirthDate : Birthdate :
-    Country : Country :
-    PricePerTicket : Ticketprice :
-    PriceToPay : Total price to pay :
-    Form :
-        Button : Pay
-        Title :  Louvre museum
-        Description : Payment
+    IdentityVisitor: Identity of the visitor :
+    FirstName: Firstname :
+    LastName: Lastname :
+    BirthDate: Birthdate :
+    Country: Country :
+    PricePerTicket: Ticketprice :
+    PriceToPay: Total price to pay :
+  Form:
+    Button: Pay
+    Title:  Louvre museum
+    Description: Payment
+    Lastname: Lastname
+    Firstname: Fristname
+    Birthdate: Birthdate
+    Price: Price
   Mail:
     Subject: Reservation for your visit to the Louvre Museum
     Title: Louvre Museum
-    Subtitle: Reservation %codeCommande% for the %date%
+    Subtitle: Reservation number ':' %codeCommande% for the %date%
     Comment1: You have booked for the following people
     Comment2: The total cost of the visit is %priceToPay% €.
     Comment3: We remind you that half-day tickets can be used from 14h.

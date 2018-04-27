@@ -1,58 +1,71 @@
-Warning :
-  Flash :
-    Identification : Veuillez, s'il vous plait, remplir avec précision les champs suivants afin que nous vous proposions le prix le plus juste
-Layout :
-  Base :
-    Title : Musee du Louvre
-    Billet : Billetterie
-    Exposition : Exposition
-    Footer : Chrisco31 - 2018
-    Langue : Langue
-Booking :
-  Index :
-    Title : Vente de Billets en ligne
-    Bienvenue : Bienvenue sur le site de reservation en ligne du musée du Louvre !
-    Heure : Nous sommes le
-    Message.Hebdo : Ouvert tous les jours de 9h à 18h sauf le mardi.
-    Message.Ferie : Fermeture les 1er mai, 1er novembre et 25 décembre.
-    Message.Reservation : Reservation impossible les dimanche et jours fériés
-    Message.Pratique : Le musée propose plusieurs types de tarifs :
-    Message.1 : Un tarif « normal » à partir de 12 ans à 16 €
-    Message.2 : Un tarif « enfant » à partir de 4 ans et jusqu’à 12 ans, à 8 € (l’entrée est gratuite pour les enfants de moins de 4 ans)
-    Message.3 : Un tarif « senior » à partir de 60 ans pour 12  €
-    Message.4 : Un tarif « réduit » de 10 € accordé dans certaines conditions (étudiant, employé du musée, d’un service du Ministère de la Culture, militaire…)
-    Message.Bouton : Reservez maintenant !
-
-  Organize :
-    Accueil : Reservation
-    Visit : Organisation de votre visite
-    Message.Intro : veuillez remplir tous les champs
-  Identification :
-      Title : Volet identification
-      Recap : Votre commande en cours :
-      NumberTicketChosen : Nombre de ticket(s) souhaité(s) :
-      InDateOf : Date de la visite :
-      Email : Votre adresse email de contact :
-      Duration : Vous avez choisi des billets :
-  Payment :
-      Token: Reservation numéro :
-      IdentityVisitor : Identite du visiteur :
-      FirstName : Prenom :
-      LastName : Nom :
-      BirthDate : Date de Naissance :
-      Country : Pays :
-      PricePerTicket : Prix du billet :
-      PriceToPay : Prix total à payer :
-      Form :
-              Button : Payer
-              Title :  Musée du Louvre
-              Description : Paiement
-  Mail:
-      Subject: Reservation pour votre visite du musee du Louvre
-      Title: Musée du Louvre
-      Subtitle: Reservation %codeCommande% pour le %date%
-      Comment1: Vous avez réservé pour les personnes suivantes :
-      Comment2: Le coût total de la visite est de %priceToPay% €.
-      Comment3: Nous vous rappelons que les billets demi-journée sont utilisables à partir de 14h.
-      Comment4: Une pièce d'identité sera demandé à l'entrée du Musée et nous vous rappelons que le tarif réduit est accordé sous reserve de remplir certaines conditions
+Warning:
+   Flash:
+    Identification: Veuillez, s'il vous plait, remplir avec précision les champs suivants afin que nous vous proposions le prix le plus juste
+Layout:
+   Base:
+    Title: Musee du Louvre
+    Billet: Billetterie
+    Exposition: Exposition
+    Footer: Chrisco31 - 2018
+    Langue: Langue
+Booking:
+   Index:
+    Title: Vente de Billets en ligne
+    Bienvenue: Bienvenue sur le site de reservation en ligne du musée du Louvre !
+    Heure: Nous sommes le
+    Message.Hebdo: Ouvert tous les jours de 9h à 18h sauf le mardi.
+    Message.Ferie: Fermeture les 1er mai, 1er novembre et 25 décembre.
+    Message.Reservation: Reservation impossible les dimanche et jours fériés
+    Message.Pratique: Le musée propose plusieurs types de tarifs :
+    Message.1: Un tarif « normal » à partir de 12 ans à 16 €
+    Message.2: Un tarif « enfant » à partir de 4 ans et jusqu’à 12 ans, à 8 € (l’entrée est gratuite pour les enfants de moins de 4 ans)
+    Message.3: Un tarif « senior » à partir de 60 ans pour 12  €
+    Message.4: Un tarif « réduit » de 10 € accordé dans certaines conditions (étudiant, employé du musée, d’un service du Ministère de la Culture, militaire…)
+    Message.Bouton: Reservez maintenant !
+   Organize:
+    Accueil: Reservation
+    Visit: Organisation de votre visite
+    Message.Intro: veuillez remplir tous les champs
+    Form.Nbticket: Nombre de billets
+    Ticketmax: 10 tickets maximum
+    Date: Date
+    Duration: Billet journée / demi-journée
+    Half: Demi-journée
+    Full: Journée complète
+    Email: email de contact
+    Email.Rep: confirmer l'email
+    Button: Poursuivre
+   Identification:
+    Title: Volet identification
+    Recap: Votre commande en cours :
+    NumberTicketChosen: Nombre de ticket(s) souhaité(s) :
+    InDateOf: Date de la visite :
+    Email: Votre adresse email de contact :
+    Duration: Vous avez choisi des billets :
+   Payment:
+    Token: Reservation numéro :
+    IdentityVisitor: Identite du visiteur :
+    FirstName: Prenom :
+    LastName: Nom :
+    BirthDate: Date de Naissance :
+    Country: Pays :
+    PricePerTicket: Prix du billet :
+    PriceToPay: Prix total à payer :
+   Form: # formulaire Stripe
+    Button: Payer
+    Title:  Musée du Louvre
+    Description : Paiement
+   Form: # tableau de l'email de recap
+    Lastname: Nom
+    Firstname: Prenom
+    Birthdate: Date de naissance
+    Price: Prix
+   Mail:
+    Subject: Reservation pour votre visite du musee du Louvre
+    Title: Musée du Louvre
+    Subtitle: Reservation numero ':'  %codeCommande% pour le %date%
+    Comment1: Vous avez réservé pour les personnes suivantes :
+    Comment2: Le coût total de la visite est de %price% €.
+    Comment3: Nous vous rappelons que les billets demi-journée sont utilisables à partir de 14h.
+    Comment4: Une pièce d'identité sera demandée à l'entrée du Musée et nous vous rappelons que le tarif réduit est accordé sous reserve de remplir certaines conditions
 

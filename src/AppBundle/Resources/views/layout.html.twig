@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{% block title %}Layout.Base.Title{% endblock %}</title>
+    {% block stylesheets %}
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+        <link href="{{ asset('css/books.css') }}" rel="stylesheet">
+    {% endblock %}
+</head>
+<body>
+
+<div class="container">
+    {% block header %}
+        {% include 'AppBundle::navbar.html.twig' %}
+    {% endblock %}
+    <div class="row">
+        <div id="content" class="col-md-12">
+            {% block body %}
+            {% endblock %}
+        </div>
+    </div>
+    <hr>
+    <footer class="footer">
+        <div class="container">
+        {% block footer %}
+            {% include 'AppBundle::footer.html.twig' %}
+        {% endblock %}
+        </div>
+    </footer>
+</div>
+{% block javascripts %}
+    <script src="https://js.stripe.com/v3/"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+{% endblock %}
+</body>
+</html>
+{# https://symfony.com/doc/3.4/templating/app_variable.html + cours + utilisation du filtre merge : #}
+{#http://v4-alpha.getbootstrap.com/components/dropdowns/#}

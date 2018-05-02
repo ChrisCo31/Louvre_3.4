@@ -6,13 +6,19 @@ Layout:
     Title: Musee du Louvre
     Billet: Billetterie
     Exposition: Exposition
-    Footer: Chrisco31 - 2018
+    Navbar:
+      Fr: Langue francaise
+      En: Langue anglaise
+    Footer:
+      Left.Pres: Site conçu avec
+      Center1: Chrisco31 - 2018
+      Center2: Tous droits réservés
+      Right: Mentions Legales
     Langue: Langue
 Booking:
    Index:
     Title: Vente de Billets en ligne
     Bienvenue: Bienvenue sur le site de reservation en ligne du musée du Louvre !
-    Heure: Nous sommes le
     Message.Hebdo: Ouvert tous les jours de 9h à 18h sauf le mardi.
     Message.Ferie: Fermeture les 1er mai, 1er novembre et 25 décembre.
     Message.Reservation: Reservation impossible les dimanche et jours fériés

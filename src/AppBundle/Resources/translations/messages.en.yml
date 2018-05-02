@@ -6,13 +6,19 @@ Layout:
     Title: Louvre museum
     Billet: Ticketing
     Exposition: Exposition
-    Footer: Chrisco31 - 2018
+    Navbar:
+          Fr: Franch language
+          En: English language
+    Footer:
+          Left.Pres: Site designed with
+          Center1: Chrisco31 - 2018
+          Center2: All rights reserved
+          Right: Legal Notice
     Langue: Language
 Booking:
   Index:
     Title: Online Ticket Sale
     Bienvenue: Welcome to the online reservation site of the Louvre Museum!
-    Heure: Today's date
     Message.Hebdo: Open every day from 9h to 18h except Tuesday.
     Message.Ferie: Closed on May 1st, November 1st and December 25th.
     Message.Reservation: Can not book on Sundays and public holidays

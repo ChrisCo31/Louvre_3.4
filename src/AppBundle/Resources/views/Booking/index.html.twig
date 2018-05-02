@@ -1,17 +1,16 @@
-{% extends "::layout.html.twig" %}
-
+{% extends "AppBundle::layout.html.twig" %}
 {% block title %}
      {{ 'Booking.Index.Title'|trans }}
 {% endblock %}
 {% block body %}
-
-        {% block titre %}
-            <h1 class="text-center text-uppercase">{{ 'Booking.Index.Bienvenue'|trans }} </h1>
-        {% endblock %}
-            <h2 class="text-center"> {{ 'Booking.Index.Heure'|trans }} {{ "now"|date('d/m/Y H:i:s') }}</h2>
-
-
-
+<div class="container">
+   <div class="row">
+        <div class="col-md-12">
+            {% block titre %}
+                <h1 class="text-center text-uppercase">{{ 'Booking.Index.Bienvenue'|trans }} </h1>
+            {% endblock %}
+        </div>
+   </div>
                         <h3>  {{ 'Booking.Index.Message.Hebdo'|trans }}</h3>
                         <h3>  {{ 'Booking.Index.Message.Ferie'|trans }}</h3>
                         <h3>  {{ 'Booking.Index.Message.Reservation'|trans }}</h3>
@@ -39,5 +38,5 @@
          {{'Booking.Index.Message.Bouton'|trans }}
         </a>
     </p>
-
+</div>
 {% endblock %}

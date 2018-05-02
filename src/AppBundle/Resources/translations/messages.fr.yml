@@ -32,6 +32,7 @@ Booking:
     Duration: Billet journée / demi-journée
     Half: Demi-journée
     Full: Journée complète
+    Email.Error: Les champs d'e-mail doivent correspondre
     Email: email de contact
     Email.Rep: confirmer l'email
     Button: Poursuivre
@@ -42,19 +43,26 @@ Booking:
     InDateOf: Date de la visite :
     Email: Votre adresse email de contact :
     Duration: Vous avez choisi des billets :
+    Half: Billet demi-journée (valable à partir de 14h )
+    Firstname: Prénom
+    Lastname: Nom
+    Birthdate: Date de naissance
+    Country: Pays
+    Discount: Réduction
+    Choicecountry: Choisissez votre pays
    Payment:
     Token: Reservation numéro :
     IdentityVisitor: Identite du visiteur :
     FirstName: Prenom :
     LastName: Nom :
     BirthDate: Date de Naissance :
-    Country: Pays :
+    Country: Pays d'origine :
     PricePerTicket: Prix du billet :
     PriceToPay: Prix total à payer :
-   Form: # formulaire Stripe
-    Button: Payer
-    Title:  Musée du Louvre
-    Description : Paiement
+    FormStripe: # formulaire Stripe
+      Button: Payer
+      Title:  Musée du Louvre
+      Description : Paiement
    Form: # tableau de l'email de recap
     Lastname: Nom
     Firstname: Prenom
@@ -63,7 +71,7 @@ Booking:
    Mail:
     Subject: Reservation pour votre visite du musee du Louvre
     Title: Musée du Louvre
-    Subtitle: Reservation numero ':'  %codeCommande% pour le %date%
+    Subtitle: Reservation numero %codeCommande% pour le %date%
     Comment1: Vous avez réservé pour les personnes suivantes :
     Comment2: Le coût total de la visite est de %price% €.
     Comment3: Nous vous rappelons que les billets demi-journée sont utilisables à partir de 14h.

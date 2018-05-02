@@ -29,25 +29,25 @@ class TicketType extends AbstractType
     {
         $builder
         ->add('firstName', TextType::class, array(
-            'label' => 'firstName',
+            'label' => 'Booking.Identification.Firstname',
             'required' => true
         ))
         ->add('lastName', TextType::class, array(
-            'label' => 'lastName',
+            'label' => 'Booking.Identification.Lastname',
             'required' => true
         ))
         ->add('birthDate', BirthdayType::class, array(
+            'label' => 'Booking.Identification.Birthdate',
             'format' => 'dd-MM-yyyy',
             'widget' => 'single_text'
         ))
         ->add('country', CountryType::class, array(
-            'label' => 'country',
-            'placeholder' => 'choisissez votre pays',
+            'label' => 'Booking.Identification.Country',
             'preferred_choices' => array(
                 'France' => 'FR'
             )))
         ->add('discount', CheckboxType::class, array(
-            'label' => 'tarif reduit',
+            'label' => 'Booking.Identification.Discount',
             'required' => false
         ));
 

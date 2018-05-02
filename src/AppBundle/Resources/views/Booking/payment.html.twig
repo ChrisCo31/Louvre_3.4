@@ -18,7 +18,7 @@
         <h4> {{ 'Booking.Payment.FirstName'|trans }} {{ ticket.firstName}} </h4>
         <h4> {{ 'Booking.Payment.LastName'|trans }} {{ ticket.lastName}}  </h4>
         <h4> {{ 'Booking.Payment.BirthDate'|trans }} {{ ticket.birthDate |date('d/m/Y')}} </h4>
-        <h4> {{ 'Booking.Payment.PricePerTicket'|trans }} {{ ticket.price}}  </h4>
+        <h4> {{ 'Booking.Payment.PricePerTicket'|trans }} {{ ticket.price}} {{ 'euros' }} </h4>
         {% endfor %}
         <h4><strong> {{'Booking.Payment.PriceToPay'|trans }} {{ reservation.priceToPay}} {{ 'euros' }}</strong></h4>
 
@@ -32,12 +32,12 @@
                                 src="https://checkout.stripe.com/checkout.js" class="stripe-button"
                                 data-key="pk_test_sJynCdb1Ux6jCwxVHaSEGE0h"
                                 data-amount="{{ reservation.priceToPay*100}}"
-                                data-name="{{ 'Booking.Payment.Form.Title'|trans }}"
+                                data-name="{{ 'Booking.Payment.FormStripe.Title'|trans }}"
                                 data-email="{{ reservation.email }}"
-                                data-description="{{ 'Booking.Payment.Form.Description'|trans }}"
+                                data-description="{{'Booking.Payment.FormStripe.Description'|trans }}"
                                 data-image="https://stripe.com/img/documentation/checkout/marketplace.png"
                                 data-locale="auto"
-                                data-label="{{ 'Booking.Payment.Form.Button'|trans }}"
+                                data-label="{{ 'Booking.Payment.FormStripe.Button'|trans }}"
                                 data-currency="eur">
                         </script>
                 </div>

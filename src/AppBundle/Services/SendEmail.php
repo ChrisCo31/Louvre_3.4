@@ -33,7 +33,7 @@ class SendEmail
         $reservation->getDateReservation();
         $reservation->getnbTicket();
         $reservation->getpriceToPay();
-        $subject = $this->translator->trans('Mail.Subject');
+        $subject = $this->translator->trans('Booking.Mail.Subject');
         $from = 'coeuranger.pastel@gmail.com';
         $to = $reservation->getEmail();
         $format = 'text/html';

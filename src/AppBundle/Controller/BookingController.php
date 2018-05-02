@@ -142,11 +142,16 @@ class BookingController extends Controller
             $em->flush();
             $pay = $this->get('app.PayWithStripe');
             $pay->useStripe($request,$reservation, $transaction);
-
             $em = $this->getDoctrine()->getManager();
             $em->persist($reservation);
             $em->flush();
+            //redirection vers la page d'identification
+            //return $this->redirectToRoute('booking_home');
+            // ajouter un message flash de succes
         }
         return $this->render('AppBundle:Booking:payment.html.twig',[
             'reservation' => $reservation, 'tickets' => $tickets]);
-    }  }
+    }
+
+}
+

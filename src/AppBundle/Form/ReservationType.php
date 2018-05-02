@@ -31,40 +31,54 @@ class ReservationType extends AbstractType
         $builder
             // mettre un cadre : entre 1 et 10 tickets
             ->add('nbTicket', IntegerType::class, array(
-                'label' => 'Nombre de billets',
-                 'attr' => ['placeholder' =>"Vous pouvez réserver jusqu'à 10 tickets",  'min' => 1, 'max' => 10],
+                'label' => 'Booking.Organize.Form.Nbticket',
+                 'attr' => ['placeholder' =>"Booking.Organize.Ticketmax",  'min' => 1, 'max' => 10],
                  'required' => true,
                 ))
 
             // integrer le date picker et les controles de vacances, feries et 1000 tickets
             ->add ('dateVisit', DateType::class, [
-                    'label' => 'Date de visite :',
+                    'label' => 'Booking.Organize.Date',
                     'widget' => 'single_text',
+                    'attr' => array(
+                        'data-provide' => 'datepicker',
+                        'format' => \IntlDateFormatter::SHORT,
+                        'data-date-autoclose' => true,
+                        'data-date-start-date' => '0d',
+                        'data-date-days-of-week-disabled' => '0,2',
+                        'data-date-days-of-week-highlighted' => '0,2',
+                        'data-date-today-highlight' => true,
+                        //'data-date-language' => $options['locale'],
+                        'data-date-max-view-mode' => 1
+                    )
                 ]
             )
             // 0 = demi journee et 1 journee
             ->add('duration', ChoiceType::class,  [
-                'label' => 'Désirez-vous un billet journée ou demi-journée ?',
+                'label' => 'Booking.Organize.Duration',
                 'choices' => [
-                    'Billet demi-journée' => true,
-                    'Billet journée complète' => false,
+                    'Booking.Organize.Half' => true,
+                    'Booking.Organize.Full' => false,
                 ]
             ])
             // verification des emails
             ->add('email', RepeatedType::class, [
                 'type' => EmailType::class,
-                'invalid_message' => 'The email fields must match',
+                'attr' => array('invalid_message' => 'Booking.Organize.Email') ,
                 'options' => array('attr' =>array('class' =>'email-field')),
                 'required' => true,
-                'first_options' =>array('label' =>'email'),
-                'second_options'=>array('label' =>'Repeat email'),
+                'first_options' =>array('label' =>'Booking.Organize.Email'),
+                'second_options'=>array('label' =>'Booking.Organize.Email.Rep'),
             ])
             // Generer un token
             ->add('token', HiddenType::class, [
             'data' =>'abcdef'
     ])
 
-            ->add('suivant', SubmitType::class);
+            ->add('suivant', SubmitType::class,[
+                    'label' => 'Booking.Organize.Button',
+                ]
+               );
     }
 
     /**

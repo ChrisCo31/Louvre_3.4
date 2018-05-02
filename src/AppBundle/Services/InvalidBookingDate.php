@@ -19,8 +19,6 @@ class InvalidBookingDate
         if ($dateVisit->format('D') == 'Tue' || $dateVisit->format('D') == 'Sun')
         {
             return true;
-        } else {
-            return false;
         }
     }
     /**

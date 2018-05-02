@@ -30,6 +30,9 @@ Booking:
     Ticketmax: 10 tickets maximum
     Date: Date
     Duration: Day / half day ticket
+    Half: Half Day
+    Full: Full Day
+    Email.Error:  The email fields must match
     Email: contact email
     Email.Rep: Confirm the e-mail
     Button: Continue
@@ -40,6 +43,13 @@ Booking:
     InDateOf: Date of the visit :
     Email: Your contact email address
     Duration: You have chosen tickets :
+    Half: Half-day ticket (valid from 14h)
+    Firstname: Firstname
+    Lastname: Lastname
+    Birthdate: Birthdate
+    Country: Native Country
+    Discount: Discount
+    Choicecountry: choose your country
   Payment:
     Token: Number of reservation :
     IdentityVisitor: Identity of the visitor :
@@ -49,18 +59,19 @@ Booking:
     Country: Country :
     PricePerTicket: Ticketprice :
     PriceToPay: Total price to pay :
-  Form:
-    Button: Pay
-    Title:  Louvre museum
-    Description: Payment
-    Lastname: Lastname
-    Firstname: Fristname
-    Birthdate: Birthdate
-    Price: Price
+    FormStripe: # formulaire Stripe
+      Button: Payer
+      Title:  Musée du Louvre
+      Description : Paiement
+  Form: # tableau de l'email de recap
+    Lastname: Nom
+    Firstname: Prenom
+    Birthdate: Date de naissance
+    Price: Prix
   Mail:
     Subject: Reservation for your visit to the Louvre Museum
     Title: Louvre Museum
-    Subtitle: Reservation number ':' %codeCommande% for the %date%
+    Subtitle: Reservation number %codeCommande% for the %date%
     Comment1: You have booked for the following people
     Comment2: The total cost of the visit is %priceToPay% €.
     Comment3: We remind you that half-day tickets can be used from 14h.

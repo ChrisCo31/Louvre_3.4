@@ -16,7 +16,7 @@
             <h3> {{ 'Booking.Identification.NumberTicketChosen'|trans }} {{ reservation.nbTicket }} </h3>
             <h3> {{  'Booking.Identification.InDateOf'|trans}} {{ reservation.dateVisit|date('d/m/Y')}} </h3>
             <h3> {{ 'Booking.Identification.Email'|trans }} {{ reservation.email }} </h3>
-            <h3> {{ 'Booking.Identification.Duration'|trans }} {{ reservation.duration }} </h3>
+            <h3> {{ 'Booking.Identification.Duration'|trans }} {% if reservation.duration %} {{ 'Booking.Identification.Half'|trans }} {% endif %} </h3>
     {% endblock %}
     {% block formulaire %}
         <ul>

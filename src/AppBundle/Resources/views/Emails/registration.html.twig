@@ -1,15 +1,16 @@
 
-<h1>{{ 'Mail.Title'|trans }}</h1>
+<h1>{{ 'Booking.Mail.Title'|trans }}</h1>
 
-<h3>{{ 'Mail.Subtitle'|trans({'%codeCommande%': reservation.token, '%date%': reservation.dateVisit|date('d/m/Y')}) }}</h3>
+<h3>{{ 'Booking.Mail.Subtitle'|trans({'%codeCommande%': reservation.token, '%date%': reservation.dateVisit|date('d/m/Y')}) }}</h3>
 
-<p>{{ 'Mail.Comment1'|trans }}</p>
+<p>{{ 'Booking.Mail.Comment1'|trans }}</p>
 <table>
-    <td>{{ 'Form.Lastname'|trans }}</td>
+
     <tr>
-        <td>{{ 'Form.Firstname'|trans }}</td>
-        <td>{{ 'Form.Birthdate'|trans }}</td>
-        <td>{{ 'Form.Price'|trans }}</td>
+        <td>{{ 'Booking.Form.Lastname'|trans }}</td>
+        <td>{{ 'Booking.Form.Firstname'|trans }}</td>
+        <td>{{ 'Booking.Form.Birthdate'|trans }}</td>
+        <td>{{ 'Booking.Form.Price'|trans }}</td>
         <td></td>
     </tr>
     {% for ticket in tickets %}
@@ -21,8 +22,8 @@
         </tr>
     {% endfor %}
 </table>
-<p>{{ 'Mail.Comment2'|trans ({'%price%': reservation.PricetoPay}) }}</p>
+<p>{{ 'Booking.Mail.Comment2'|trans ({'%price%': reservation.PricetoPay}) }}</p>
 {% if reservation.duration %}
-    <p>{{ 'Mail.Comment3'|trans }}</p>
+    <p>{{ 'Booking.Mail.Comment3'|trans }}</p>
 {% endif %}
-<p>{{ 'Mail.Comment4'|trans }}</p>
+<p>{{ 'Booking.Mail.Comment4'|trans }}</p>

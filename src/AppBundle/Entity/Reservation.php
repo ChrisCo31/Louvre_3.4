@@ -90,6 +90,8 @@ class Reservation
     {
         $this->dateReservation = new \Datetime();
         $this->tickets = new ArrayCollection();
+        
+        if(!$this->getToken()) $this->setToken($this->generateToken());
     }
 
     /**
@@ -245,6 +247,19 @@ class Reservation
     {
         return $this->token;
     }
+    
+    /**
+    * generate a random token
+    *
+    *@return string
+    */
+    public function generateToken()
+    {
+        $alphabet = "azertyuiopqsdfghjklmwxcvbnAZERTYUIOPMLKJHGFDSQWXCVBN0123456789";
+        $token = substr(str_shuffle(str_repeat($alphabet, $length)), 0, $length);
+        return $token;
+    }
+    
 
     /**
      * Set priceToPay

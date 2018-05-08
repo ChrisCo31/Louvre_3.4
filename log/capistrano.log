@@ -1,0 +1,439 @@
+# Logfile created on 2018-05-02 22:15:09 +0200 by logger.rb/61378
+  INFO ---------------------------------------------------------------------------
+  INFO START 2018-05-02 22:15:09 +0200 cap production deploy
+  INFO ---------------------------------------------------------------------------
+  INFO [cb18cdd9] Running /usr/bin/env mkdir -p /tmp as u82088990@home590207427.1and1-data.host
+ DEBUG [cb18cdd9] Command: /usr/bin/env mkdir -p /tmp
+  INFO [75abda78] Running /usr/bin/env #<StringIO:0x000000000676aa10> /tmp/git-ssh-Louvre_3.4-production-mishi.sh as u82088990@home590207427.1and1-data.host
+ DEBUG [75abda78] Command: /usr/bin/env #<StringIO:0x000000000676aa10> /tmp/git-ssh-Louvre_3.4-production-mishi.sh
+  INFO [15cd13e2] Running /usr/bin/env chmod 700 /tmp/git-ssh-Louvre_3.4-production-mishi.sh as u82088990@home590207427.1and1-data.host
+ DEBUG [15cd13e2] Command: /usr/bin/env chmod 700 /tmp/git-ssh-Louvre_3.4-production-mishi.sh
+  INFO [c278bf7c] Running /usr/bin/env git ls-remote ChrisCo31@github.com:ChrisCo31/Louvre_3.4.git HEAD as u82088990@home590207427.1and1-data.host
+ DEBUG [c278bf7c] Command: ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-Louvre_3.4-production-mishi.sh" ; /usr/bin/env git ls-remote ChrisCo31@github.com:ChrisCo31/Louvre_3.4.git HEAD )
+  INFO [5b6b625f] Running /usr/bin/env mkdir -p /crackthesky/louvre.crackthesky.fr/shared /crackthesky/louvre.crackthesky.fr/releases as u82088990@home590207427.1and1-data.host
+ DEBUG [5b6b625f] Command: /usr/bin/env mkdir -p /crackthesky/louvre.crackthesky.fr/shared /crackthesky/louvre.crackthesky.fr/releases
+ DEBUG [8f5662ba] Running [ -f /crackthesky/louvre.crackthesky.fr/current/REVISION ] as u82088990@home590207427.1and1-data.host
+ DEBUG [8f5662ba] Command: [ -f /crackthesky/louvre.crackthesky.fr/current/REVISION ]
+ DEBUG [e870707d] Running /usr/bin/env cat /crackthesky/louvre.crackthesky.fr/current/REVISION 2>/dev/null as u82088990@home590207427.1and1-data.host
+ DEBUG [e870707d] Command: /usr/bin/env cat /crackthesky/louvre.crackthesky.fr/current/REVISION 2>/dev/null
+ DEBUG [dceb2ca2] Running [ -f /crackthesky/louvre.crackthesky.fr/repo/HEAD ] as u82088990@home590207427.1and1-data.host
+ DEBUG [dceb2ca2] Command: [ -f /crackthesky/louvre.crackthesky.fr/repo/HEAD ]
+  INFO The repository mirror is at /crackthesky/louvre.crackthesky.fr/repo
+ DEBUG [147a62bf] Running if test ! -d /crackthesky/louvre.crackthesky.fr/repo; then echo "Directory does not exist '/crackthesky/louvre.crackthesky.fr/repo'" 1>&2; false; fi as u82088990@home590207427.1and1-data.host
+ DEBUG [147a62bf] Command: if test ! -d /crackthesky/louvre.crackthesky.fr/repo; then echo "Directory does not exist '/crackthesky/louvre.crackthesky.fr/repo'" 1>&2; false; fi
+  INFO [d98df02f] Running /usr/bin/env git remote set-url origin ChrisCo31@github.com:ChrisCo31/Louvre_3.4.git as u82088990@home590207427.1and1-data.host
+ DEBUG [d98df02f] Command: cd /crackthesky/louvre.crackthesky.fr/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-Louvre_3.4-production-mishi.sh" ; /usr/bin/env git remote set-url origin ChrisCo31@github.com:ChrisCo31/Louvre_3.4.git )
+  INFO [fed3baeb] Running /usr/bin/env git remote update --prune as u82088990@home590207427.1and1-data.host
+ DEBUG [fed3baeb] Command: cd /crackthesky/louvre.crackthesky.fr/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-Louvre_3.4-production-mishi.sh" ; /usr/bin/env git remote update --prune )
+ DEBUG [a3344c5a] Running if test ! -d /crackthesky/louvre.crackthesky.fr/repo; then echo "Directory does not exist '/crackthesky/louvre.crackthesky.fr/repo'" 1>&2; false; fi as u82088990@home590207427.1and1-data.host
+ DEBUG [a3344c5a] Command: if test ! -d /crackthesky/louvre.crackthesky.fr/repo; then echo "Directory does not exist '/crackthesky/louvre.crackthesky.fr/repo'" 1>&2; false; fi
+  INFO [7b539cc9] Running /usr/bin/env mkdir -p /crackthesky/louvre.crackthesky.fr/releases/20180502201525 as u82088990@home590207427.1and1-data.host
+ DEBUG [7b539cc9] Command: cd /crackthesky/louvre.crackthesky.fr/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-Louvre_3.4-production-mishi.sh" ; /usr/bin/env mkdir -p /crackthesky/louvre.crackthesky.fr/releases/20180502201525 )
+  INFO [88a62f8b] Running /usr/bin/env git archive draft | /usr/bin/env tar -x -f - -C /crackthesky/louvre.crackthesky.fr/releases/20180502201525 as u82088990@home590207427.1and1-data.host
+ DEBUG [88a62f8b] Command: cd /crackthesky/louvre.crackthesky.fr/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-Louvre_3.4-production-mishi.sh" ; /usr/bin/env git archive draft | /usr/bin/env tar -x -f - -C /crackthesky/louvre.crackthesky.fr/releases/20180502201525 )
+ DEBUG [55dd6a0f] Running if test ! -d /crackthesky/louvre.crackthesky.fr/repo; then echo "Directory does not exist '/crackthesky/louvre.crackthesky.fr/repo'" 1>&2; false; fi as u82088990@home590207427.1and1-data.host
+ DEBUG [55dd6a0f] Command: if test ! -d /crackthesky/louvre.crackthesky.fr/repo; then echo "Directory does not exist '/crackthesky/louvre.crackthesky.fr/repo'" 1>&2; false; fi
+ DEBUG [fc19dce4] Running /usr/bin/env git rev-list --max-count=1 draft as u82088990@home590207427.1and1-data.host
+ DEBUG [fc19dce4] Command: cd /crackthesky/louvre.crackthesky.fr/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-Louvre_3.4-production-mishi.sh" ; /usr/bin/env git rev-list --max-count=1 draft )
+ DEBUG [f1d3ffd2] Running if test ! -d /crackthesky/louvre.crackthesky.fr/releases/20180502201525; then echo "Directory does not exist '/crackthesky/louvre.crackthesky.fr/releases/20180502201525'" 1>&2; false; fi as u82088990@home590207427.1and1-data.host
+ DEBUG [f1d3ffd2] Command: if test ! -d /crackthesky/louvre.crackthesky.fr/releases/20180502201525; then echo "Directory does not exist '/crackthesky/louvre.crackthesky.fr/releases/20180502201525'" 1>&2; false; fi
+  INFO [6e8306b7] Running /usr/bin/env echo "" > REVISION as u82088990@home590207427.1and1-data.host
+ DEBUG [6e8306b7] Command: cd /crackthesky/louvre.crackthesky.fr/releases/20180502201525 && /usr/bin/env echo "" > REVISION
+  INFO [43717fcd] Running /usr/bin/env ln -s /crackthesky/louvre.crackthesky.fr/releases/20180502201525 /crackthesky/louvre.crackthesky.fr/releases/current as u82088990@home590207427.1and1-data.host
+ DEBUG [43717fcd] Command: /usr/bin/env ln -s /crackthesky/louvre.crackthesky.fr/releases/20180502201525 /crackthesky/louvre.crackthesky.fr/releases/current
+  INFO [e2a5e419] Running /usr/bin/env mv /crackthesky/louvre.crackthesky.fr/releases/current /crackthesky/louvre.crackthesky.fr as u82088990@home590207427.1and1-data.host
+ DEBUG [e2a5e419] Command: /usr/bin/env mv /crackthesky/louvre.crackthesky.fr/releases/current /crackthesky/louvre.crackthesky.fr
+ DEBUG [e573f5a8] Running /usr/bin/env ls -x /crackthesky/louvre.crackthesky.fr/releases as u82088990@home590207427.1and1-data.host
+ DEBUG [e573f5a8] Command: /usr/bin/env ls -x /crackthesky/louvre.crackthesky.fr/releases
+ DEBUG [5cfd42ee] Running if test ! -d /crackthesky/louvre.crackthesky.fr/releases; then echo "Directory does not exist '/crackthesky/louvre.crackthesky.fr/releases'" 1>&2; false; fi as u82088990@home590207427.1and1-data.host
+ DEBUG [5cfd42ee] Command: if test ! -d /crackthesky/louvre.crackthesky.fr/releases; then echo "Directory does not exist '/crackthesky/louvre.crackthesky.fr/releases'" 1>&2; false; fi
+  INFO [aee35ac1] Running /usr/bin/env echo "Branch draft (at ) deployed as release 20180502201525 by mishi" >> /crackthesky/louvre.crackthesky.fr/revisions.log as u82088990@home590207427.1and1-data.host
+ DEBUG [aee35ac1] Command: cd /crackthesky/louvre.crackthesky.fr/releases && /usr/bin/env echo "Branch draft (at ) deployed as release 20180502201525 by mishi" >> /crackthesky/louvre.crackthesky.fr/revisions.log
+  INFO ---------------------------------------------------------------------------
+  INFO START 2018-05-02 22:16:29 +0200 cap production deploy
+  INFO ---------------------------------------------------------------------------
+  INFO [1f371739] Running /usr/bin/env mkdir -p /tmp as u82088990@home590207427.1and1-data.host
+ DEBUG [1f371739] Command: /usr/bin/env mkdir -p /tmp
+  INFO [0cf14850] Running /usr/bin/env #<StringIO:0x0000000006892d48> /tmp/git-ssh-Louvre_3.4-production-mishi.sh as u82088990@home590207427.1and1-data.host
+ DEBUG [0cf14850] Command: /usr/bin/env #<StringIO:0x0000000006892d48> /tmp/git-ssh-Louvre_3.4-production-mishi.sh
+  INFO [81020fbb] Running /usr/bin/env chmod 700 /tmp/git-ssh-Louvre_3.4-production-mishi.sh as u82088990@home590207427.1and1-data.host
+ DEBUG [81020fbb] Command: /usr/bin/env chmod 700 /tmp/git-ssh-Louvre_3.4-production-mishi.sh
+  INFO [df855104] Running /usr/bin/env git ls-remote ChrisCo31@github.com:ChrisCo31/Louvre_3.4.git HEAD as u82088990@home590207427.1and1-data.host
+ DEBUG [df855104] Command: ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-Louvre_3.4-production-mishi.sh" ; /usr/bin/env git ls-remote ChrisCo31@github.com:ChrisCo31/Louvre_3.4.git HEAD )
+  INFO [ce0ef6e5] Running /usr/bin/env mkdir -p /crackthesky/louvre.crackthesky.fr/shared /crackthesky/louvre.crackthesky.fr/releases as u82088990@home590207427.1and1-data.host
+ DEBUG [ce0ef6e5] Command: /usr/bin/env mkdir -p /crackthesky/louvre.crackthesky.fr/shared /crackthesky/louvre.crackthesky.fr/releases
+ DEBUG [651628ca] Running [ -f /crackthesky/louvre.crackthesky.fr/current/REVISION ] as u82088990@home590207427.1and1-data.host
+ DEBUG [651628ca] Command: [ -f /crackthesky/louvre.crackthesky.fr/current/REVISION ]
+ DEBUG [8ba95f20] Running /usr/bin/env cat /crackthesky/louvre.crackthesky.fr/current/REVISION 2>/dev/null as u82088990@home590207427.1and1-data.host
+ DEBUG [8ba95f20] Command: /usr/bin/env cat /crackthesky/louvre.crackthesky.fr/current/REVISION 2>/dev/null
+ DEBUG [0fd8b945] Running [ -f /crackthesky/louvre.crackthesky.fr/repo/HEAD ] as u82088990@home590207427.1and1-data.host
+ DEBUG [0fd8b945] Command: [ -f /crackthesky/louvre.crackthesky.fr/repo/HEAD ]
+  INFO The repository mirror is at /crackthesky/louvre.crackthesky.fr/repo
+ DEBUG [16e3760d] Running if test ! -d /crackthesky/louvre.crackthesky.fr/repo; then echo "Directory does not exist '/crackthesky/louvre.crackthesky.fr/repo'" 1>&2; false; fi as u82088990@home590207427.1and1-data.host
+ DEBUG [16e3760d] Command: if test ! -d /crackthesky/louvre.crackthesky.fr/repo; then echo "Directory does not exist '/crackthesky/louvre.crackthesky.fr/repo'" 1>&2; false; fi
+  INFO [47fb5bdd] Running /usr/bin/env git remote set-url origin ChrisCo31@github.com:ChrisCo31/Louvre_3.4.git as u82088990@home590207427.1and1-data.host
+ DEBUG [47fb5bdd] Command: cd /crackthesky/louvre.crackthesky.fr/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-Louvre_3.4-production-mishi.sh" ; /usr/bin/env git remote set-url origin ChrisCo31@github.com:ChrisCo31/Louvre_3.4.git )
+  INFO [7f4cf08a] Running /usr/bin/env git remote update --prune as u82088990@home590207427.1and1-data.host
+ DEBUG [7f4cf08a] Command: cd /crackthesky/louvre.crackthesky.fr/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-Louvre_3.4-production-mishi.sh" ; /usr/bin/env git remote update --prune )
+ DEBUG [7ceef6a2] Running if test ! -d /crackthesky/louvre.crackthesky.fr/repo; then echo "Directory does not exist '/crackthesky/louvre.crackthesky.fr/repo'" 1>&2; false; fi as u82088990@home590207427.1and1-data.host
+ DEBUG [7ceef6a2] Command: if test ! -d /crackthesky/louvre.crackthesky.fr/repo; then echo "Directory does not exist '/crackthesky/louvre.crackthesky.fr/repo'" 1>&2; false; fi
+  INFO [6787ae76] Running /usr/bin/env mkdir -p /crackthesky/louvre.crackthesky.fr/releases/20180502201629 as u82088990@home590207427.1and1-data.host
+ DEBUG [6787ae76] Command: cd /crackthesky/louvre.crackthesky.fr/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-Louvre_3.4-production-mishi.sh" ; /usr/bin/env mkdir -p /crackthesky/louvre.crackthesky.fr/releases/20180502201629 )
+  INFO [99592229] Running /usr/bin/env git archive draft | /usr/bin/env tar -x -f - -C /crackthesky/louvre.crackthesky.fr/releases/20180502201629 as u82088990@home590207427.1and1-data.host
+ DEBUG [99592229] Command: cd /crackthesky/louvre.crackthesky.fr/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-Louvre_3.4-production-mishi.sh" ; /usr/bin/env git archive draft | /usr/bin/env tar -x -f - -C /crackthesky/louvre.crackthesky.fr/releases/20180502201629 )
+ DEBUG [7a6d434d] Running if test ! -d /crackthesky/louvre.crackthesky.fr/repo; then echo "Directory does not exist '/crackthesky/louvre.crackthesky.fr/repo'" 1>&2; false; fi as u82088990@home590207427.1and1-data.host
+ DEBUG [7a6d434d] Command: if test ! -d /crackthesky/louvre.crackthesky.fr/repo; then echo "Directory does not exist '/crackthesky/louvre.crackthesky.fr/repo'" 1>&2; false; fi
+ DEBUG [effcad25] Running /usr/bin/env git rev-list --max-count=1 draft as u82088990@home590207427.1and1-data.host
+ DEBUG [effcad25] Command: cd /crackthesky/louvre.crackthesky.fr/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-Louvre_3.4-production-mishi.sh" ; /usr/bin/env git rev-list --max-count=1 draft )
+ DEBUG [32ab3900] Running if test ! -d /crackthesky/louvre.crackthesky.fr/releases/20180502201629; then echo "Directory does not exist '/crackthesky/louvre.crackthesky.fr/releases/20180502201629'" 1>&2; false; fi as u82088990@home590207427.1and1-data.host
+ DEBUG [32ab3900] Command: if test ! -d /crackthesky/louvre.crackthesky.fr/releases/20180502201629; then echo "Directory does not exist '/crackthesky/louvre.crackthesky.fr/releases/20180502201629'" 1>&2; false; fi
+  INFO [2fdf05ab] Running /usr/bin/env echo "" > REVISION as u82088990@home590207427.1and1-data.host
+ DEBUG [2fdf05ab] Command: cd /crackthesky/louvre.crackthesky.fr/releases/20180502201629 && /usr/bin/env echo "" > REVISION
+  INFO [60227a72] Running /usr/bin/env ln -s /crackthesky/louvre.crackthesky.fr/releases/20180502201629 /crackthesky/louvre.crackthesky.fr/releases/current as u82088990@home590207427.1and1-data.host
+ DEBUG [60227a72] Command: /usr/bin/env ln -s /crackthesky/louvre.crackthesky.fr/releases/20180502201629 /crackthesky/louvre.crackthesky.fr/releases/current
+  INFO [b567a6ae] Running /usr/bin/env mv /crackthesky/louvre.crackthesky.fr/releases/current /crackthesky/louvre.crackthesky.fr as u82088990@home590207427.1and1-data.host
+ DEBUG [b567a6ae] Command: /usr/bin/env mv /crackthesky/louvre.crackthesky.fr/releases/current /crackthesky/louvre.crackthesky.fr
+ DEBUG [73ef6549] Running /usr/bin/env ls -x /crackthesky/louvre.crackthesky.fr/releases as u82088990@home590207427.1and1-data.host
+ DEBUG [73ef6549] Command: /usr/bin/env ls -x /crackthesky/louvre.crackthesky.fr/releases
+ DEBUG [65a7c490] Running if test ! -d /crackthesky/louvre.crackthesky.fr/releases; then echo "Directory does not exist '/crackthesky/louvre.crackthesky.fr/releases'" 1>&2; false; fi as u82088990@home590207427.1and1-data.host
+ DEBUG [65a7c490] Command: if test ! -d /crackthesky/louvre.crackthesky.fr/releases; then echo "Directory does not exist '/crackthesky/louvre.crackthesky.fr/releases'" 1>&2; false; fi
+  INFO [73736b0e] Running /usr/bin/env echo "Branch draft (at ) deployed as release 20180502201629 by mishi" >> /crackthesky/louvre.crackthesky.fr/revisions.log as u82088990@home590207427.1and1-data.host
+ DEBUG [73736b0e] Command: cd /crackthesky/louvre.crackthesky.fr/releases && /usr/bin/env echo "Branch draft (at ) deployed as release 20180502201629 by mishi" >> /crackthesky/louvre.crackthesky.fr/revisions.log
+  INFO ---------------------------------------------------------------------------
+  INFO START 2018-05-02 22:19:24 +0200 cap production deploy
+  INFO ---------------------------------------------------------------------------
+  INFO [c831cb78] Running /usr/bin/env mkdir -p /tmp as u82088990@home590207427.1and1-data.host
+ DEBUG [c831cb78] Command: /usr/bin/env mkdir -p /tmp
+  INFO ---------------------------------------------------------------------------
+  INFO START 2018-05-02 23:15:40 +0200 cap production deploy
+  INFO ---------------------------------------------------------------------------
+  INFO [a8ebafcb] Running /usr/bin/env mkdir -p /tmp as u82088990@home590207427.1and1-data.host
+ DEBUG [a8ebafcb] Command: /usr/bin/env mkdir -p /tmp
+  INFO ---------------------------------------------------------------------------
+  INFO START 2018-05-02 23:17:58 +0200 cap production deploy
+  INFO ---------------------------------------------------------------------------
+  INFO [9d11dea1] Running /usr/bin/env mkdir -p /tmp as u82088990@home590207427.1and1-data.host
+ DEBUG [9d11dea1] Command: /usr/bin/env mkdir -p /tmp
+  INFO ---------------------------------------------------------------------------
+  INFO START 2018-05-02 23:32:35 +0200 cap production deploy
+  INFO ---------------------------------------------------------------------------
+  INFO [5e613000] Running /usr/bin/env mkdir -p /tmp as u82088990@home590207427.1and1-data.host
+ DEBUG [5e613000] Command: /usr/bin/env mkdir -p /tmp
+  INFO ---------------------------------------------------------------------------
+  INFO START 2018-05-02 23:33:55 +0200 cap production deploy
+  INFO ---------------------------------------------------------------------------
+  INFO [dbf935b1] Running /usr/bin/env mkdir -p /tmp as u82088990@home590207427.1and1-data.host
+ DEBUG [dbf935b1] Command: /usr/bin/env mkdir -p /tmp
+  INFO ---------------------------------------------------------------------------
+  INFO START 2018-05-02 23:35:29 +0200 cap production deploy
+  INFO ---------------------------------------------------------------------------
+  INFO [a8a06f5d] Running /usr/bin/env mkdir -p /tmp as u82088990@home590207427.1and1-data.host
+ DEBUG [a8a06f5d] Command: /usr/bin/env mkdir -p /tmp
+  INFO ---------------------------------------------------------------------------
+  INFO START 2018-05-02 23:35:56 +0200 cap production deploy
+  INFO ---------------------------------------------------------------------------
+  INFO [98ada5b8] Running /usr/bin/env mkdir -p /tmp as u82088990@home590207427.1and1-data.host
+ DEBUG [98ada5b8] Command: /usr/bin/env mkdir -p /tmp
+  INFO ---------------------------------------------------------------------------
+  INFO START 2018-05-02 23:37:54 +0200 cap production deploy
+  INFO ---------------------------------------------------------------------------
+  INFO [d3f96b66] Running /usr/bin/env mkdir -p /tmp as u82088990@home590207427.1and1-data.host
+ DEBUG [d3f96b66] Command: /usr/bin/env mkdir -p /tmp
+  INFO ---------------------------------------------------------------------------
+  INFO START 2018-05-02 23:39:01 +0200 cap production deploy
+  INFO ---------------------------------------------------------------------------
+  INFO [db3290c1] Running /usr/bin/env mkdir -p /tmp as u82088990@home590207427.1and1-data.host
+ DEBUG [db3290c1] Command: /usr/bin/env mkdir -p /tmp
+  INFO ---------------------------------------------------------------------------
+  INFO START 2018-05-02 23:39:23 +0200 cap production deploy
+  INFO ---------------------------------------------------------------------------
+  INFO [f3d5ae5d] Running /usr/bin/env mkdir -p /tmp as u82088990@home590207427.1and1-data.host
+ DEBUG [f3d5ae5d] Command: /usr/bin/env mkdir -p /tmp
+  INFO ---------------------------------------------------------------------------
+  INFO START 2018-05-03 10:04:52 +0200 cap production deploy
+  INFO ---------------------------------------------------------------------------
+  INFO [e4c67826] Running /usr/bin/env mkdir -p /tmp as u82088990@home590207427.1and1-data.host
+ DEBUG [e4c67826] Command: /usr/bin/env mkdir -p /tmp
+  INFO [e4c67826] Finished in 19.669 seconds with exit status 0 (successful).
+ DEBUG Uploading /tmp/git-ssh-Louvre_3.4-production-mishi.sh 0.0%
+  INFO Uploading /tmp/git-ssh-Louvre_3.4-production-mishi.sh 100.0%
+  INFO [14eb737c] Running /usr/bin/env chmod 700 /tmp/git-ssh-Louvre_3.4-production-mishi.sh as u82088990@home590207427.1and1-data.host
+ DEBUG [14eb737c] Command: /usr/bin/env chmod 700 /tmp/git-ssh-Louvre_3.4-production-mishi.sh
+  INFO [14eb737c] Finished in 0.162 seconds with exit status 0 (successful).
+  INFO [574247bf] Running /usr/bin/env git ls-remote ChrisCo31@github.com:ChrisCo31/Louvre_3.4.git HEAD as u82088990@home590207427.1and1-data.host
+ DEBUG [574247bf] Command: ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-Louvre_3.4-production-mishi.sh" ; /usr/bin/env git ls-remote ChrisCo31@github.com:ChrisCo31/Louvre_3.4.git HEAD )
+  INFO ---------------------------------------------------------------------------
+  INFO START 2018-05-03 10:44:00 +0200 cap production deploy
+  INFO ---------------------------------------------------------------------------
+  INFO [e54a29eb] Running /usr/bin/env mkdir -p /tmp as u82088990@home590207427.1and1-data.host
+ DEBUG [e54a29eb] Command: /usr/bin/env mkdir -p /tmp
+  INFO [e54a29eb] Finished in 22.158 seconds with exit status 0 (successful).
+ DEBUG Uploading /tmp/git-ssh-Louvre_3.4-production-mishi.sh 0.0%
+  INFO Uploading /tmp/git-ssh-Louvre_3.4-production-mishi.sh 100.0%
+  INFO [77fba03b] Running /usr/bin/env chmod 700 /tmp/git-ssh-Louvre_3.4-production-mishi.sh as u82088990@home590207427.1and1-data.host
+ DEBUG [77fba03b] Command: /usr/bin/env chmod 700 /tmp/git-ssh-Louvre_3.4-production-mishi.sh
+  INFO [77fba03b] Finished in 0.157 seconds with exit status 0 (successful).
+  INFO [1e9c8572] Running /usr/bin/env git ls-remote ChrisCo31@github.com:ChrisCo31/Louvre_3.4.git HEAD as u82088990@home590207427.1and1-data.host
+ DEBUG [1e9c8572] Command: ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-Louvre_3.4-production-mishi.sh" ; /usr/bin/env git ls-remote ChrisCo31@github.com:ChrisCo31/Louvre_3.4.git HEAD )
+ DEBUG [1e9c8572] 	fatal: cannot exec '/tmp/git-ssh-Louvre_3.4-production-mishi.sh': Permission denied
+ DEBUG [1e9c8572] 	fatal: unable to fork
+  INFO ---------------------------------------------------------------------------
+  INFO START 2018-05-03 10:45:06 +0200 cap production deploy
+  INFO ---------------------------------------------------------------------------
+  INFO [04a1f36a] Running /usr/bin/env mkdir -p /tmp as u82088990@home590207427.1and1-data.host
+ DEBUG [04a1f36a] Command: /usr/bin/env mkdir -p /tmp
+  INFO [04a1f36a] Finished in 9.505 seconds with exit status 0 (successful).
+ DEBUG Uploading /tmp/git-ssh-Louvre_3.4-production-mishi.sh 0.0%
+  INFO Uploading /tmp/git-ssh-Louvre_3.4-production-mishi.sh 100.0%
+  INFO [090dd4ec] Running /usr/bin/env chmod 700 /tmp/git-ssh-Louvre_3.4-production-mishi.sh as u82088990@home590207427.1and1-data.host
+ DEBUG [090dd4ec] Command: /usr/bin/env chmod 700 /tmp/git-ssh-Louvre_3.4-production-mishi.sh
+  INFO [090dd4ec] Finished in 0.173 seconds with exit status 0 (successful).
+  INFO [e3cba3b7] Running /usr/bin/env git ls-remote ChrisCo31@github.com:ChrisCo31/Louvre_3.4.git HEAD as u82088990@home590207427.1and1-data.host
+ DEBUG [e3cba3b7] Command: ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-Louvre_3.4-production-mishi.sh" ; /usr/bin/env git ls-remote ChrisCo31@github.com:ChrisCo31/Louvre_3.4.git HEAD )
+ DEBUG [e3cba3b7] 	fatal: cannot exec '/tmp/git-ssh-Louvre_3.4-production-mishi.sh': Permission denied
+ DEBUG [e3cba3b7] 	fatal: unable to fork
+  INFO ---------------------------------------------------------------------------
+  INFO START 2018-05-03 11:07:53 +0200 cap production deploy
+  INFO ---------------------------------------------------------------------------
+  INFO [b4d36780] Running /usr/bin/env mkdir -p /tmp as u82088990@home590207427.1and1-data.host
+ DEBUG [b4d36780] Command: /usr/bin/env mkdir -p /tmp
+  INFO [b4d36780] Finished in 10.920 seconds with exit status 0 (successful).
+ DEBUG Uploading /tmp/git-ssh-Louvre_3.4-production-mishi.sh 0.0%
+  INFO Uploading /tmp/git-ssh-Louvre_3.4-production-mishi.sh 100.0%
+  INFO [b645d930] Running /usr/bin/env chmod 700 /tmp/git-ssh-Louvre_3.4-production-mishi.sh as u82088990@home590207427.1and1-data.host
+ DEBUG [b645d930] Command: /usr/bin/env chmod 700 /tmp/git-ssh-Louvre_3.4-production-mishi.sh
+  INFO [b645d930] Finished in 0.160 seconds with exit status 0 (successful).
+  INFO [cd18e669] Running /usr/bin/env git ls-remote ChrisCo31@github.com:ChrisCo31/Louvre_3.4.git HEAD as u82088990@home590207427.1and1-data.host
+ DEBUG [cd18e669] Command: ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-Louvre_3.4-production-mishi.sh" ; /usr/bin/env git ls-remote ChrisCo31@github.com:ChrisCo31/Louvre_3.4.git HEAD )
+ DEBUG [cd18e669] 	fatal: cannot exec '/tmp/git-ssh-Louvre_3.4-production-mishi.sh': Permission denied
+ DEBUG [cd18e669] 	fatal: unable to fork
+  INFO ---------------------------------------------------------------------------
+  INFO START 2018-05-03 11:28:37 +0200 cap production deploy
+  INFO ---------------------------------------------------------------------------
+  INFO [d8632fd0] Running /usr/bin/env mkdir -p /tmp as u82088990@home590207427.1and1-data.host
+ DEBUG [d8632fd0] Command: /usr/bin/env mkdir -p /tmp
+  INFO [d8632fd0] Finished in 10.353 seconds with exit status 0 (successful).
+ DEBUG Uploading /tmp/git-ssh-Louvre_3.4-production-mishi.sh 0.0%
+  INFO Uploading /tmp/git-ssh-Louvre_3.4-production-mishi.sh 100.0%
+  INFO [a46fb605] Running /usr/bin/env chmod 700 /tmp/git-ssh-Louvre_3.4-production-mishi.sh as u82088990@home590207427.1and1-data.host
+ DEBUG [a46fb605] Command: /usr/bin/env chmod 700 /tmp/git-ssh-Louvre_3.4-production-mishi.sh
+  INFO [a46fb605] Finished in 0.161 seconds with exit status 0 (successful).
+  INFO [a2b21678] Running /usr/bin/env git ls-remote  https://github.com/ChrisCo31/Louvre_3.4.git HEAD as u82088990@home590207427.1and1-data.host
+ DEBUG [a2b21678] Command: ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-Louvre_3.4-production-mishi.sh" ; /usr/bin/env git ls-remote  https://github.com/ChrisCo31/Louvre_3.4.git HEAD )
+ DEBUG [a2b21678] 	4d823290c51c5838ece2900e0ee3bd1f07723096	HEAD
+  INFO [a2b21678] Finished in 0.893 seconds with exit status 0 (successful).
+  INFO [19c9f725] Running /usr/bin/env mkdir -p /crackthesky/louvre.crackthesky.fr/shared /crackthesky/louvre.crackthesky.fr/releases as u82088990@home590207427.1and1-data.host
+ DEBUG [19c9f725] Command: /usr/bin/env mkdir -p /crackthesky/louvre.crackthesky.fr/shared /crackthesky/louvre.crackthesky.fr/releases
+ DEBUG [19c9f725] 	mkdir: cannot create directory '/crackthesky': Read-only file system
+mkdir: cannot create directory '/crackthesky': Read-only file system
+  INFO ---------------------------------------------------------------------------
+  INFO START 2018-05-03 11:30:37 +0200 cap production deploy
+  INFO ---------------------------------------------------------------------------
+  INFO [f10f164b] Running /usr/bin/env mkdir -p /tmp as u82088990@home590207427.1and1-data.host
+ DEBUG [f10f164b] Command: /usr/bin/env mkdir -p /tmp
+  INFO [f10f164b] Finished in 9.542 seconds with exit status 0 (successful).
+ DEBUG Uploading /tmp/git-ssh-Louvre_3.4-production-mishi.sh 0.0%
+  INFO Uploading /tmp/git-ssh-Louvre_3.4-production-mishi.sh 100.0%
+  INFO [90858fee] Running /usr/bin/env chmod 700 /tmp/git-ssh-Louvre_3.4-production-mishi.sh as u82088990@home590207427.1and1-data.host
+ DEBUG [90858fee] Command: /usr/bin/env chmod 700 /tmp/git-ssh-Louvre_3.4-production-mishi.sh
+  INFO [90858fee] Finished in 0.159 seconds with exit status 0 (successful).
+  INFO [cdc7eba3] Running /usr/bin/env git ls-remote  https://github.com/ChrisCo31/Louvre_3.4.git HEAD as u82088990@home590207427.1and1-data.host
+ DEBUG [cdc7eba3] Command: ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-Louvre_3.4-production-mishi.sh" ; /usr/bin/env git ls-remote  https://github.com/ChrisCo31/Louvre_3.4.git HEAD )
+ DEBUG [cdc7eba3] 	4d823290c51c5838ece2900e0ee3bd1f07723096	HEAD
+  INFO [cdc7eba3] Finished in 0.773 seconds with exit status 0 (successful).
+  INFO [6d8835ee] Running /usr/bin/env mkdir -p /louvre.crackthesky.fr/shared /louvre.crackthesky.fr/releases as u82088990@home590207427.1and1-data.host
+ DEBUG [6d8835ee] Command: /usr/bin/env mkdir -p /louvre.crackthesky.fr/shared /louvre.crackthesky.fr/releases
+ DEBUG [6d8835ee] 	mkdir: cannot create directory '/louvre.crackthesky.fr': Read-only file system
+mkdir: cannot create directory '/louvre.crackthesky.fr': Read-only file system
+  INFO ---------------------------------------------------------------------------
+  INFO START 2018-05-03 11:34:28 +0200 cap production deploy
+  INFO ---------------------------------------------------------------------------
+  INFO [b381f192] Running /usr/bin/env mkdir -p /tmp as u82088990@home590207427.1and1-data.host
+ DEBUG [b381f192] Command: /usr/bin/env mkdir -p /tmp
+  INFO [b381f192] Finished in 9.867 seconds with exit status 0 (successful).
+ DEBUG Uploading /tmp/git-ssh-Louvre_3.4-production-mishi.sh 0.0%
+  INFO Uploading /tmp/git-ssh-Louvre_3.4-production-mishi.sh 100.0%
+  INFO [32290044] Running /usr/bin/env chmod 700 /tmp/git-ssh-Louvre_3.4-production-mishi.sh as u82088990@home590207427.1and1-data.host
+ DEBUG [32290044] Command: /usr/bin/env chmod 700 /tmp/git-ssh-Louvre_3.4-production-mishi.sh
+  INFO [32290044] Finished in 0.160 seconds with exit status 0 (successful).
+  INFO [81febe22] Running /usr/bin/env git ls-remote  https://github.com/ChrisCo31/Louvre_3.4.git HEAD as u82088990@home590207427.1and1-data.host
+ DEBUG [81febe22] Command: ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-Louvre_3.4-production-mishi.sh" ; /usr/bin/env git ls-remote  https://github.com/ChrisCo31/Louvre_3.4.git HEAD )
+ DEBUG [81febe22] 	4d823290c51c5838ece2900e0ee3bd1f07723096	HEAD
+  INFO [81febe22] Finished in 0.770 seconds with exit status 0 (successful).
+  INFO [ba20fdcb] Running /usr/bin/env mkdir -p www/louvre.crackthesky.fr/shared www/louvre.crackthesky.fr/releases as u82088990@home590207427.1and1-data.host
+ DEBUG [ba20fdcb] Command: /usr/bin/env mkdir -p www/louvre.crackthesky.fr/shared www/louvre.crackthesky.fr/releases
+  INFO [ba20fdcb] Finished in 0.158 seconds with exit status 0 (successful).
+ DEBUG [f83c70e6] Running [ -f www/louvre.crackthesky.fr/current/REVISION ] as u82088990@home590207427.1and1-data.host
+ DEBUG [f83c70e6] Command: [ -f www/louvre.crackthesky.fr/current/REVISION ]
+ DEBUG [f83c70e6] Finished in 0.163 seconds with exit status 1 (failed).
+ DEBUG [eecf2c1d] Running [ -f www/louvre.crackthesky.fr/repo/HEAD ] as u82088990@home590207427.1and1-data.host
+ DEBUG [eecf2c1d] Command: [ -f www/louvre.crackthesky.fr/repo/HEAD ]
+ DEBUG [eecf2c1d] Finished in 0.162 seconds with exit status 1 (failed).
+ DEBUG [a25a6281] Running if test ! -d www/louvre.crackthesky.fr; then echo "Directory does not exist 'www/louvre.crackthesky.fr'" 1>&2; false; fi as u82088990@home590207427.1and1-data.host
+ DEBUG [a25a6281] Command: if test ! -d www/louvre.crackthesky.fr; then echo "Directory does not exist 'www/louvre.crackthesky.fr'" 1>&2; false; fi
+ DEBUG [a25a6281] Finished in 0.162 seconds with exit status 0 (successful).
+  INFO [54f31669] Running /usr/bin/env git clone --mirror  https://github.com/ChrisCo31/Louvre_3.4.git www/louvre.crackthesky.fr/repo as u82088990@home590207427.1and1-data.host
+ DEBUG [54f31669] Command: cd www/louvre.crackthesky.fr && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-Louvre_3.4-production-mishi.sh" ; /usr/bin/env git clone --mirror  https://github.com/ChrisCo31/Louvre_3.4.git www/louvre.crackthesky.fr/repo )
+ DEBUG [54f31669] 	Cloning into bare repository 'www/louvre.crackthesky.fr/repo'...
+  INFO [54f31669] Finished in 1.553 seconds with exit status 0 (successful).
+ DEBUG [065f056d] Running if test ! -d www/louvre.crackthesky.fr/repo; then echo "Directory does not exist 'www/louvre.crackthesky.fr/repo'" 1>&2; false; fi as u82088990@home590207427.1and1-data.host
+ DEBUG [065f056d] Command: if test ! -d www/louvre.crackthesky.fr/repo; then echo "Directory does not exist 'www/louvre.crackthesky.fr/repo'" 1>&2; false; fi
+ DEBUG [065f056d] 	Directory does not exist 'www/louvre.crackthesky.fr/repo'
+  INFO ---------------------------------------------------------------------------
+  INFO START 2018-05-03 11:49:08 +0200 cap production deploy
+  INFO ---------------------------------------------------------------------------
+  INFO [7ee37f82] Running /usr/bin/env mkdir -p /tmp as u82088990@home590207427.1and1-data.host
+ DEBUG [7ee37f82] Command: /usr/bin/env mkdir -p /tmp
+  INFO [7ee37f82] Finished in 10.043 seconds with exit status 0 (successful).
+ DEBUG Uploading /tmp/git-ssh-Louvre_3.4-production-mishi.sh 0.0%
+  INFO Uploading /tmp/git-ssh-Louvre_3.4-production-mishi.sh 100.0%
+  INFO [828a3c02] Running /usr/bin/env chmod 700 /tmp/git-ssh-Louvre_3.4-production-mishi.sh as u82088990@home590207427.1and1-data.host
+ DEBUG [828a3c02] Command: /usr/bin/env chmod 700 /tmp/git-ssh-Louvre_3.4-production-mishi.sh
+  INFO [828a3c02] Finished in 0.161 seconds with exit status 0 (successful).
+  INFO [da36c9bf] Running /usr/bin/env git ls-remote  https://github.com/ChrisCo31/Louvre_3.4.git HEAD as u82088990@home590207427.1and1-data.host
+ DEBUG [da36c9bf] Command: ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-Louvre_3.4-production-mishi.sh" ; /usr/bin/env git ls-remote  https://github.com/ChrisCo31/Louvre_3.4.git HEAD )
+ DEBUG [da36c9bf] 	4d823290c51c5838ece2900e0ee3bd1f07723096	HEAD
+  INFO [da36c9bf] Finished in 0.945 seconds with exit status 0 (successful).
+  INFO [86d5df4a] Running /usr/bin/env mkdir -p /louvre.crackthesky.fr/shared /louvre.crackthesky.fr/releases as u82088990@home590207427.1and1-data.host
+ DEBUG [86d5df4a] Command: /usr/bin/env mkdir -p /louvre.crackthesky.fr/shared /louvre.crackthesky.fr/releases
+ DEBUG [86d5df4a] 	mkdir: cannot create directory '/louvre.crackthesky.fr': Read-only file system
+mkdir: cannot create directory '/louvre.crackthesky.fr': Read-only file system
+  INFO ---------------------------------------------------------------------------
+  INFO START 2018-05-08 15:40:20 +0200 cap production deploy
+  INFO ---------------------------------------------------------------------------
+  INFO [cc423e2b] Running /usr/bin/env mkdir -p /tmp as u82088990@home590207427.1and1-data.host
+ DEBUG [cc423e2b] Command: /usr/bin/env mkdir -p /tmp
+  INFO [cc423e2b] Finished in 15.927 seconds with exit status 0 (successful).
+ DEBUG Uploading /tmp/git-ssh-Louvre_3.4-production-mishi.sh 0.0%
+  INFO Uploading /tmp/git-ssh-Louvre_3.4-production-mishi.sh 100.0%
+  INFO [20b76ad3] Running /usr/bin/env chmod 700 /tmp/git-ssh-Louvre_3.4-production-mishi.sh as u82088990@home590207427.1and1-data.host
+ DEBUG [20b76ad3] Command: /usr/bin/env chmod 700 /tmp/git-ssh-Louvre_3.4-production-mishi.sh
+  INFO [20b76ad3] Finished in 0.160 seconds with exit status 0 (successful).
+  INFO [abffe4a7] Running /usr/bin/env git ls-remote  https://github.com/ChrisCo31/Louvre_3.4.git HEAD as u82088990@home590207427.1and1-data.host
+ DEBUG [abffe4a7] Command: ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-Louvre_3.4-production-mishi.sh" ; /usr/bin/env git ls-remote  https://github.com/ChrisCo31/Louvre_3.4.git HEAD )
+ DEBUG [abffe4a7] 	4d823290c51c5838ece2900e0ee3bd1f07723096	HEAD
+  INFO [abffe4a7] Finished in 0.888 seconds with exit status 0 (successful).
+  INFO [7b3c16a6] Running /usr/bin/env mkdir -p /louvre.crackthesky.fr/shared /louvre.crackthesky.fr/releases as u82088990@home590207427.1and1-data.host
+ DEBUG [7b3c16a6] Command: /usr/bin/env mkdir -p /louvre.crackthesky.fr/shared /louvre.crackthesky.fr/releases
+ DEBUG [7b3c16a6] 	mkdir: cannot create directory '/louvre.crackthesky.fr': Read-only file system
+mkdir: cannot create directory '/louvre.crackthesky.fr'
+ DEBUG [7b3c16a6] 	: Read-only file system
+  INFO ---------------------------------------------------------------------------
+  INFO START 2018-05-08 15:41:53 +0200 cap production deploy
+  INFO ---------------------------------------------------------------------------
+  INFO [6bab0804] Running /usr/bin/env mkdir -p /tmp as u82088990@home590207427.1and1-data.host
+ DEBUG [6bab0804] Command: /usr/bin/env mkdir -p /tmp
+  INFO [6bab0804] Finished in 11.541 seconds with exit status 0 (successful).
+ DEBUG Uploading /tmp/git-ssh-Louvre_3.4-production-mishi.sh 0.0%
+  INFO Uploading /tmp/git-ssh-Louvre_3.4-production-mishi.sh 100.0%
+  INFO [ebd26c72] Running /usr/bin/env chmod 700 /tmp/git-ssh-Louvre_3.4-production-mishi.sh as u82088990@home590207427.1and1-data.host
+ DEBUG [ebd26c72] Command: /usr/bin/env chmod 700 /tmp/git-ssh-Louvre_3.4-production-mishi.sh
+  INFO [ebd26c72] Finished in 0.153 seconds with exit status 0 (successful).
+  INFO [7b8dda41] Running /usr/bin/env git ls-remote  https://github.com/ChrisCo31/Louvre_3.4.git HEAD as u82088990@home590207427.1and1-data.host
+ DEBUG [7b8dda41] Command: ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-Louvre_3.4-production-mishi.sh" ; /usr/bin/env git ls-remote  https://github.com/ChrisCo31/Louvre_3.4.git HEAD )
+ DEBUG [7b8dda41] 	4d823290c51c5838ece2900e0ee3bd1f07723096	HEAD
+  INFO [7b8dda41] Finished in 0.840 seconds with exit status 0 (successful).
+  INFO [274ac992] Running /usr/bin/env mkdir -p /louvre.crackthesky.fr/shared /louvre.crackthesky.fr/releases as u82088990@home590207427.1and1-data.host
+ DEBUG [274ac992] Command: /usr/bin/env mkdir -p /louvre.crackthesky.fr/shared /louvre.crackthesky.fr/releases
+ DEBUG [274ac992] 	mkdir: cannot create directory '/louvre.crackthesky.fr': Read-only file system
+mkdir: cannot create directory '/louvre.crackthesky.fr': Read-only file system
+  INFO ---------------------------------------------------------------------------
+  INFO START 2018-05-08 15:47:50 +0200 cap production deploy
+  INFO ---------------------------------------------------------------------------
+  INFO [1c485079] Running /usr/bin/env mkdir -p /tmp as u82088990@home590207427.1and1-data.host
+ DEBUG [1c485079] Command: /usr/bin/env mkdir -p /tmp
+  INFO [1c485079] Finished in 10.884 seconds with exit status 0 (successful).
+ DEBUG Uploading /tmp/git-ssh-Louvre_3.4-production-mishi.sh 0.0%
+  INFO Uploading /tmp/git-ssh-Louvre_3.4-production-mishi.sh 100.0%
+  INFO [811081a1] Running /usr/bin/env chmod 700 /tmp/git-ssh-Louvre_3.4-production-mishi.sh as u82088990@home590207427.1and1-data.host
+ DEBUG [811081a1] Command: /usr/bin/env chmod 700 /tmp/git-ssh-Louvre_3.4-production-mishi.sh
+  INFO [811081a1] Finished in 0.159 seconds with exit status 0 (successful).
+  INFO [ce8dcc9f] Running /usr/bin/env git ls-remote  https://github.com/ChrisCo31/Louvre_3.4.git HEAD as u82088990@home590207427.1and1-data.host
+ DEBUG [ce8dcc9f] Command: ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-Louvre_3.4-production-mishi.sh" ; /usr/bin/env git ls-remote  https://github.com/ChrisCo31/Louvre_3.4.git HEAD )
+ DEBUG [ce8dcc9f] 	4d823290c51c5838ece2900e0ee3bd1f07723096	HEAD
+  INFO [ce8dcc9f] Finished in 1.324 seconds with exit status 0 (successful).
+  INFO [e119b974] Running /usr/bin/env mkdir -p /louvre.crackthesky.fr/shared /louvre.crackthesky.fr/releases as u82088990@home590207427.1and1-data.host
+ DEBUG [e119b974] Command: /usr/bin/env mkdir -p /louvre.crackthesky.fr/shared /louvre.crackthesky.fr/releases
+ DEBUG [e119b974] 	mkdir: cannot create directory '/louvre.crackthesky.fr': Read-only file system
+mkdir: cannot create directory '/louvre.crackthesky.fr': Read-only file system
+  INFO ---------------------------------------------------------------------------
+  INFO START 2018-05-08 15:49:46 +0200 cap production deploy
+  INFO ---------------------------------------------------------------------------
+  INFO [8f5bee2f] Running /usr/bin/env mkdir -p /tmp as u82088990@home590207427.1and1-data.host
+ DEBUG [8f5bee2f] Command: /usr/bin/env mkdir -p /tmp
+  INFO [8f5bee2f] Finished in 17.437 seconds with exit status 0 (successful).
+ DEBUG Uploading /tmp/git-ssh-Louvre_3.4-production-mishi.sh 0.0%
+  INFO Uploading /tmp/git-ssh-Louvre_3.4-production-mishi.sh 100.0%
+  INFO [d789127d] Running /usr/bin/env chmod 700 /tmp/git-ssh-Louvre_3.4-production-mishi.sh as u82088990@home590207427.1and1-data.host
+ DEBUG [d789127d] Command: /usr/bin/env chmod 700 /tmp/git-ssh-Louvre_3.4-production-mishi.sh
+  INFO [d789127d] Finished in 0.171 seconds with exit status 0 (successful).
+  INFO [a0c6d0d8] Running /usr/bin/env git ls-remote  https://github.com/ChrisCo31/Louvre_3.4.git HEAD as u82088990@home590207427.1and1-data.host
+ DEBUG [a0c6d0d8] Command: ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-Louvre_3.4-production-mishi.sh" ; /usr/bin/env git ls-remote  https://github.com/ChrisCo31/Louvre_3.4.git HEAD )
+ DEBUG [a0c6d0d8] 	4d823290c51c5838ece2900e0ee3bd1f07723096	HEAD
+  INFO [a0c6d0d8] Finished in 2.082 seconds with exit status 0 (successful).
+  INFO [34bbe18c] Running /usr/bin/env mkdir -p /louvre.crackthesky.fr/shared /louvre.crackthesky.fr/releases as u82088990@home590207427.1and1-data.host
+ DEBUG [34bbe18c] Command: /usr/bin/env mkdir -p /louvre.crackthesky.fr/shared /louvre.crackthesky.fr/releases
+ DEBUG [34bbe18c] 	mkdir: cannot create directory '/louvre.crackthesky.fr': Read-only file system
+mkdir: cannot create directory '/louvre.crackthesky.fr': Read-only file system
+  INFO ---------------------------------------------------------------------------
+  INFO START 2018-05-08 15:56:31 +0200 cap production deploy
+  INFO ---------------------------------------------------------------------------
+  INFO [f6933e3a] Running /usr/bin/env mkdir -p /tmp as u82088990@home590207427.1and1-data.host
+ DEBUG [f6933e3a] Command: /usr/bin/env mkdir -p /tmp
+  INFO [f6933e3a] Finished in 10.900 seconds with exit status 0 (successful).
+ DEBUG Uploading /tmp/git-ssh-Louvre_3.4-production-mishi.sh 0.0%
+  INFO Uploading /tmp/git-ssh-Louvre_3.4-production-mishi.sh 100.0%
+  INFO [3c9c1304] Running /usr/bin/env chmod 700 /tmp/git-ssh-Louvre_3.4-production-mishi.sh as u82088990@home590207427.1and1-data.host
+ DEBUG [3c9c1304] Command: /usr/bin/env chmod 700 /tmp/git-ssh-Louvre_3.4-production-mishi.sh
+  INFO [3c9c1304] Finished in 0.171 seconds with exit status 0 (successful).
+  INFO [a59244bb] Running /usr/bin/env git ls-remote  https://github.com/ChrisCo31/Louvre_3.4.git HEAD as u82088990@home590207427.1and1-data.host
+ DEBUG [a59244bb] Command: ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-Louvre_3.4-production-mishi.sh" ; /usr/bin/env git ls-remote  https://github.com/ChrisCo31/Louvre_3.4.git HEAD )
+ DEBUG [a59244bb] 	4d823290c51c5838ece2900e0ee3bd1f07723096	HEAD
+  INFO [a59244bb] Finished in 0.757 seconds with exit status 0 (successful).
+  INFO [fb2c3016] Running /usr/bin/env mkdir -p /louvre.crackthesky.fr/shared /louvre.crackthesky.fr/releases as u82088990@home590207427.1and1-data.host
+ DEBUG [fb2c3016] Command: /usr/bin/env mkdir -p /louvre.crackthesky.fr/shared /louvre.crackthesky.fr/releases
+ DEBUG [fb2c3016] 	mkdir: cannot create directory '/louvre.crackthesky.fr': Read-only file system
+mkdir: cannot create directory '/louvre.crackthesky.fr': Read-only file system
+  INFO ---------------------------------------------------------------------------
+  INFO START 2018-05-08 16:38:39 +0200 cap production deploy
+  INFO ---------------------------------------------------------------------------
+  INFO [28f0b251] Running /usr/bin/env mkdir -p /tmp as u82088990@home590207427.1and1-data.host
+ DEBUG [28f0b251] Command: /usr/bin/env mkdir -p /tmp
+  INFO [28f0b251] Finished in 10.086 seconds with exit status 0 (successful).
+ DEBUG Uploading /tmp/git-ssh-Louvre_3.4-production-mishi.sh 0.0%
+  INFO Uploading /tmp/git-ssh-Louvre_3.4-production-mishi.sh 100.0%
+  INFO [3b4285c7] Running /usr/bin/env chmod 700 /tmp/git-ssh-Louvre_3.4-production-mishi.sh as u82088990@home590207427.1and1-data.host
+ DEBUG [3b4285c7] Command: /usr/bin/env chmod 700 /tmp/git-ssh-Louvre_3.4-production-mishi.sh
+  INFO [3b4285c7] Finished in 0.170 seconds with exit status 0 (successful).
+  INFO [5d9957b1] Running /usr/bin/env git ls-remote  https://github.com/ChrisCo31/Louvre_3.4.git HEAD as u82088990@home590207427.1and1-data.host
+ DEBUG [5d9957b1] Command: ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-Louvre_3.4-production-mishi.sh" ; /usr/bin/env git ls-remote  https://github.com/ChrisCo31/Louvre_3.4.git HEAD )
+ DEBUG [5d9957b1] 	4d823290c51c5838ece2900e0ee3bd1f07723096	HEAD
+  INFO [5d9957b1] Finished in 0.809 seconds with exit status 0 (successful).
+  INFO [418b2d6f] Running /usr/bin/env mkdir -p /louvre.crackthesky.fr/remote/www/shared /louvre.crackthesky.fr/remote/www/releases as u82088990@home590207427.1and1-data.host
+ DEBUG [418b2d6f] Command: /usr/bin/env mkdir -p /louvre.crackthesky.fr/remote/www/shared /louvre.crackthesky.fr/remote/www/releases
+ DEBUG [418b2d6f] 	mkdir: cannot create directory '/louvre.crackthesky.fr': Read-only file system
+mkdir: cannot create directory '/louvre.crackthesky.fr': Read-only file system
+  INFO ---------------------------------------------------------------------------
+  INFO START 2018-05-08 17:39:23 +0200 cap production deploy
+  INFO ---------------------------------------------------------------------------
+  INFO [3a60a3db] Running /usr/bin/env mkdir -p /tmp as u82088990@home590207427.1and1-data.host
+ DEBUG [3a60a3db] Command: /usr/bin/env mkdir -p /tmp
+  INFO ---------------------------------------------------------------------------
+  INFO START 2018-05-08 17:40:33 +0200 cap production deploy
+  INFO ---------------------------------------------------------------------------
+  INFO [c1f74722] Running /usr/bin/env mkdir -p /tmp as u82088990@home590207427.1and1-data.host
+ DEBUG [c1f74722] Command: /usr/bin/env mkdir -p /tmp
+  INFO [c1f74722] Finished in 9.773 seconds with exit status 0 (successful).
+ DEBUG Uploading /tmp/git-ssh-Louvre_3.4-production-mishi.sh 0.0%
+  INFO Uploading /tmp/git-ssh-Louvre_3.4-production-mishi.sh 100.0%
+  INFO [b3201170] Running /usr/bin/env chmod 700 /tmp/git-ssh-Louvre_3.4-production-mishi.sh as u82088990@home590207427.1and1-data.host
+ DEBUG [b3201170] Command: /usr/bin/env chmod 700 /tmp/git-ssh-Louvre_3.4-production-mishi.sh
+  INFO [b3201170] Finished in 0.160 seconds with exit status 0 (successful).
+  INFO [99b05899] Running /usr/bin/env git ls-remote  https://github.com/ChrisCo31/Louvre_3.4.git HEAD as u82088990@home590207427.1and1-data.host
+ DEBUG [99b05899] Command: ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-Louvre_3.4-production-mishi.sh" ; /usr/bin/env git ls-remote  https://github.com/ChrisCo31/Louvre_3.4.git HEAD )
+ DEBUG [99b05899] 	4d823290c51c5838ece2900e0ee3bd1f07723096	HEAD
+  INFO [99b05899] Finished in 0.797 seconds with exit status 0 (successful).
+  INFO [66c588d5] Running /usr/bin/env mkdir -p /var/www/louvre.crackthesky.fr/shared /var/www/louvre.crackthesky.fr/releases as u82088990@home590207427.1and1-data.host
+ DEBUG [66c588d5] Command: /usr/bin/env mkdir -p /var/www/louvre.crackthesky.fr/shared /var/www/louvre.crackthesky.fr/releases
+ DEBUG [66c588d5] 	mkdir: cannot create directory '/var/www': Read-only file system
+ DEBUG [66c588d5] 	mkdir: cannot create directory '/var/www': Read-only file system

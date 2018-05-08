@@ -1,6 +1,6 @@
 body
 {
-    background-color: #F4EDDA;
+    background-color:  #fffce5;
 }
 .title
 {
@@ -15,6 +15,7 @@ body
     border-width: 1px;
 }
 .panel-primary>.panel-heading {
+
     color: #fff;
     background-color: #5A5B56;
     border-color: #252925;

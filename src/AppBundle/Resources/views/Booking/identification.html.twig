@@ -12,7 +12,7 @@
     {% endblock %}
     {% block recap %}
             <h2> {{ 'Booking.Identification.Recap'|trans }} </h2>
-
+            <h3> {{ 'Booking.Payment.Token'|trans }} {{ reservation.token }} </h3>
             <h3> {{ 'Booking.Identification.NumberTicketChosen'|trans }} {{ reservation.nbTicket }} </h3>
             <h3> {{  'Booking.Identification.InDateOf'|trans}} {{ reservation.dateVisit|date('d/m/Y')}} </h3>
             <h3> {{ 'Booking.Identification.Email'|trans }} {{ reservation.email }} </h3>

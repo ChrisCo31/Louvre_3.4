@@ -20,9 +20,6 @@ services:
     app.PriceCalculator:
         class: AppBundle\Services\PriceCalculator
 
-    app.GenerateToken:
-        class: AppBundle\Services\GenerateToken
-
     app.SendEmail:
         class: AppBundle\Services\SendEmail
         arguments: ["@mailer", "@templating", "@translator"]

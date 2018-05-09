@@ -71,9 +71,7 @@ class ReservationType extends AbstractType
                 'second_options'=>array('label' =>'Booking.Organize.Email.Rep'),
             ])
             // Generer un token
-            ->add('token', HiddenType::class, [
-            'data' =>'abcdef'
-    ])
+            ->add('token', HiddenType::class)
 
             ->add('suivant', SubmitType::class,[
                     'label' => 'Booking.Organize.Button',

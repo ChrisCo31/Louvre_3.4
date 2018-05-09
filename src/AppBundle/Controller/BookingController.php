@@ -56,6 +56,7 @@ class BookingController extends Controller
         $half = $this->get('app.HalfDay');
         $dateVisit = $reservation->getDateVisit();
         $nbTicket = $reservation->getNbTicket();
+        $token = $reservation->getToken();
         if($max->MaxTicket($dateVisit, $nbTicket))
         {
             throw new \Exception('trop de tickets vendu');
@@ -102,16 +103,12 @@ class BookingController extends Controller
         $form = $this->createForm(ReservationIdentifyType::class, $reservation);
         // appel le service PriceCalculator
         $totalPrice = $this->get('app.PriceCalculator');
-        // appel du service GenerateToken
-        $token = $this->get('app.GenerateToken');
         //formulaire ticket rempli
         if($request->isMethod('POST'))
         {
             $form->handleRequest($request);
             // utilisation de la methode calculateTotalPrice du service PriceCalculator
             $totalPrice = $totalPrice->calculateTotalPrice($reservation);
-            $token = $token->random(10);
-            $token = $reservation->setToken($token);
         }
         if($form->isValid())
         {

@@ -1,5 +1,8 @@
 Warning:
   Flash:
+    Organize.MaxSold: Full day, reservation impossible
+    Organize.InvalidDate: Reservation is impossible for this day
+    Organize.Half: The reservation is only possible for the half-day (from 14h)
     Identification: Please fill in the following fields accurately so that we can offer you the fairest price
 Layout:
   Base:
@@ -47,6 +50,7 @@ Booking:
     Recap: Your order in progress :
     NumberTicketChosen: Number of ticket(s) desired :
     InDateOf: Date of the visit :
+    Date: DD-MM-YY
     Email: Your contact email address
     Duration: You have chosen tickets :
     Half: Half-day ticket (valid from 14h)

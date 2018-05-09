@@ -1,6 +1,15 @@
 Warning:
    Flash:
+    Organize.MaxSold: Journée compléte, réservation impossible
+    Organize.InvalidDate: la reservation est impossible pour cette journée
+    Organize.Half: La reservation n'est possible que pour la demi-journee (a partir de 14h)
     Identification: Veuillez, s'il vous plait, remplir avec précision les champs suivants afin que nous vous proposions le prix le plus juste
+Alert:
+  Flash:
+     Organize.MaxSold: Journée compléte, réservation impossible
+     Organize.InvalidDate: la reservation est impossible pour cette journée
+     Organize.Half: La reservation n'est possible que pour la demi-journee (a partir de 14h)
+
 Layout:
    Base:
     Title: Musee du Louvre
@@ -47,6 +56,7 @@ Booking:
     Recap: Votre commande en cours :
     NumberTicketChosen: Nombre de ticket(s) souhaité(s) :
     InDateOf: Date de la visite :
+    Date: JJ-MM-AA
     Email: Votre adresse email de contact :
     Duration: Vous avez choisi des billets :
     Half: Billet demi-journée (valable à partir de 14h )

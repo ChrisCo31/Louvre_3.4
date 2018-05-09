@@ -24,12 +24,18 @@ class PayWithStripe
     {
         $this->sendEmail = $sendEmail;
     }
-    public function useStripe(Request $request,Reservation $reservation, Transaction $transaction)
+
+    /**
+     * @param Request $request
+     * @param Reservation $reservation
+     * @param Transaction $transaction
+     * @return bool
+     */
+    public function useStripe(Request $request, Reservation $reservation, Transaction $transaction)
     {
         \Stripe\Stripe::setApiKey("sk_test_qHjRSqkcpdP6N7Y8SfVPM79H");
         // recuperation du token
         $token = $_POST['stripeToken'];
-
         // creation du client
             try {
                 $charge =\Stripe\Charge::create(array(
@@ -38,29 +44,29 @@ class PayWithStripe
                     "source" =>  $token, // obtained with Stripe.js
                     "description" =>  $reservation->getEmail()
                 ));
-
-            }catch (Card $e){
-                $message = $transaction->setMessage("Probleme carte");
-                echo "carte !";
-                var_dump($e);
+            } catch (Card $e){ // test avec carte 4100000000000019
+                $message = $transaction->setMessage($e->getMessage());
+                $statusCode = $transaction->setStatusCode($e->getHttpStatus());
+                $charge = \Stripe\Charge::all();
+                $idStripe = $charge['data'][0]['id'];
+                $idStripe = $transaction->setIdStripe($idStripe);
+                echo "vous avez un probleme avec votre carte !"; // mettre un message flash
                 return false;
-            } catch (Exception $e) {
+            } catch (Exception $e) { // token utilise deux fois
                 // mettre un message d'erreur en flash
                 // faire une redirection
-                $message = $transaction->setMessage("Probleme avec la transaction");
+                $message = $transaction->setMessage($e->getMessage());
+                // $message = $transaction->setMessage("Probleme avec la transaction");
                 $charge = \Stripe\Charge::all();
                 $idStripe = $transaction->setIdStripe($charge['data'][0]['id']);
-
+                echo "il y a eu un probleme de transaction !"; // mettre un message flash
                 return false;
             }
-
-            $charge = \Stripe\Charge::all();
+           $charge = \Stripe\Charge::all();
             $idStripe = $charge['data'][0]['id'];
-
-
-            $message = $transaction->setMessage("Transaction enregistrée dans Stripe");
+            $message = $transaction->setMessage("Transaction reussie");
             $idStripe = $transaction->setIdStripe($idStripe);
+            $statusCode = $transaction->setStatusCode("200");
             $this->sendEmail->sendEmail($reservation);
-
     }
 }

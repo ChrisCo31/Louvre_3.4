@@ -39,7 +39,8 @@ class TicketType extends AbstractType
         ->add('birthDate', BirthdayType::class, array(
             'label' => 'Booking.Identification.Birthdate',
             'format' => 'dd-MM-yyyy',
-            'widget' => 'single_text'
+            'widget' => 'single_text',
+             'attr' => ['placeholder' =>"Booking.Identification.Date"],
         ))
         ->add('country', CountryType::class, array(
             'label' => 'Booking.Identification.Country',

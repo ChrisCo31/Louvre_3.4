@@ -38,7 +38,7 @@ class SendEmail
         $to = $reservation->getEmail();
         $format = 'text/html';
         $body = $this->templating->render(
-            'AppBundle:Emails:Registration.html.twig', array(
+            'AppBundle:Emails:registration.html.twig', array(
                 'reservation'=>$reservation,
                 'tickets' =>$reservation->getTickets()
             ));

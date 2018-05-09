@@ -5,17 +5,30 @@
 {% endblock %}
 
 {% block body %}
+    <div class="container">
     {% block li %}
-        <li>
-            {{ 'Quand' }}
-        </li>
-        <li>
-            {{ 'Qui'}}
-        </li>
-        <li>
-        {{ 'Combien' }}
-        </li>
+        <div class="container">
+            <ol class="breadcrumb">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Library</a></li>
+                <li class="active">Data</li>
+            </ol>
+        </div>
+
+
+        <div class="container">
+            <ol class="breadcrumb breadcrumb-arrow">
+                <li><a href="#">Organisation</a></li>
+                <li><a href="#">Identification</a></li>
+                <li><a href="#">Paiement</a></li>
+                <li class="active"><span>Organisation</span></li>
+            </ol>
+        </div>
     {%  endblock %}
+    {% for message in app.session.flashbag.get('alert') %}
+        <div class="alert alert-danger">{{ message }}</div>
+    {% endfor %}
+
     {% block formulaire %}
         {{ form_start(form) }}
         <div class="row">
@@ -26,6 +39,7 @@
 
             {{ form_widget(form) }}
             {{ form_end(form) }}
+        </div>
         </div>
     {% endblock %}
 {% endblock %}

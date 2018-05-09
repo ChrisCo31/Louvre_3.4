@@ -56,10 +56,9 @@ class BookingController extends Controller
         $half = $this->get('app.HalfDay');
         $dateVisit = $reservation->getDateVisit();
         $nbTicket = $reservation->getNbTicket();
-        $token = $reservation->getToken();
-        if($max->MaxTicket($dateVisit, $nbTicket))
+        if($max->MaxTicket($dateVisit, $nbTicket)== true)
         {
-            throw new \Exception('trop de tickets vendu');
+            $this->get('session')->getFlashBag()->add('alert', $this->get('translator')->trans('alert.Flash.Organize.MaxSold'));
         }
         //  1. Verification que la requete est de type POST
         if($request->isMethod('POST'))
@@ -69,11 +68,11 @@ class BookingController extends Controller
             $dateVisit = $reservation->getDateVisit();
             if(($closingDay->checkDay($dateVisit) == true) )
             {
-               echo "reservation impossible";
+                $this->get('session')->getFlashBag()->add('alert', $this->get('translator')->trans('Alert.Flash.Organize.InvalidDate'));
 
             } elseif ($half->todayAfternoon($reservation) == true)
             {
-                echo "demijournee only";
+                $this->get('session')->getFlashBag()->add('alert', $this->get('translator')->trans('Alert.Flash.Organize.Half'));
             } else
             {  // 3. Verification des valeurs et validation de l'objet
                 if($form->isValid())

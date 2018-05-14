@@ -1,0 +1,32 @@
+{% extends "AppBundle::layout.html.twig" %}
+
+{% block title %}
+    {{ 'Booking.Index.Title'|trans }}
+{% endblock %}
+
+{% block body %}
+    <div class="container">
+        <div class="col-md-12">
+            <div class="date_reserve">
+                <h3 class="BlocTitle">Votre commande</h3>
+                <div class="well">
+                    <div class="final">
+                        <h3 class="final">Votre reservation est enregistrée</h3>
+
+                        <p>Vous allez recevoir vos tickets par mail, ils seront à imprimer et à présenter à l'entrée du musée.</p>
+                        <p>Le mail de récap vous a été envoye à l'adresse suivante :<br/></p>
+                        <b>{{ reservation.email }}<br/></b>
+                        <br/>
+                        <p>Si vous ne recevez pas de mail, veuillez nous contacter : <br/>
+                            Par mail : <b><a href="mailto:assistance@louvre.fr">assistance@louvre.fr</a></b>
+                        </p>
+                        <br/>
+                        <p>
+                            <b>Nous vous souhaitons une agréable visite au Louvre.</b>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

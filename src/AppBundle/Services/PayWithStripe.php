@@ -24,7 +24,6 @@ class PayWithStripe
     {
         $this->sendEmail = $sendEmail;
     }
-
     /**
      * @param Request $request
      * @param Reservation $reservation

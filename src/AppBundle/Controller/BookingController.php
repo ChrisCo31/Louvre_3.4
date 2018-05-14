@@ -142,13 +142,25 @@ class BookingController extends Controller
             $em = $this->getDoctrine()->getManager();
             $em->persist($reservation);
             $em->flush();
-            //redirection vers la page d'identification
-            //return $this->redirectToRoute('booking_home');
-            // ajouter un message flash de succes
+            var_dump($transaction->getMessage());
+            if($transaction->getMessage("Transaction reussie")){
+                return $this->redirectToRoute('booking_success');
+            }
         }
         return $this->render('AppBundle:Booking:payment.html.twig',[
             'reservation' => $reservation, 'tickets' => $tickets]);
     }
-
+    /**
+     * Matches /succes
+     * @route("/{_locale}/succes", name="booking_success")
+     */
+    public function successAction(Request $request)
+    {
+        $reservation = $request->getSession()->get('reservation');
+        return $this->render('AppBundle:Booking:success.html.twig',
+            ['reservation' => $reservation,
+             ]
+        );
+    }
 }
 

@@ -43,8 +43,6 @@ class TicketTest extends TestCase
 
         $this->assertEquals("17", $ticket);
     }
-
-
     public function testGivePriceFromAge()
     {
 

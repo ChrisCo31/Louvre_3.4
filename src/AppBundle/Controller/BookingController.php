@@ -32,7 +32,8 @@ class BookingController extends Controller
 {
     /**
      * Matches /
-     * @route("/", name="booking_home")
+     * @route("/{_locale}", defaults={"_locale"="fr"}, requirements={
+     *     "_locale"="en|fr"},name="booking_home")
      */
     public function indexAction(Request $request)
     {
@@ -41,7 +42,7 @@ class BookingController extends Controller
     }
     /**
      * Matches /organisation
-     * @route("/organisation", name="booking_organisation")
+     * @route("/{_locale}/organisation", name="booking_organisation")
      * @throws \Exception
      */
     public function organizeAction(Request $request)
@@ -89,7 +90,7 @@ class BookingController extends Controller
     }
     /**
      * Matches /identification
-     * @route("/identification", name="booking_identification")
+     * @route("/{_locale}/identification", name="booking_identification")
      */
     public function identificationAction(Request $request)
     {
@@ -123,7 +124,7 @@ class BookingController extends Controller
     }
     /**
      * Matches /payment
-     * @route("/payment", name="booking_payment")
+     * @route("/{_locale}/payment", name="booking_payment")
      */
     public function paymentAction(Request $request, Response $response = null)
     {

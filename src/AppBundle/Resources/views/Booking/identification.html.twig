@@ -19,6 +19,7 @@
     {% block titre %}
        <h1 class="text-center text-uppercase"> {{ 'Booking.Identification.Title'|trans }}</h1>
     {% endblock %}
+    <div class="well">
     {% block recap %}
             <h2> {{ 'Booking.Identification.Recap'|trans }} </h2>
             <h3> {{ 'Booking.Payment.Token'|trans }} {{ reservation.token }} </h3>
@@ -27,6 +28,7 @@
             <h3> {{ 'Booking.Identification.Email'|trans }} {{ reservation.email }} </h3>
             <h3> {{ 'Booking.Identification.Duration'|trans }} {% if reservation.duration %} {{ 'Booking.Identification.Half'|trans }} {% endif %} </h3>
     {% endblock %}
+    </div>
     {% block formulaire %}
         <ul>
             {% for tickets in form.tickets %}

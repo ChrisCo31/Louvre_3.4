@@ -11,19 +11,16 @@
             {% endblock %}
         </div>
    </div>
-                        <h3>  {{ 'Booking.Index.Message.Hebdo'|trans }}</h3>
-                        <h3>  {{ 'Booking.Index.Message.Ferie'|trans }}</h3>
-                        <h3>  {{ 'Booking.Index.Message.Reservation'|trans }}</h3>
-
-
-
+    <div class="well">
+        <h3>  {{ 'Booking.Index.Message.Hebdo'|trans }}</h3>
+        <h3>  {{ 'Booking.Index.Message.Ferie'|trans }}</h3>
+        <h3>  {{ 'Booking.Index.Message.Reservation'|trans }}</h3>
+    </div>
     <div class="panel panel-primary">
-
         <div class ="panel-heading">
             {{ 'Booking.Index.Message.Pratique'|trans }}
         </div>
         <div class="panel-body">
-
             <ul>
                 <li> {{ 'Booking.Index.Message.1'|trans }}</li></br>
                 <li> {{ 'Booking.Index.Message.2'|trans }}</li></br>
@@ -31,7 +28,6 @@
                 <li> {{ 'Booking.Index.Message.4'|trans }}</li></br>
             </ul>
         </div>
-
     </div>
     <p>
         <a class="btn btn-primary btn-lg" href="{{ path('booking_organisation') }}">

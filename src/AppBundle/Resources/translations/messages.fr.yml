@@ -87,7 +87,7 @@ Booking:
    Mail:
     Subject: Reservation pour votre visite du musee du Louvre
     Title: Musée du Louvre
-    Subtitle: Reservation numero %codeCommande% pour le %date%
+    Subtitle: Reservation n° %codeCommande% pour le %date%
     Comment1: Vous avez réservé pour les personnes suivantes :
     Comment2: Le coût total de la visite est de %price% €.
     Comment3: Nous vous rappelons que les billets demi-journée sont utilisables à partir de 14h.

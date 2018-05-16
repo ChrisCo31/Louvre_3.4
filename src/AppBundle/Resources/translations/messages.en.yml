@@ -41,7 +41,6 @@ Booking:
     Duration: Day / half day ticket
     Half: Half Day
     Full: Full Day
-    Email.Error:  The email fields must match
     Email: contact email
     Email.Rep: Confirm the e-mail
     Button: Continue

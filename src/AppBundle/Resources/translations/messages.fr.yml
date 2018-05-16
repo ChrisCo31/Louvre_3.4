@@ -47,7 +47,6 @@ Booking:
     Duration: Billet journée / demi-journée
     Half: Demi-journée
     Full: Journée complète
-    Email.Error: Les champs d'e-mail doivent correspondre
     Email: email de contact
     Email.Rep: confirmer l'email
     Button: Poursuivre

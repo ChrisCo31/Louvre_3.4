@@ -1,0 +1,8 @@
+message:
+    email:          format = votre@email.fr
+    min:            1 ticket minimum
+    max:            10 tickets maximum
+    pastdays:       pas de réservation possible pour les jours passés
+    name:           2 caracteres minimum
+    birthday:       La date de naissance ne peut être egale ou superieure à la date du jour
+    country:        Choisissez un pays de la liste

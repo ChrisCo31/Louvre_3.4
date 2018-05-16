@@ -6,7 +6,6 @@ use Doctrine\ORM\Mapping as ORM;
 
 /**
  * Transaction
- *
  * @ORM\Table(name="transaction")
  * @ORM\Entity(repositoryClass="AppBundle\Repository\TransactionRepository")
  */
@@ -20,28 +19,24 @@ class Transaction
      * @ORM\GeneratedValue(strategy="AUTO")
      */
     private $id;
-
     /**
      * @var int
      *
      * @ORM\Column(name="statusCode", type="integer")
      */
     private $statusCode;
-
     /**
      * @var string
      *
      * @ORM\Column(name="message", type="string", length=255)
      */
     private $message;
-
     /**
      * @var string
      *
      * @ORM\Column(name="idStripe", type="string", length=255)
      */
     private $idStripe;
-
     /**
      * Transaction constructor.
      */
@@ -51,7 +46,6 @@ class Transaction
         $this->message = "En attente";
         $this->idStripe = "0";
     }
-
     /**
      * Get id
      *
@@ -61,7 +55,6 @@ class Transaction
     {
         return $this->id;
     }
-
     /**
      * Set statusCode
      *
@@ -75,7 +68,6 @@ class Transaction
 
         return $this;
     }
-
     /**
      * Get statusCode
      *
@@ -85,7 +77,6 @@ class Transaction
     {
         return $this->statusCode;
     }
-
     /**
      * Set message
      *
@@ -99,7 +90,6 @@ class Transaction
 
         return $this;
     }
-
     /**
      * Get message
      *
@@ -109,7 +99,6 @@ class Transaction
     {
         return $this->message;
     }
-
     /**
      * Set idStripe
      *
@@ -123,7 +112,6 @@ class Transaction
 
         return $this;
     }
-
     /**
      * Get idStripe
      *

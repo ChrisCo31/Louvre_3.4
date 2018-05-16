@@ -57,12 +57,12 @@ body
 }
 .alert-danger {
      color: #fff;
-     background-color: #BB0B0B !important;
+     background-color: #BB0B0B;
      border-color: #960018;
  }
 .alert-warning {
     color: #fff;
-    background-color: dodgerblue !important;
+    background-color: dodgerblue;
     border-color: #960018;
 }
 .well {

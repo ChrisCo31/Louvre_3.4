@@ -6,3 +6,5 @@ message:
     name:           2 caracteres minimum
     birthday:       La date de naissance ne peut être egale ou superieure à la date du jour
     country:        Choisissez un pays de la liste
+    visitMax:       Le nombre de visite mas pour la journée a été atteint
+    halfday:        Seule la demi-journée est disponible aujourd'hui

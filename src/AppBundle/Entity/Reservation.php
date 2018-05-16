@@ -5,6 +5,7 @@ namespace AppBundle\Entity;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Validator\Constraints as Assert;
+use AppBundle\Validator\Constraints as ReservationAssert;
 
 /**
  * Reservation
@@ -20,12 +21,11 @@ class Reservation
     private $transaction;
    /**
      * @ORM\OneToMany(targetEntity="AppBundle\Entity\Ticket", mappedBy ="Reservation", cascade={"all"})
-    * @Assert\Valid()
+     * @Assert\Valid()
      */
     private $tickets;
     /**
      * @var int
-     *
      * @ORM\Column(name="id", type="integer")
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="AUTO")
@@ -49,12 +49,14 @@ class Reservation
      * @ORM\Column(name="dateReservation", type="datetime")
      * @Assert\DateTime()
      * @Assert\NotBlank()
+     * @ReservationAssert\ValidateDateValidator
      */
     private $dateReservation; //ajout validation de la date
     /**
      * @var bool
      * @ORM\Column(name="duration", type="boolean")
      * @Assert\Type(type="bool")
+     * @ReservationAssert\ValidateDateValidator
      */
     private $duration;
     /**
@@ -63,9 +65,9 @@ class Reservation
      *     min = 1,
      *     max = 10,
      *     minMessage = "message.min",
-     *     maxMessage = "message.max"
-     * )
+     *     maxMessage = "message.max")
      * @ORM\Column(name="nbTicket", type="integer")
+     * @ReservationAssert\ValidateDateValidator
      */
     private $nbTicket;
     /**
@@ -89,7 +91,6 @@ class Reservation
         $this->setToken($this->generateToken());
        // if(!$this->getToken()) $this->setToken($this->generateToken());
     }
-
     /**
      * Get id
      *
@@ -99,7 +100,6 @@ class Reservation
     {
         return $this->id;
     }
-
     /**
      * Set email
      *
@@ -113,7 +113,6 @@ class Reservation
 
         return $this;
     }
-
     /**
      * Get email
      *
@@ -123,7 +122,6 @@ class Reservation
     {
         return $this->email;
     }
-
     /**
      * Set dateVisit
      *
@@ -137,7 +135,6 @@ class Reservation
 
         return $this;
     }
-
     /**
      * Get dateVisit
      *
@@ -147,7 +144,6 @@ class Reservation
     {
         return $this->dateVisit;
     }
-
     /**
      * Set dateReservation
      *
@@ -161,7 +157,6 @@ class Reservation
 
         return $this;
     }
-
     /**
      * Get dateReservation
      *
@@ -171,7 +166,6 @@ class Reservation
     {
         return $this->dateReservation;
     }
-
     /**
      * Set duration
      *
@@ -185,7 +179,6 @@ class Reservation
 
         return $this;
     }
-
     /**
      * Get duration
      *
@@ -195,7 +188,6 @@ class Reservation
     {
         return $this->duration;
     }
-
     /**
      * Set nbTicket
      *
@@ -209,7 +201,6 @@ class Reservation
 
         return $this;
     }
-
     /**
      * Get nbTicket
      *
@@ -219,7 +210,6 @@ class Reservation
     {
         return $this->nbTicket;
     }
-
     /**
      * Set token
      *
@@ -233,7 +223,6 @@ class Reservation
 
         return $this;
     }
-
     /**
      * Get token
      *
@@ -254,7 +243,6 @@ class Reservation
         $token = substr(str_shuffle(str_repeat($alphabet, 10)), 0, 10);
         return $token;
     }
-
     /**
      * Set priceToPay
      *
@@ -268,7 +256,6 @@ class Reservation
 
         return $this;
     }
-
     /**
      * Get priceToPay
      *
@@ -278,7 +265,6 @@ class Reservation
     {
         return $this->priceToPay;
     }
-
     /**
      * chek if the reservation has all tickets
      * @return bool
@@ -288,8 +274,6 @@ class Reservation
         if (count($this->getTickets()) == $this->getNbTicket() ) return true;
         return false;
     }
-
-
     /**
      * Add ticket
      *
@@ -305,7 +289,6 @@ class Reservation
 
         return $this;
     }
-
     /**
      * Remove ticket
      *
@@ -324,7 +307,6 @@ class Reservation
     {
         return $this->tickets;
     }
-
     /**
      * Set transaction
      *
@@ -338,7 +320,6 @@ class Reservation
 
         return $this;
     }
-
     /**
      * Get transaction
      *

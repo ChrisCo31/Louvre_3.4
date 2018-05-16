@@ -19,3 +19,6 @@ class BookingControllerTest extends WebTestCase
         $this->assertSame(200, $client->getResponse()->getStatusCode());
     }
 }
+
+// php bin>/console server:run
+// afficher la page a l'adresse http://127.0.0.1:8000/resultTest.html :

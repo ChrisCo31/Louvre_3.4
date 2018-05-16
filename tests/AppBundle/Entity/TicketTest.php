@@ -10,6 +10,7 @@ namespace Tests\AppBundle\Entity;
 
 
 use AppBundle\Entity\Ticket;
+use AppBundle\Form\ReservationIdentifyType;
 use PHPUnit\Framework\TestCase;
 
 class TicketTest extends TestCase
@@ -46,12 +47,10 @@ class TicketTest extends TestCase
     /*public function testCalculatePricePerTicket()
     {
         $ticket = new Ticket();
-        $duration = $ticket->getReservation()->setDuration(0);
-        $duration = $ticket->getReservation()->getDuration();
+        $duration = true;
         $ticket = $ticket->calculatePricePerTicket('20');
 
         $this->assertEquals("16", $ticket);
-    }
-    */
+    }*/
 }
 

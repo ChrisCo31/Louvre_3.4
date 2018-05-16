@@ -43,10 +43,15 @@ class TicketTest extends TestCase
 
         $this->assertEquals("17", $ticket);
     }
-    public function testGivePriceFromAge()
+    /*public function testCalculatePricePerTicket()
     {
+        $ticket = new Ticket();
+        $duration = $ticket->getReservation()->setDuration(0);
+        $duration = $ticket->getReservation()->getDuration();
+        $ticket = $ticket->calculatePricePerTicket('20');
 
-
-
+        $this->assertEquals("16", $ticket);
     }
+    */
 }
+

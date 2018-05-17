@@ -5,7 +5,7 @@ namespace AppBundle\Entity;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Validator\Constraints as Assert;
-use AppBundle\Validator\Constraints as ReservationAssert;
+use AppBundle\Validator as ReservationAssert;
 
 /**
  * Reservation
@@ -42,6 +42,7 @@ class Reservation
      * @ORM\Column(name="dateVisit", type="datetime")
      * @Assert\DateTime()
      * @Assert\NotBlank()
+     * @ReservationAssert\ValidateDate
      */
     private $dateVisit; //ajout validation de la date
     /**
@@ -49,14 +50,13 @@ class Reservation
      * @ORM\Column(name="dateReservation", type="datetime")
      * @Assert\DateTime()
      * @Assert\NotBlank()
-     * @ReservationAssert\ValidateDateValidator
      */
     private $dateReservation; //ajout validation de la date
     /**
      * @var bool
      * @ORM\Column(name="duration", type="boolean")
      * @Assert\Type(type="bool")
-     * @ReservationAssert\ValidateDateValidator
+     * @ReservationAssert\ValidateDate
      */
     private $duration;
     /**
@@ -67,7 +67,7 @@ class Reservation
      *     minMessage = "message.min",
      *     maxMessage = "message.max")
      * @ORM\Column(name="nbTicket", type="integer")
-     * @ReservationAssert\ValidateDateValidator
+     * @ReservationAssert\ValidateDate
      */
     private $nbTicket;
     /**

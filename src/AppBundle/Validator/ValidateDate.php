@@ -20,8 +20,4 @@ class ValidateDate extends Constraint
     public $msgIsPast = 'la reservation n\'est pas possible pour les jours passés';
     public $msgIsBankHollyday = 'la reservation est impossible les jours fériés';
 
-    public function validatedBy()
-    {
-        return get_class($this).'Validator';
-    }
 }

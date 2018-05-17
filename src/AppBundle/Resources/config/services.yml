@@ -10,10 +10,6 @@ services:
         class: AppBundle\Services\GenerateTicket
         arguments: ["@doctrine.orm.entity_manager"]
 
-    app.ValidateDate:
-        class: AppBundle\Services\ValidateDate
-        arguments: ["@app.InvalidBookingDate"]
-
     app.HalfDay:
         class: AppBundle\Services\HalfDay
 
@@ -27,4 +23,11 @@ services:
     app.PayWithStripe:
         class: AppBundle\Services\PayWithStripe
         arguments: ["@app.SendEmail"]
+
+    app.ValidateDate:
+        class: AppBundle\Validator\ValidateDateValidator
+        arguments: ["@app.InvalidBookingDate", "@app.MaxTicketSold", "@app.HalfDay"]
+
+
+
 

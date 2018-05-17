@@ -27,7 +27,6 @@ use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\Session\Session;
 
-
 class BookingController extends Controller
 {
     /**
@@ -48,35 +47,15 @@ class BookingController extends Controller
     public function organizeAction(Request $request)
     {
         $reservation = new Reservation();
-        $form =$this->createForm(ReservationType :: class, $reservation);
-        // recuperation du service qui va checker la date / jours de fermetures
-        $closingDay = $this->get('app.ValidateDate');
-        // recuperation du service qui va controler si le nombre de ticket max a ete vendu
-        $max = $this->get('app.MaxTicketSold');
-        //recuperation du service qui controle l'heure de reservation et exclut la reservation à la journée
-        $half = $this->get('app.HalfDay');
-        $dateVisit = $reservation->getDateVisit();
-        $nbTicket = $reservation->getNbTicket();
-        if($max->MaxTicket($dateVisit, $nbTicket)== true)
-        {
-            $this->get('session')->getFlashBag()->add('alert', $this->get('translator')->trans('alert.Flash.Organize.MaxSold'));
-        }
+        $form = $this->createForm(ReservationType :: class, $reservation);
         //  1. Verification que la requete est de type POST
-        if($request->isMethod('POST'))
+        if ($request->isMethod('POST'))
         {
             //  2. Recuperation des valeurs pour hydrater l'objet
             $form->handleRequest($request);
             $dateVisit = $reservation->getDateVisit();
-            if(($closingDay->checkDay($dateVisit) == true) )
-            {
-                $this->get('session')->getFlashBag()->add('alert', $this->get('translator')->trans('Alert.Flash.Organize.InvalidDate'));
-
-            } elseif ($half->todayAfternoon($reservation) == true)
-            {
-                $this->get('session')->getFlashBag()->add('alert', $this->get('translator')->trans('Alert.Flash.Organize.Half'));
-            } else
             {  // 3. Verification des valeurs et validation de l'objet
-                if($form->isValid())
+                if ($form->isValid())
                 {   //ouverture d'une session et on garde les infos en session
                     $reservation = $form->getData();
                     $this->get('session')->set('reservation', $reservation);
@@ -132,7 +111,6 @@ class BookingController extends Controller
         $tickets = $reservation->getTickets();
         $transaction = new Transaction();
         $reservation->setTransaction($transaction);
-
         if($request->isMethod('POST')){
             $em = $this->getDoctrine()->getManager();
             $em->persist($reservation);

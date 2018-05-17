@@ -44,7 +44,7 @@ class Reservation
      * @Assert\NotBlank()
      * @ReservationAssert\ValidateDate
      */
-    private $dateVisit; //ajout validation de la date
+    private $dateVisit;
     /**
      * @var \DateTime
      * @ORM\Column(name="dateReservation", type="datetime")

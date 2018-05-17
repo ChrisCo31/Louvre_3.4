@@ -18,6 +18,5 @@ class ValidateDate extends Constraint
     public $msgHalfDay = 'message.halfday';
     public $msgIsClosing = 'la reservation n\'est pas possible les mardis et dimanches';
     public $msgIsPast = 'la reservation n\'est pas possible pour les jours passés';
-    public $msgIsBankHollyday = 'la reservation est impossible les jours fériés';
-
+    public $msgIsBankHolyday = 'la reservation est impossible les jours fériés';
 }

@@ -8,21 +8,17 @@
     <div class="container">
     {% block li %}
         <div class="container">
-            <ol class="breadcrumb">
-                <li><a href="#">Home</a></li>
-                <li><a href="#">Library</a></li>
-                <li class="active">Data</li>
-            </ol>
-        </div>
+            <div class="row">
+                <div class="col-md-8 ">
+                    <ol class="breadcrumb breadcrumb-arrow">
+                        <li><a href="#">Organisation</a></li>
+                        <li><a href="#">Identification</a></li>
+                        <li><a href="#">Paiement</a></li>
+                        <li class="active"><span>Organisation</span></li>
+                    </ol>
+                </div>
 
-
-        <div class="container">
-            <ol class="breadcrumb breadcrumb-arrow">
-                <li><a href="#">Organisation</a></li>
-                <li><a href="#">Identification</a></li>
-                <li><a href="#">Paiement</a></li>
-                <li class="active"><span>Organisation</span></li>
-            </ol>
+            </div>
         </div>
     {%  endblock %}
     {% for message in app.session.flashbag.get('alert') %}

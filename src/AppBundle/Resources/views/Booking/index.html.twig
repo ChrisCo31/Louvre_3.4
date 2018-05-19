@@ -5,30 +5,40 @@
 {% block body %}
 <div class="container">
    <div class="row">
+
         <div class="col-md-12">
             {% block titre %}
                 <h1 class="text-center text-uppercase">{{ 'Booking.Index.Bienvenue'|trans }} </h1>
             {% endblock %}
         </div>
    </div>
-    <div class="well">
-        <h3>  {{ 'Booking.Index.Message.Hebdo'|trans }}</h3>
-        <h3>  {{ 'Booking.Index.Message.Ferie'|trans }}</h3>
-        <h3>  {{ 'Booking.Index.Message.Reservation'|trans }}</h3>
-    </div>
-    <div class="panel panel-primary">
-        <div class ="panel-heading">
-            {{ 'Booking.Index.Message.Pratique'|trans }}
+   <div class="row">
+        <div class="col-md-12">
+        <div class="well">
+            <h3>  {{ 'Booking.Index.Message.Hebdo'|trans }}</h3>
+            <h3>  {{ 'Booking.Index.Message.Ferie'|trans }}</h3>
+            <h3>  {{ 'Booking.Index.Message.Reservation'|trans }}</h3>
         </div>
-        <div class="panel-body">
-            <ul>
-                <li> {{ 'Booking.Index.Message.1'|trans }}</li></br>
-                <li> {{ 'Booking.Index.Message.2'|trans }}</li></br>
-                <li> {{ 'Booking.Index.Message.3'|trans }}</li></br>
-                <li> {{ 'Booking.Index.Message.4'|trans }}</li></br>
-            </ul>
         </div>
-    </div>
+        <div class="col-md-7 col-md-offset-2">
+            <div class="panel panel-primary">
+                <div class ="panel-heading">
+                    {{ 'Booking.Index.Message.Pratique'|trans }}
+                </div>
+                <div class="panel-body">
+                    <ul>
+                        <li> {{ 'Booking.Index.Message.1'|trans }}</li></br>
+                        <li> {{ 'Booking.Index.Message.2'|trans }}</li></br>
+                        <li> {{ 'Booking.Index.Message.3'|trans }}</li></br>
+                        <li> {{ 'Booking.Index.Message.4'|trans }}</li></br>
+                    </ul>
+                </div>
+            </div>
+        </div>
+       <div class="col-md-2 col-md-offset-1">
+           <div class="aside"><img src="images/TheVisitorS.png" width="100" alt="Visitors"/></div>
+       </div>
+   </div>
     <p>
         <a class="btn btn-primary btn-lg" href="{{ path('booking_organisation') }}">
          {{'Booking.Index.Message.Bouton'|trans }}

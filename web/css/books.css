@@ -1,6 +1,6 @@
 body
 {
-    background-color:  #fffce5;
+   background-color:  #fffce5;
 }
 .title
 {
@@ -9,16 +9,21 @@ body
 }
 .navbar
 {
-    background-color: #5A5B56;
+    background-color: #38363b;
     border-bottom: solid;
     border-color: #252925;
     border-width: 1px;
     color: #fffce5;
 }
+.navbar-brand
+{
+    padding-top:0px;
+
+}
 .panel-primary>.panel-heading {
 
     color: #fff;
-    background-color: #5A5B56;
+    background-color: #38363b;
     border-color: #252925;
 }
 .panel-primary {
@@ -26,12 +31,12 @@ body
 }
 .btn-primary {
     color: #fff;
-    background-color: #5A5B56;
+    background-color: #38363b;
     border-color: #252925;
 }
 .btn-primary:hover {
     color: #fff;
-    background-color: #2F1B0C;
+    background-color: #38363b;
     border-color: #2F1B0C;
 }
 .navbar-header {
@@ -41,13 +46,13 @@ body
     color: #fff;
     background-color: #BB0B0B;
     border-color: #BB0B0B;
-    margin-top: 25px;
+    margin-top: 40px;
 }
 .btn-danger:hover {
     color: #fff;
     background-color: #960018;
     border-color: #960018;
-    margin-top: 25px;
+    margin-top: 40px;
 }
 .dropdown-menu {
     background-color: #F4EDDA;
@@ -84,13 +89,13 @@ body
     border-color: #BB0B0B;
 }
 
-
 .breadcrumb-arrow {
     height: 36px;
     padding: 0;
     line-height: 36px;
     list-style: none;
-    background-color: #e6e9ed
+    background-color:#38363b;
+
 }
 .breadcrumb-arrow li:first-child a {
     border-radius: 4px 0 0 4px;
@@ -165,5 +170,6 @@ body
     border-left-color: #2494be
 }
 .breadcrumb-arrow li span {
-    color: #434a54
+    color: #fffce5;
+
 }

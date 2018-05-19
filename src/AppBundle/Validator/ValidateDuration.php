@@ -3,15 +3,18 @@
  * Created by PhpStorm.
  * User: mishi
  * Date: 19/05/2018
- * Time: 15:27
+ * Time: 16:34
  */
 
 namespace AppBundle\Validator;
+
+
 use Symfony\Component\Validator\Constraint;
 /**
  * @Annotation
  */
-class ValidateVisitMax extends Constraint
-    {
-        public $msgVisitMax = 'Nombre maximum de visiteurs atteint ce jour';
-    }
+
+class ValidateDuration extends Constraint
+{
+    public $msgDuration = 'Réservation possible uniquement pour la demi-journee';
+}

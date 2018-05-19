@@ -59,7 +59,7 @@ class InvalidBookingDate
             // Dates variables
             mktime(0, 0, 0, $easterMonth, $easterDay + 2,  $easterYear), // le lundi de Paques
             mktime(0, 0, 0, $easterMonth, $easterDay + 40, $easterYear), // le jeudi de l'ascension
-            mktime(0, 0, 0, $easterMonth, $easterDay + 50, $easterYear), // le lundi de pentecote
+            mktime(0, 0, 0, $easterMonth, $easterDay + 51, $easterYear), // le lundi de pentecote
         ];
         sort($holidays);
         return $holidays;

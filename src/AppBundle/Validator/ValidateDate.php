@@ -14,9 +14,9 @@ use Symfony\Component\Validator\Constraint;
  */
 class ValidateDate extends Constraint
 {
-    public $msgVisitMax = 'message.visitMax';
-    public $msgHalfDay = 'message.halfday';
-    public $msgIsClosing = 'la reservation n\'est pas possible les mardis et dimanches';
+    public $msgIsClosing = 'la reservation n\'est pas possible le {{ madate }}';
     public $msgIsPast = 'la reservation n\'est pas possible pour les jours passés';
     public $msgIsBankHolyday = 'la reservation est impossible les jours fériés';
+
+    //public $message ='ca marche pas {{ montexte }}';
 }

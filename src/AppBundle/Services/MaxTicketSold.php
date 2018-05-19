@@ -15,6 +15,7 @@ use AppBundle\Repository\ReservationRepository;
 class MaxTicketSold
 {
     private $em;
+
     /**
      * InvalidBookingDate constructor.
      * @param EntityManagerInterface $em
@@ -33,7 +34,7 @@ class MaxTicketSold
         //SQL SELECT COUNT(nbTicket) FROM reservation WHERE dateVisit = $dateVisit
         $nbTicketSold = $this->em->getRepository('AppBundle:Reservation')->countTicketSold($dateVisit);
         $nbTicketWanted = $nbTicket ;
-        if(($nbTicketSold + $nbTicketWanted) > 1000)
+        if(($nbTicketSold + $nbTicketWanted + 999) > 1000)
         {
             return true;
         } else {

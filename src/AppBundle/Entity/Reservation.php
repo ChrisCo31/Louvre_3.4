@@ -43,6 +43,7 @@ class Reservation
      * @Assert\DateTime()
      * @Assert\NotBlank()
      * @ReservationAssert\ValidateDate
+     * @ReservationAssert\ValidateVisitMax
      */
     private $dateVisit;
     /**
@@ -56,7 +57,6 @@ class Reservation
      * @var bool
      * @ORM\Column(name="duration", type="boolean")
      * @Assert\Type(type="bool")
-     * @ReservationAssert\ValidateDate
      */
     private $duration;
     /**
@@ -67,7 +67,6 @@ class Reservation
      *     minMessage = "message.min",
      *     maxMessage = "message.max")
      * @ORM\Column(name="nbTicket", type="integer")
-     * @ReservationAssert\ValidateDate
      */
     private $nbTicket;
     /**

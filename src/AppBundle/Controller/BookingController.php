@@ -50,13 +50,13 @@ class BookingController extends Controller
         $form = $this->createForm(ReservationType :: class, $reservation);
         //  1. Verification que la requete est de type POST
         if ($request->isMethod('POST'))
-        {
-            //  2. Recuperation des valeurs pour hydrater l'objet
+        {   //  2. Recuperation des valeurs pour hydrater l'objet
             $form->handleRequest($request);
-            $dateVisit = $reservation->getDateVisit();
             {  // 3. Verification des valeurs et validation de l'objet
                 if ($form->isValid())
-                {   //ouverture d'une session et on garde les infos en session
+                {   var_dump($reservation);
+                   // exit();
+                    //ouverture d'une session et on garde les infos en session
                     $reservation = $form->getData();
                     $this->get('session')->set('reservation', $reservation);
                     //redirection vers la page d'identification
@@ -64,7 +64,6 @@ class BookingController extends Controller
                 }
             }
         }
-        // Creation du formulaire
         return $this->render('AppBundle:Booking:organize.html.twig', ['form'=> $form->createView()]);
     }
     /**

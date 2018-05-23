@@ -173,3 +173,12 @@ body
     color: #fffce5;
 
 }
+.datepicker-dropdown
+{
+    min-width: 220px;
+    background-color: #FFFFFF;
+    left: 1150px;
+}
+.datepicker table tr td.highlighted {
+    background: #f7d9dc;
+}

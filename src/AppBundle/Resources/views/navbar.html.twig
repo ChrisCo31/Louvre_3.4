@@ -1,12 +1,10 @@
 {% block header %}
-<nav class="navbar navbar-inverse">
+<nav class="navbar ">
     <div class="container">
-        <section class="row">
             <div class="col-lg-6">
                 <div class="navbar-header">
                     <a class="navbar-brand" href="{{ path('booking_home') }}"><img src="{{ asset('images/hader.png') }}" width="240" alt="Visitors"/></a>
                 </div>
-                <div id="navbar" class="navbar-collapse collapse">
                     <div class="btn-group" >
                         <button type="button" class="btn btn-danger dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             {{ 'Layout.Base.Langue'|trans }}
@@ -19,14 +17,11 @@
                                 <img src="{{ asset('images/flag-en.png') }}"></a>
                         </div>
                     </div>
-                </div>
             </div>
             <div class="col-lg-4 col-lg-offset-2">
                 <h3> Musée du Louvre</h3>
                 <h4> Service de réservation en ligne</h4>
             </div>
-        </section>
-
     </div>
 </nav>
 {% endblock %}

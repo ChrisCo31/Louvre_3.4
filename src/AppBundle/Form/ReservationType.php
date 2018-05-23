@@ -39,20 +39,21 @@ class ReservationType extends AbstractType
             // integrer le date picker et les controles de vacances, feries et 1000 tickets
             ->add ('dateVisit', DateType::class, [
                     'label' => 'Booking.Organize.Date',
+                    'format' => \IntlDateFormatter::SHORT,
                     'widget' => 'single_text',
-                    'attr' => array(
-                        'data-provide' => 'datepicker',
+                    'html5'=>false,
+                    'attr'=>array('data-provide' => 'datepicker',
                         'format' => \IntlDateFormatter::SHORT,
                         'data-date-autoclose' => true,
                         'data-date-start-date' => '0d',
                         'data-date-days-of-week-disabled' => '0,2',
                         'data-date-days-of-week-highlighted' => '0,2',
                         'data-date-today-highlight' => true,
-                        //'data-date-language' => $options['locale'],
-                        'data-date-max-view-mode' => 1
+                        'data-date-week-start' => 1,
+                        'data-date-end-date' => '+180d',
                     )
-                ]
-            )
+            ])
+
             // 0 = demi journee et 1 journee
             ->add('duration', ChoiceType::class,  [
                 'label' => 'Booking.Organize.Duration',

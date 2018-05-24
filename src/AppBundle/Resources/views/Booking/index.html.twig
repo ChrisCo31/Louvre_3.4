@@ -5,22 +5,25 @@
 {% block body %}
 <div class="container">
    <div class="row">
-
-        <div class="col-md-12">
+        <div class="col-md-offset-2 col-md-8 col-md-offset-2">
             {% block titre %}
                 <h1 class="text-center text-uppercase">{{ 'Booking.Index.Bienvenue'|trans }} </h1>
             {% endblock %}
         </div>
    </div>
    <div class="row">
-        <div class="col-md-12">
-        <div class="well">
-            <h3>  {{ 'Booking.Index.Message.Hebdo'|trans }}</h3>
-            <h3>  {{ 'Booking.Index.Message.Ferie'|trans }}</h3>
-            <h3>  {{ 'Booking.Index.Message.Reservation'|trans }}</h3>
+         <div class="col-md-offset-2 col-md-8 col-md-offset-2">
+               <div class="well">
+                       <h3>  {{ 'Booking.Index.Message.Hebdo'|trans }}</h3>
+                       <h3>  {{ 'Booking.Index.Message.Ferie'|trans }}</h3>
+                       <h3>  {{ 'Booking.Index.Message.Reservation'|trans }}</h3>
+               </div>
+         </div>
+        <div class="col-md-1 col-md-offset-1 ">
+            <div class="aside"><img src="images/TheVisitorS.png" width="100" alt="Visitors"/></div>
         </div>
-        </div>
-        <div class="col-md-7 col-md-offset-2">
+   </div>
+        <div class="col-md-8 col-md-offset-2">
             <div class="panel panel-primary">
                 <div class ="panel-heading">
                     {{ 'Booking.Index.Message.Pratique'|trans }}
@@ -35,14 +38,11 @@
                 </div>
             </div>
         </div>
-       <div class="col-md-2 col-md-offset-1">
-           <div class="aside"><img src="images/TheVisitorS.png" width="100" alt="Visitors"/></div>
-       </div>
-   </div>
-    <p>
+
+    <div class="col-md-offset-7 col-md-5">
         <a class="btn btn-primary btn-lg" href="{{ path('booking_organisation') }}">
          {{'Booking.Index.Message.Bouton'|trans }}
         </a>
-    </p>
+    </div>
 </div>
 {% endblock %}

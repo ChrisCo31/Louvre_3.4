@@ -3,39 +3,48 @@
     {{ 'Booking.Index.Title'|trans }}
 {% endblock %}
 {% block body %}
-    {% block li %}
-        <div class="container">
-            <ol class="breadcrumb breadcrumb-arrow">
-                <li><a href="#">Organisation</a></li>
-                <li><a href="#">Identification</a></li>
-                <li><a href="#">Paiement</a></li>
-                <li class="active"><span>Identification</span></li>
-            </ol>
-        </div>
-    {%  endblock %}
-    {% for message in app.session.flashbag.get('warning') %}
-        <div class="alert alert-warning">{{ message }}</div>
-    {% endfor %}
-    {% block titre %}
-       <h1 class="text-center text-uppercase"> {{ 'Booking.Identification.Title'|trans }}</h1>
-    {% endblock %}
-    <div class="well">
-    {% block recap %}
-            <h2> {{ 'Booking.Identification.Recap'|trans }} </h2>
-            <h3> {{ 'Booking.Payment.Token'|trans }} {{ reservation.token }} </h3>
-            <h3> {{ 'Booking.Identification.NumberTicketChosen'|trans }} {{ reservation.nbTicket }} </h3>
-            <h3> {{  'Booking.Identification.InDateOf'|trans}} {{ reservation.dateVisit|date('d/m/Y')}} </h3>
-            <h3> {{ 'Booking.Identification.Email'|trans }} {{ reservation.email }} </h3>
-            <h3> {{ 'Booking.Identification.Duration'|trans }} {% if reservation.duration %} {{ 'Booking.Identification.Half'|trans }} {% endif %} </h3>
-    {% endblock %}
-    </div>
-    {% block formulaire %}
-        <ul>
-            {% for tickets in form.tickets %}
-                <div class="well">
-                    {{ form(form) }}
+    <div class="row">
+        {% block li %}
+            <div class="col-md-12">
+                <ol class="breadcrumb breadcrumb-arrow">
+                    <li><a href="#">Organisation</a></li>
+                    <li><a href="#">Identification</a></li>
+                    <li><a href="#">Paiement</a></li>
+                    <li class="active"><span>Identification</span></li>
+                </ol>
+            </div>
+        {%  endblock %}
+        {% block flash %}
+            <div class="col-md-12">
+                {% for message in app.session.flashbag.get('warning') %}
+                    <div class="alert alert-warning">{{ message }}</div>
+                {% endfor %}
+            </div>
+        {%  endblock %}
+        <div class="row">
+            {% block recap %}
+                <div class="col-md-offset-2 col-md-8 col-md-offset-2">
+                    <div class="well">
+                        <h2> {{ 'Booking.Identification.Recap'|trans }} </h2>
+                        <h3> {{ 'Booking.Payment.Token'|trans }} {{ reservation.token }} </h3>
+                        <h3> {{ 'Booking.Identification.NumberTicketChosen'|trans }} {{ reservation.nbTicket }} </h3>
+                        <h3> {{  'Booking.Identification.InDateOf'|trans}} {{ reservation.dateVisit|date('d/m/Y')}} </h3>
+                        <h3> {{ 'Booking.Identification.Email'|trans }} {{ reservation.email }} </h3>
+                        <h3> {{ 'Booking.Identification.Duration'|trans }} {% if reservation.duration %} {{ 'Booking.Identification.Half'|trans }} {% endif %} </h3>
+                    </div>
                 </div>
-            {% endfor %}
-        </ul>
-    {% endblock %}
+            {%  endblock %}
+            {% block formulaire %}
+                <div class="col-md-offset-2 col-md-8 col-md-offset-2">
+                    <ul>
+                        {% for tickets in form.tickets %}
+                            <div class="well">
+                                {{ form(form) }}
+                            </div>
+                        {% endfor %}
+                    </ul>
+                </div>
+            {% endblock %}
+        </div>
+    </div>
 {% endblock %}

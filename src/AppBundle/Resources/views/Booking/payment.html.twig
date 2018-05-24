@@ -16,22 +16,23 @@
     {%  endblock %}
 
     {% block recap %}
-        <h2> {{ 'Booking.Identification.Recap'|trans }} </h2>
+    <div class="well">
+            <h2> {{ 'Booking.Identification.Recap'|trans }} </h2>
 
-        <h4> {{ 'Booking.Payment.Token'|trans }} {{ reservation.token }} </h4>
-        <h4> {{ 'Booking.Identification.NumberTicketChosen'|trans }} {{ reservation.nbTicket }} </h4>
-        <h4> {{ 'Booking.Identification.InDateOf'|trans}} {{ reservation.dateVisit|date('d/m/Y')}} </h4>
-        <h4> {{ 'Booking.Identification.Email'|trans }} {{ reservation.email }} </h4>
+            <h4> {{ 'Booking.Payment.Token'|trans }} {{ reservation.token }} </h4>
+            <h4> {{ 'Booking.Identification.NumberTicketChosen'|trans }} {{ reservation.nbTicket }} </h4>
+            <h4> {{ 'Booking.Identification.InDateOf'|trans}} {{ reservation.dateVisit|date('d/m/Y')}} </h4>
+            <h4> {{ 'Booking.Identification.Email'|trans }} {{ reservation.email }} </h4>
 
-        {% for ticket in tickets %}
-        <h3> {{ 'Booking.Payment.IdentityVisitor'|trans }}</h3>
-        <h4> {{ 'Booking.Payment.FirstName'|trans }} {{ ticket.firstName}} </h4>
-        <h4> {{ 'Booking.Payment.LastName'|trans }} {{ ticket.lastName}}  </h4>
-        <h4> {{ 'Booking.Payment.BirthDate'|trans }} {{ ticket.birthDate |date('d/m/Y')}} </h4>
-        <h4> {{ 'Booking.Payment.PricePerTicket'|trans }} {{ ticket.price}} {{ 'euros' }} </h4>
-        {% endfor %}
-        <h4><strong> {{'Booking.Payment.PriceToPay'|trans }} {{ reservation.priceToPay}} {{ 'euros' }}</strong></h4>
-
+            {% for ticket in tickets %}
+            <h3> {{ 'Booking.Payment.IdentityVisitor'|trans }}</h3>
+            <h4> {{ 'Booking.Payment.FirstName'|trans }} {{ ticket.firstName}} </h4>
+            <h4> {{ 'Booking.Payment.LastName'|trans }} {{ ticket.lastName}}  </h4>
+            <h4> {{ 'Booking.Payment.BirthDate'|trans }} {{ ticket.birthDate |date('d/m/Y')}} </h4>
+            <h4> {{ 'Booking.Payment.PricePerTicket'|trans }} {{ ticket.price}} {{ 'euros' }} </h4>
+            {% endfor %}
+            <h4><strong> {{'Booking.Payment.PriceToPay'|trans }} {{ reservation.priceToPay}} {{ 'euros' }}</strong></h4>
+    </div>
 
     {% endblock %}
     {% block formulaire %}

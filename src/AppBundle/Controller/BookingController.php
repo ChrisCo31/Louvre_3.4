@@ -54,8 +54,7 @@ class BookingController extends Controller
             $form->handleRequest($request);
             {  // 3. Verification des valeurs et validation de l'objet
                 if ($form->isValid())
-                {   var_dump($reservation);
-                   // exit();
+                {
                     //ouverture d'une session et on garde les infos en session
                     $reservation = $form->getData();
                     $this->get('session')->set('reservation', $reservation);

@@ -1,6 +1,11 @@
-body
+.body
 {
-   background-color:  #fffce5;
+    background-color:  #FFFFFF;
+}
+#footerwrap
+{
+    padding-top: 110px;
+    padding-bottom: 150px;
 }
 .title
 {
@@ -9,132 +14,171 @@ body
 }
 .navbar
 {
-    background-color: #38363b;
+    background-color: #404f6c;
     border-bottom: solid;
     border-color: #252925;
     border-width: 1px;
-    color: #fffce5;
+    color: #fff;
 }
 .navbar-brand
 {
     padding-top:0px;
-
 }
-.panel-primary>.panel-heading {
-
-    color: #fff;
-    background-color: #38363b;
+.panel-primary>.panel-heading
+{
+   color: #fff;
+    background-color: #404f6c;
     border-color: #252925;
 }
-.panel-primary {
-    border-color: #252925;
+.panel-primary
+{
+    border-color: #003366;
 }
-.btn-primary {
+.btn-primary
+{
     color: #fff;
-    background-color: #38363b;
-    border-color: #252925;
+    background-color: #BB0B0B;
+    border-color: #BB0B0B;
 }
-.btn-primary:hover {
+.btn-primary:hover
+{
     color: #fff;
-    background-color: #38363b;
-    border-color: #2F1B0C;
+    background-color: #BB0B0B;
+    border-color: #BB0B0B;
 }
-.navbar-header {
+.navbar-header
+{
     margin-bottom: 20px;
 }
-.btn-danger {
+.btn-danger
+{
     color: #fff;
     background-color: #BB0B0B;
     border-color: #BB0B0B;
     margin-top: 40px;
 }
-.btn-danger:hover {
+.btn-danger:hover
+{
     color: #fff;
     background-color: #960018;
     border-color: #960018;
     margin-top: 40px;
 }
-.dropdown-menu {
-    background-color: #F4EDDA;
+.dropdown-menu
+{
+    background-color: #fff;
     border-color: #252925;
     text-align: center;
     width: 25px;
 }
-.alert-danger {
+.alert-danger
+{
      color: #fff;
      background-color: #BB0B0B;
      border-color: #960018;
- }
-.alert-warning {
+}
+.alert-warning
+{
     color: #fff;
-    background-color: dodgerblue;
+    background-color: #bb0b0b;
     border-color: #960018;
+    border-radius: 15px;
+    width:400px;
 }
-.well {
-    background-color: #f9f3e9;
+.well
+{
+    background-color: #92aac2;
+    border-radius: 15px;
+    width : 750px;
+    color: #fff;
+}
+.panel-primary
+{
+    background-color: #92aac2;
     border-radius: 15px;
 }
-.panel-body {
-    background-color: #f9f3e9;
-    border-radius: 15px;
+.panel-heading
+{
+    border-radius: 15px 15px 0px 0px;
 }
-#reservation_suivant {
+.panel-body
+{
+    background-color: #92aac2;
+    border-radius: 15px 15px 15px 15px;
+    color: #fff;
+}
+#reservation_suivant
+{
     color: #fff;
     background-color: #BB0B0B;
     border-color: #BB0B0B;
 }
-#reservation_identify_Ajouter {
+#reservation_identify_Ajouter
+{
     color: #fff;
     background-color: #BB0B0B;
     border-color: #BB0B0B;
 }
-
-.breadcrumb-arrow {
+.breadcrumb-arrow
+{
     height: 36px;
     padding: 0;
     line-height: 36px;
     list-style: none;
-    background-color:#38363b;
-
+    background-color:#92aac2;
+    width : 500px;
 }
-.breadcrumb-arrow li:first-child a {
+.breadcrumb-arrow li:first-child a
+{
     border-radius: 4px 0 0 4px;
     -webkit-border-radius: 4px 0 0 4px;
     -moz-border-radius: 4px 0 0 4px
+
 }
-.breadcrumb-arrow li, .breadcrumb-arrow li a, .breadcrumb-arrow li span {
+.breadcrumb-arrow li, .breadcrumb-arrow li a, .breadcrumb-arrow li span
+{
     display: inline-block;
     vertical-align: top
 }
-.breadcrumb-arrow li:not(:first-child) {
+.breadcrumb-arrow li:not(:first-child)
+{
     margin-left: -5px
 }
-.breadcrumb-arrow li+li:before {
+.breadcrumb-arrow li+li:before
+{
     padding: 0;
     content: ""
 }
-.breadcrumb-arrow li span {
+.breadcrumb-arrow li span
+{
     padding: 0 10px
 }
-.breadcrumb-arrow li a, .breadcrumb-arrow li:not(:first-child) span {
+.breadcrumb-arrow li a, .breadcrumb-arrow li:not(:first-child) span
+{
     height: 36px;
     padding: 0 10px 0 25px;
     line-height: 36px
 }
-.breadcrumb-arrow li:first-child a {
+.breadcrumb-arrow li:first-child a
+{
     padding: 0 10px
 }
-.breadcrumb-arrow li a {
+.breadcrumb-arrow li a
+{
     position: relative;
     color: #fff;
     text-decoration: none;
-    background-color: #3bafda;
-    border: 1px solid #3bafda
+    background-color: #404f6c;
+    border: 1px solid #404f6c;
 }
-.breadcrumb-arrow li:first-child a {
-    padding-left: 10px
+.breadcrumb-arrow li:first-child a
+{
+    padding-left: 10px;
+    background-color: #404f6c;
+    border: 1px solid #404f6c;
 }
-.breadcrumb-arrow li a:after, .breadcrumb-arrow li a:before {
+.breadcrumb-arrow li a:after, .breadcrumb-arrow li a:before
+{
     position: absolute;
     top: -1px;
     width: 0;
@@ -143,35 +187,41 @@ body
     border-top: 18px solid transparent;
     border-bottom: 18px solid transparent
 }
-.breadcrumb-arrow li a:before {
+.breadcrumb-arrow li a:before
+{
     right: -10px;
     z-index: 3;
-    border-left-color: #3bafda;
+    border-left-color: #404f6c;
     border-left-style: solid;
     border-left-width: 11px
 }
-.breadcrumb-arrow li a:after {
+.breadcrumb-arrow li a:after
+{
     right: -11px;
     z-index: 2;
-    border-left: 11px solid #2494be
+    border-left: 11px solid #92aac2;
 }
-.breadcrumb-arrow li a:focus, .breadcrumb-arrow li a:hover {
-    background-color: #4fc1e9;
-    border: 1px solid #4fc1e9
+.breadcrumb-arrow li a:focus, .breadcrumb-arrow li a:hover
+{
+    background-color: #92aac2;
+    border: 1px solid #92aac2;
 }
-.breadcrumb-arrow li a:focus:before, .breadcrumb-arrow li a:hover:before {
-    border-left-color: #4fc1e9
+.breadcrumb-arrow li a:focus:before, .breadcrumb-arrow li a:hover:before
+{
+    border-left-color: #92aac2;
 }
-.breadcrumb-arrow li a:active {
-    background-color: #2494be;
-    border: 1px solid #2494be
+.breadcrumb-arrow li a:active
+{
+    background-color: #92aac2;
+    border: 1px solid #92aac2;
 }
-.breadcrumb-arrow li a:active:after, .breadcrumb-arrow li a:active:before {
-    border-left-color: #2494be
+.breadcrumb-arrow li a:active:after, .breadcrumb-arrow li a:active:before
+{
+    border-left-color: #92aac2;
 }
-.breadcrumb-arrow li span {
+.breadcrumb-arrow li span
+{
     color: #fffce5;
-
 }
 .datepicker-dropdown
 {
@@ -179,6 +229,13 @@ body
     background-color: #FFFFFF;
     left: 1150px;
 }
-.datepicker table tr td.highlighted {
+.datepicker table tr td.highlighted
+{
     background: #f7d9dc;
+}
+.bstripe-button-el
+{
+    color: #fff;
+    background-color: #BB0B0B;
+    border-color: #BB0B0B;
 }

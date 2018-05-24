@@ -3,7 +3,6 @@
 {% block title %}
     {{ 'Booking.Index.Title'|trans }}
 {% endblock %}
-
 {% block body %}
     <div class="container">
     {% block li %}
@@ -24,21 +23,11 @@
     {% for message in app.session.flashbag.get('alert') %}
         <div class="alert alert-danger">{{ message }}</div>
     {% endfor %}
-
     {% block formulaire %}
-        {{ form_start(form) }}
-        <div class="row">
-            <h1>{{ 'Booking.Organize.Visit'|trans }} </h1>
-        </div>
-        <h2> {{ 'Booking.Organize.Message.Intro'|trans }}</h2>
+            {{ form_start(form) }}
         <div class="well">
-
             {{ form_widget(form) }}
             {{ form_end(form) }}
         </div>
-        </div>
     {% endblock %}
 {% endblock %}
-
-
-

@@ -12,32 +12,61 @@
     </head>
     <body>
         <div class="container">
-            <div class="row">
-                {% block header %}
-                    {% include 'AppBundle::navbar.html.twig' %}
-                {% endblock %}
-            </div>
-            <div class="row">
-                {% block body %}
-
-                {% endblock %}
-            </div>
-            <div class="row">
-                {% block footer %}
-                    {% include 'AppBundle::footer.html.twig' %}
-                {% endblock %}
-            </div>
+                <div class="row">
+                    {% block header %}
+                        {% include 'AppBundle::navbar.html.twig' %}
+                    {% endblock %}
+                </div>
+                <div class="row">
+                    {% block body %}
+                    {% endblock %}
+                </div>
+                <div class="row">
+                    {% block footer %}
+                        {% include 'AppBundle::footer.html.twig' %}
+                    {% endblock %}
+                </div>
         </div>
         {% block javascripts %}
             <script src="https://js.stripe.com/v3/"></script>
             <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
             <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
             <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.8.0/js/bootstrap-datepicker.js"></script>
-            <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.8.0/locales/bootstrap-datepicker.fr.js"></script>
             <script>
                 $(document).ready(function() {
-                    $('#datepicker').datepicker({dateFormat: 'dd/mm/yyyy'});
+                    var lang;
+                    $.fn.datepicker.dates['fr'] = {
+                        days: ["Dimanche", "Lundi", "Mardi", "Mercredi", "Jeudi", "Vendredi", "Samedi"],
+                        daysShort: ["Dim", "Lun", "Mar", "Mer", "Jeu", "Ven", "Sam"],
+                        daysMin: ["Di", "Lu", "Ma", "Me", "Je", "Ve", "Sa"],
+                        months: ["Janvier", "Fevrier", "Mars", "Avril", "Mai", "Juin", "Juillet", "Aout", "Septembre", "Octobre", "Novembre", "Decembre"],
+                        monthsShort: ["Jan", "Feb", "Mar", "Avr", "Mai", "Jui", "Jul", "Aou", "Sep", "Oct", "Nov", "Dec"],
+                        today: "Today",
+                        clear: "Clear",
+                        format: "mm/dd/yyyy",
+                        titleFormat: "MM yyyy" /* Leverages same syntax as 'format' */
+                    };
+                    $.fn.datepicker.dates['en'] = {
+                        days: ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+                        daysShort: ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"],
+                        daysMin: ["Su", "Mo", "Tu", "We", "Th", "Fr", "Sa"],
+                        months: ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"],
+                        monthsShort: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+                        today: "Today",
+                        clear: "Clear",
+                        format: "mm/dd/yyyy",
+                        titleFormat: "MM yyyy" /* Leverages same syntax as 'format' */
+                    };
+                    if (document.location.pathname === '/P4/Louvre_3.4/web/fr/organisation') {
+                        lang = 'fr';
+                    } else {
+                        lang ='en';
+                    }
+                    $('.js-datepicker').datepicker({
+                       language: lang
+                    });
                 });
+
             </script>
 
         {% endblock %}

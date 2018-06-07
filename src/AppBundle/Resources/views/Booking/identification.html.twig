@@ -5,7 +5,7 @@
 {% block body %}
     <div class="row">
         {% block li %}
-            <div class="col-md-12">
+            <div class="col-md-offset-2 col-md-8 col-md-offset-2">
                 <ol class="breadcrumb breadcrumb-arrow">
                     <li><a href="#">Organisation</a></li>
                     <li><a href="#">Identification</a></li>
@@ -15,9 +15,9 @@
             </div>
         {%  endblock %}
         {% block flash %}
-            <div class="col-md-12">
+            <div class="col-md-offset-2 col-md-8 col-md-offset-2">
                 {% for message in app.session.flashbag.get('warning') %}
-                    <div class="alert alert-warning">{{ message }}</div>
+                    <div class="alert alert-info">{{ message }}</div>
                 {% endfor %}
             </div>
         {%  endblock %}
@@ -33,17 +33,16 @@
                         <h3> {{ 'Booking.Identification.Duration'|trans }} {% if reservation.duration %} {{ 'Booking.Identification.Half'|trans }} {% endif %} </h3>
                     </div>
                 </div>
+        </div>
             {%  endblock %}
+        <div class="row">
             {% block formulaire %}
-                <div class="col-md-offset-2 col-md-8 col-md-offset-2">
+            {{ form_start(form) }}
                     <ul>
                         {% for tickets in form.tickets %}
-                            <div class="well">
-                                {{ form(form) }}
-                            </div>
+                                {{ form_widget(form) }}
                         {% endfor %}
                     </ul>
-                </div>
             {% endblock %}
         </div>
     </div>

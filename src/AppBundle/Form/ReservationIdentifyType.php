@@ -21,7 +21,8 @@ class ReservationIdentifyType extends AbstractType
     {
         $builder
             ->add('tickets', CollectionType::class, array(
-                    'entry_type' => TicketType::class)
+                    'entry_type' => TicketType::class,
+                    )
             )
             ->add('Ajouter', SubmitType::class, ['label' => 'Booking.Organize.Button']);
     }

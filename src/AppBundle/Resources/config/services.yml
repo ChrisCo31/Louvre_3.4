@@ -26,7 +26,15 @@ services:
 
     app.ValidateDate:
         class: AppBundle\Validator\ValidateDateValidator
-        arguments: ["@app.InvalidBookingDate", "@app.MaxTicketSold", "@app.HalfDay"]
+        arguments: ["@app.InvalidBookingDate", "@app.MaxTicketSold"]
+
+    app.ValidateDuration:
+            class: AppBundle\Validator\ValidateDurationValidator
+            arguments: ["@app.HalfDay"]
+
+    app.BookingManager:
+        class: AppBundle\Services\BookingManager
+        arguments: ["@Session"]
 
 
 

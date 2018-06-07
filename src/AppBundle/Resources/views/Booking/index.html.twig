@@ -4,45 +4,51 @@
 {% endblock %}
 {% block body %}
 <div class="container">
-   <div class="row">
-        <div class="col-md-offset-2 col-md-8 col-md-offset-2">
-            {% block titre %}
-                <h1 class="text-center text-uppercase">{{ 'Booking.Index.Bienvenue'|trans }} </h1>
-            {% endblock %}
-        </div>
-   </div>
-   <div class="row">
-         <div class="col-md-offset-2 col-md-8 col-md-offset-2">
-               <div class="well">
-                       <h3>  {{ 'Booking.Index.Message.Hebdo'|trans }}</h3>
-                       <h3>  {{ 'Booking.Index.Message.Ferie'|trans }}</h3>
-                       <h3>  {{ 'Booking.Index.Message.Reservation'|trans }}</h3>
-               </div>
-         </div>
-        <div class="col-md-1 col-md-offset-1 ">
-            <div class="aside"><img src="images/TheVisitorS.png" width="100" alt="Visitors"/></div>
-        </div>
-   </div>
-        <div class="col-md-8 col-md-offset-2">
-            <div class="panel panel-primary">
-                <div class ="panel-heading">
-                    {{ 'Booking.Index.Message.Pratique'|trans }}
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="col-lg-offset-2 col-lg-8 col-lg-offset-2">
+                {% block titre %}
+                <div class="row">
+                    <div id="triangle-up"> </div>
                 </div>
-                <div class="panel-body">
-                    <ul>
-                        <li> {{ 'Booking.Index.Message.1'|trans }}</li></br>
-                        <li> {{ 'Booking.Index.Message.2'|trans }}</li></br>
-                        <li> {{ 'Booking.Index.Message.3'|trans }}</li></br>
-                        <li> {{ 'Booking.Index.Message.4'|trans }}</li></br>
-                    </ul>
+                <h1 class="text-center text-uppercase">{{ 'Booking.Index.Bienvenue'|trans }} </h1>
+                    </div>
+                {% endblock %}
+            </div>
+            <div class="row">
+                <div class="col-lg-offset-2 col-lg-8 col-lg-offset-2">
+                    <div class="section_2">
+                        <h3>  {{ 'Booking.Index.Message.Hebdo'|trans }}</h3>
+                        <h3>  {{ 'Booking.Index.Message.Ferie'|trans }}</h3>
+                        <h3>  {{ 'Booking.Index.Message.Reservation'|trans }}</h3>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2">
+                    <div class="panel panel-primary">
+                        <div class ="panel-heading">
+                        {{ 'Booking.Index.Message.Pratique'|trans }}
+                        </div>
+                        <div class="panel-body">
+                            <ul>
+                            <li> {{ 'Booking.Index.Message.1'|trans }}</li></br>
+                            <li> {{ 'Booking.Index.Message.2'|trans }}</li></br>
+                            <li> {{ 'Booking.Index.Message.3'|trans }}</li></br>
+                            <li> {{ 'Booking.Index.Message.4'|trans }}</li></br>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-offset-7 col-lg-5">
+                    <a class="btn btn-primary btn-lg" href="{{ path('booking_organisation') }}">
+                    {{'Booking.Index.Message.Bouton'|trans }}
+                    </a>
                 </div>
             </div>
         </div>
-
-    <div class="col-md-offset-7 col-md-5">
-        <a class="btn btn-primary btn-lg" href="{{ path('booking_organisation') }}">
-         {{'Booking.Index.Message.Bouton'|trans }}
-        </a>
     </div>
 </div>
 {% endblock %}

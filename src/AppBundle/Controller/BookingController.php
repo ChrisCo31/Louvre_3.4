@@ -46,24 +46,21 @@ class BookingController extends Controller
      */
     public function organizeAction(Request $request)
     {
+        $locale = $request->getLocale();
         $reservation = new Reservation();
         $form = $this->createForm(ReservationType :: class, $reservation);
-        //  1. Verification que la requete est de type POST
-        if ($request->isMethod('POST'))
-        {   //  2. Recuperation des valeurs pour hydrater l'objet
-            $form->handleRequest($request);
-            {  // 3. Verification des valeurs et validation de l'objet
-                if ($form->isValid())
-                {
-                    //ouverture d'une session et on garde les infos en session
-                    $reservation = $form->getData();
-                    $this->get('session')->set('reservation', $reservation);
-                    //redirection vers la page d'identification
-                    return $this->redirectToRoute('booking_identification');
-                }
-            }
+        $form->handleRequest($request);
+        if($form->isSubmitted() && $form->isValid())
+        {
+                //ouverture d'une session et on garde les infos en session
+                $reservation = $form->getData();
+                //$bookingManager = $this->get('app.BookingManager');
+                //$bookingManager = $bookingManager->getSession();
+                $this->get('session')->set('reservation', $reservation);
+                //redirection vers la page d'identification
+                return $this->redirectToRoute('booking_identification');
         }
-        return $this->render('AppBundle:Booking:organize.html.twig', ['form'=> $form->createView()]);
+        return $this->render('AppBundle:Booking:organize.html.twig', ['locale' =>$locale, 'form'=> $form->createView()]);
     }
     /**
      * Matches /identification
@@ -71,6 +68,10 @@ class BookingController extends Controller
      */
     public function identificationAction(Request $request)
     {
+        //formulaire ticket a remplir
+        //$bookingManager->generateTickets();
+        //$bookingManager->initTicktes($tickets);
+        $locale = $request->getLocale();
         //recuperation des info de la page precedente
         $reservation = $request->getSession()->get('reservation');
         // Flash Message
@@ -81,14 +82,11 @@ class BookingController extends Controller
         // appel le service PriceCalculator
         $totalPrice = $this->get('app.PriceCalculator');
         //formulaire ticket rempli
-        if($request->isMethod('POST'))
+        $form->handleRequest($request);
+        if($form->isSubmitted() && $form->isValid())
         {
-            $form->handleRequest($request);
             // utilisation de la methode calculateTotalPrice du service PriceCalculator
             $totalPrice = $totalPrice->calculateTotalPrice($reservation);
-        }
-        if($form->isValid())
-        {
             $ticket = $form->getData();
             $this->get('session')->set('ticket', $ticket);
             return $this->redirectToRoute('booking_payment');
@@ -96,7 +94,8 @@ class BookingController extends Controller
         return $this->render('AppBundle:Booking:identification.html.twig',
             ['reservation' => $reservation,
              'form'        => $form->createView(),
-             ]
+             'locale' =>$locale
+            ]
         );
     }
     /**
@@ -105,6 +104,7 @@ class BookingController extends Controller
      */
     public function paymentAction(Request $request, Response $response = null)
     {
+        $locale = $request->getLocale();
         $reservation = $request->getSession()->get('reservation');
         $tickets = $reservation->getTickets();
         $transaction = new Transaction();
@@ -124,7 +124,10 @@ class BookingController extends Controller
             }
         }
         return $this->render('AppBundle:Booking:payment.html.twig',[
-            'reservation' => $reservation, 'tickets' => $tickets]);
+            'reservation' => $reservation,
+             'tickets' => $tickets,
+            'locale' =>$locale
+        ]);
     }
     /**
      * Matches /succes
@@ -132,9 +135,11 @@ class BookingController extends Controller
      */
     public function successAction(Request $request)
     {
+        $locale = $request->getLocale();
         $reservation = $request->getSession()->get('reservation');
         return $this->render('AppBundle:Booking:success.html.twig',
             ['reservation' => $reservation,
+              'locale' =>$locale
              ]
         );
     }

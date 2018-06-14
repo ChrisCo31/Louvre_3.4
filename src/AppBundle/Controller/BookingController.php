@@ -52,13 +52,12 @@ class BookingController extends Controller
         $form->handleRequest($request);
         if($form->isSubmitted() && $form->isValid())
         {
-                //ouverture d'une session et on garde les infos en session
-                $reservation = $form->getData();
-                //$bookingManager = $this->get('app.BookingManager');
-                //$bookingManager = $bookingManager->getSession();
-                $this->get('session')->set('reservation', $reservation);
-                //redirection vers la page d'identification
-                return $this->redirectToRoute('booking_identification');
+            // service qui va gerer la reservation
+            $bookingManager = $this->get('app.BookingManager');
+            // Methode qui place les donnees de la reservation dans une session
+            $session = $bookingManager->saveReservation($reservation);
+            $retrieve = $bookingManager->retrieveReservation($session);
+            return $this->redirectToRoute('booking_identification');
         }
         return $this->render('AppBundle:Booking:organize.html.twig', ['locale' =>$locale, 'form'=> $form->createView()]);
     }
@@ -68,33 +67,28 @@ class BookingController extends Controller
      */
     public function identificationAction(Request $request)
     {
-        //formulaire ticket a remplir
-        //$bookingManager->generateTickets();
-        //$bookingManager->initTicktes($tickets);
         $locale = $request->getLocale();
-        //recuperation des info de la page precedente
-        $reservation = $request->getSession()->get('reservation');
+        $bookingManager = $this->get('app.BookingManager');
+        $reservation = $bookingManager->retrieveReservation();
         // Flash Message
         $this->get('session')->getFlashBag()->add('warning', $this->get('translator')->trans('Warning.Flash.Identification'));
         //formulaire ticket a remplir
-        if(!$reservation->hasAllTicket()) $this->get('app.GenerateTicket')->generateTicket($reservation);
+        if(!$reservation->hasAllTicket()) $bookingManager->generateTickets($reservation);
         $form = $this->createForm(ReservationIdentifyType::class, $reservation);
-        // appel le service PriceCalculator
-        $totalPrice = $this->get('app.PriceCalculator');
         //formulaire ticket rempli
         $form->handleRequest($request);
         if($form->isSubmitted() && $form->isValid())
         {
             // utilisation de la methode calculateTotalPrice du service PriceCalculator
-            $totalPrice = $totalPrice->calculateTotalPrice($reservation);
+            $totalPrice = $bookingManager->calculPrice($reservation);
             $ticket = $form->getData();
             $this->get('session')->set('ticket', $ticket);
             return $this->redirectToRoute('booking_payment');
         }
         return $this->render('AppBundle:Booking:identification.html.twig',
             ['reservation' => $reservation,
-             'form'        => $form->createView(),
-             'locale' =>$locale
+                'form'        => $form->createView(),
+                'locale' =>$locale
             ]
         );
     }
@@ -118,7 +112,6 @@ class BookingController extends Controller
             $em = $this->getDoctrine()->getManager();
             $em->persist($reservation);
             $em->flush();
-            var_dump($transaction->getMessage());
             if($transaction->getMessage("Transaction reussie")){
                 return $this->redirectToRoute('booking_success');
             }

@@ -2,37 +2,56 @@
 /**
  * Created by PhpStorm.
  * User: mishi
- * Date: 06/06/2018
- * Time: 15:08
+ * Date: 08/06/2018
+ * Time: 09:47
  */
 
 namespace AppBundle\Services;
-
 use AppBundle\Entity\Reservation;
-use AppBundle\Entity\Ticket;
+use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Session\SessionInterface;
+use Symfony\Component\HttpFoundation\Session\Session;
 
 class BookingManager
 {
     private $session;
-    public function __construct(SessionInterface $session)
+
+    public function __construct(SessionInterface $session, $generateTicket, $calculPrice)
     {
         $this->session = $session;
+        $this->GenerateTicket = $generateTicket;
+        $this->PriceCalculator = $calculPrice;
     }
-    public function getSession()
+    /**
+     * save in session the reservation
+     * @param $reservation
+     */
+    public function saveReservation(Reservation $reservation)
     {
-        if($this->session->has('reservation'))
-        {
-            if($this->session->get('reservation') instanceof Reservation)
-            {
-                return $this ->session->get('reservation');
-            }
-        }
-        return null;
+       $this->session->set('reservation', $reservation);
     }
-    public function getReservation()
+    /**
+     * @param $request
+     * @return mixed
+     */
+    public function retrieveReservation()
     {
-        $reservation = $this->getSession();
+        $reservation = $this->session->get('reservation');
         return $reservation;
+    }
+    public function generateTickets($reservation)
+    {
+        $this->GenerateTicket->generateTicket($reservation);
+        //appel la methode generateTicket($reservation) du service generateTicket
+    }
+    public function calculPrice($reservation)
+    {
+        $this->PriceCalculator->calculateTotalPrice($reservation);
+        //appel la methode calculateTotalPrice($reservation) du service PriceCalculator
+    }
+    public function updateReservation($reservation){
+
+        $this->generateTickets();
+        $this->calculPrice();
     }
 }

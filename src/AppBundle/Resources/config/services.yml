@@ -34,7 +34,7 @@ services:
 
     app.BookingManager:
         class: AppBundle\Services\BookingManager
-        arguments: ["@Session"]
+        arguments: ["@Session", "@app.GenerateTicket", "@app.PriceCalculator"]
 
 
 

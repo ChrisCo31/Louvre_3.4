@@ -103,7 +103,8 @@ class BookingController extends Controller
         $tickets = $reservation->getTickets();
         $transaction = new Transaction();
         $reservation->setTransaction($transaction);
-        if($request->isMethod('POST')){
+        if($request->isMethod('POST'))
+        {
             $em = $this->getDoctrine()->getManager();
             $em->persist($reservation);
             $em->flush();
@@ -112,7 +113,8 @@ class BookingController extends Controller
             $em = $this->getDoctrine()->getManager();
             $em->persist($reservation);
             $em->flush();
-            if($transaction->getMessage("Transaction reussie")){
+            if($transaction->getMessage("Transaction reussie"))
+            {
                 return $this->redirectToRoute('booking_success');
             }
         }
@@ -134,6 +136,17 @@ class BookingController extends Controller
             ['reservation' => $reservation,
               'locale' =>$locale
              ]
+        );
+    }
+    /**
+     * Matches /mentions
+     * @route("/{_locale}/mentions", name="booking_mentions")
+     */
+    public function mentionsAction(Request $request)
+    {
+        $locale = $request->getLocale();
+        return $this->render('AppBundle:Booking:mention.html.twig',
+            ['locale' =>$locale]
         );
     }
 }

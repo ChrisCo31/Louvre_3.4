@@ -1,8 +1,10 @@
 {% extends "AppBundle::layout.html.twig" %}
+
 {% block title %}
     {{ 'Booking.Index.Title'|trans }}
 {% endblock %}
 {% block body %}
+<div class="container">
     <div class="row">
         {% block li %}
             <div class="col-md-offset-2 col-md-8 col-md-offset-2">
@@ -46,4 +48,5 @@
             {% endblock %}
         </div>
     </div>
+</div>
 {% endblock %}

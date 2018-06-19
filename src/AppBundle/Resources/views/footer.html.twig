@@ -1,20 +1,31 @@
 {% block footer %}
-    <div class="footer">
+    </hr>
+    <section id="footer">
         <div class="container">
-            <div class="row">
-                <div class="col-sm-4 col-sm-6 footerleft ">
-                    <ul>{{ 'Layout.Base.Footer.Left.Pres'|trans }}</ul>
-                        <ol><a target="_blank" href="https://getbootstrap.com/">Bootstrap </a></ol>
-                        <ol><a target="_blank" href="https://symfony.com/">Symfony</a></ol>
+            <div class="row text-center text-xs-center text-sm-left text-md-left">
+                <div class="col-xs-12 col-sm-4 col-md-4">
+                    <h5>{{ 'Layout.Base.Footer.Left.Pres'|trans }}</h5>
+                    <ul class="list-unstyled quick-links">
+                        <li><a href="https://getbootstrap.com/">Bootstrap </a></li>
+                        <li><a target="_blank" href="https://symfony.com/">Symfony</a></li>
+                    </ul>
                 </div>
-                <div class="col-sm-4 col-sm-6 padding-bottom" align="center">
-                    <p>{{ 'Layout.Base.Footer.Center1'|trans }}</p>
-                    <p>{{ 'Layout.Base.Footer.Center2'|trans }}</p>
+                <div class="col-xs-12 col-sm-4 col-md-4">
+                    <h5>Conception</h5>
+                    <ul class="list-unstyled quick-links">
+                        <p>{{ 'Layout.Base.Footer.Center1'|trans }}</p>
+                        <p>{{ 'Layout.Base.Footer.Center2'|trans }}</p>
+                    </ul>
                 </div>
-                <div class="col-sm-4 col-sm-6 paddingtop-bottom" align="right">
-                    <p><a href="" > {{ 'Layout.Base.Footer.Right'|trans }}</a> </p>
+                <div class="col-xs-12 col-sm-4 col-md-4">
+                    <h5>Informations</h5>
+                    <ul class="list-unstyled quick-links">
+                        <li><a href="fr/mentions" > {{ 'Layout.Base.Footer.Right'|trans }}</a></li>
+                        <li><a href=""><i class="fa fa-angle-double-right"></i>About</a></li>
+                    </ul>
                 </div>
             </div>
         </div>
-    </div>
+    </section>
 {% endblock %}
+

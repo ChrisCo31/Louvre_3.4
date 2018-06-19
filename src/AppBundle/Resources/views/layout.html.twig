@@ -4,10 +4,12 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>{% block title %}Layout.Base.Title{% endblock %}</title>
+
         {% block stylesheets %}
             <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
             <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.8.0/css/bootstrap-datepicker.min.css" />
             <link href="{{ asset('css/books.css') }}" rel="stylesheet">
+            <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
         {% endblock %}
     </head>
     <body>
@@ -21,11 +23,6 @@
                     {% block body %}
 
                     {% endblock %}
-                </div>
-                <div class="row">
-                    <div class="col-lg-offset-2 col-lg-8 col-lg-offset-2">
-                    <div id="line"></div>
-                    </div>
                 </div>
                 <div class="row">
                     {% block footer %}

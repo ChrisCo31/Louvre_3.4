@@ -1,80 +1,72 @@
 body
 {
-    background: black url("../images/joc_redim2.jpg") no-repeat;
+    background: #404040 url("../images/Pyramid5.jpg") no-repeat ;
     background-size: cover;
     padding-top: 60px;
     height: 100%
 }
-#line
-{
-    padding: 0px;
-    margin: 0px;
-    border: solid 1px #F5D599;
-    width: 100%;
+/* ----------------------------------Footer ---------------------- */
+section {
+    padding: 60px 0;
 }
-.footer {
-    margin-top: 20px;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    height: 0px;
-    color: #fff;
-    line-height: 1.4;
-}
-.footer a
-{
-    color: #fff;
-}
-.title
-{
+section .section-title {
     text-align: center;
-    margin-bottom: 30px;
+    margin-bottom: 50px;
 }
+#footer ul.quick-links li a{
+    color:#000;
+}
+#footer ul.quick-links li{
+    padding: 3px 0;
+    -webkit-transition: .50s all ease;
+    -moz-transition: .50s all ease;
+    transition: .50s all ease;
+}
+#footer ul.quick-links li:hover{
+    padding: 3px 0;
+    margin-left:5px;
+    font-weight:700;
+}
+#footer ul.quick-links li a i{
+    margin-right: 5px;
+}
+#footer ul.quick-links li:hover a i {
+    font-weight: 700;
+}
+/* ----------------------------------Navbar---------------------- */
 .navbar
 {
-    background-color: #F5D599;
+    background-color: #404040;
     border-bottom: solid;
-    border-color: #252925;
+    border-color: #404040;
     border-width: 1px;
-    color: #5A4020;
-}
-#triangle-up {
-    margin-top: 50px;
-    margin-left:150px;
-    width: 0;
-    height: 0;
-    border-left: 250px solid transparent;
-    border-right: 250px solid transparent;
-    border-bottom: 250px solid  #F5D599;
-}
-.text-uppercase
-{
-    color: #F5D599;
-}
-.section_2
-{
-    margin-top: 30px;
-    padding : 50px;
-    color: #5A4020;
-    background-color: #F5D599;
-    border-radius: 50px 5px;
+    color: #fff;
 }
 .navbar-brand
 {
     padding-top:0px;
 }
+/* ----------------------------------Body---------------------- */
+.section_1
+{
+    margin-top: 220px;
+    padding : 50px;
+    color: #fff;
+    background-color: #404040;
+    border-radius: 50px 5px;
+}
+
 .panel-primary>.panel-heading
 {
-    color: #5A4020;
-    background-color: #F5D599;
-    border-color: #252925;
-    border-radius: 5px 5px;
+    color: #fff;
+    background-color: #404040;
+    border-color: #404040;
+    border-radius: 50px 50px;
 }
 .panel-primary
 {
     margin-top: 30px;
-    border-color: #F5D599;
-    border-radius: 50px 5px;
+    border-color: #404040;
 }
 .btn-primary
 {
@@ -106,7 +98,7 @@ body
 }
 .dropdown-menu
 {
-    background-color: #F5D599;
+    background-color: #404040;
     border-color: #252925;
     text-align: center;
     min-width: 50px;
@@ -126,14 +118,15 @@ body
 }
 .well
 {
-    background-color: #F5D599;
+    background-color: #404040;
+    color: #fff;
     border-color: #252925;
     border-radius: 15px;
     width : 900px;
 }
 .panel-primary
 {
-    background-color: #F5D599;
+    background-color: #404040;
     border-radius: 15px;
 }
 .panel-heading
@@ -142,14 +135,14 @@ body
 }
 .panel-body
 {
-    background-color: #F5D599;
+    background-color: #404040;
     border-radius: 15px 15px 15px 15px;
-    color: #5A4020;
+    color: #fff;
 }
 .form-group.row
 {
-    background-color: #F5D599;
-    color: #5A4020;
+    background-color: #404040;
+    color: #fff;
     padding : 10px;
 }
 
@@ -167,12 +160,12 @@ body
 }
 .breadcrumb-arrow
 {
-    margin-top: 100px;
+    margin-top: 200px;
     height: 36px;
     padding: 0;
     line-height: 36px;
     list-style: none;
-    background-color:#F5D599;
+    background-color:#8f8f8f;
 }
 .breadcrumb-arrow li:first-child a
 {
@@ -212,16 +205,16 @@ body
 .breadcrumb-arrow li a
 {
     position: relative;
-    color: #5A4020;
+    color: #fff;
     text-decoration: none;
-    background-color: #9f6735;
-    border: 1px solid #9f6735;
+    background-color: #8f8f8f;
+    border: 1px solid #404040;
 }
 .breadcrumb-arrow li:first-child a
 {
     padding-left: 10px;
-    background-color: #9f6735;
-    border: 1px solid #9f6735;
+    background-color: #8f8f8f;
+    border: 1px solid #404040;
 }
 .breadcrumb-arrow li a:after, .breadcrumb-arrow li a:before
 {
@@ -237,7 +230,7 @@ body
 {
     right: -10px;
     z-index: 3;
-    border-left-color: #9f6735;
+    border-left-color: #8f8f8f;
     border-left-style: solid;
     border-left-width: 11px
 }
@@ -245,29 +238,29 @@ body
 {
     right: -11px;
     z-index: 2;
-    border-left: 11px solid #F5D599;
+    border-left: 11px solid #404040;
 }
 .breadcrumb-arrow li a:focus, .breadcrumb-arrow li a:hover
 {
-    background-color: #F5D599;
-    border: 1px solid #F5D599;
+    background-color: #404040;
+    border: 1px solid #404040;
 }
 .breadcrumb-arrow li a:focus:before, .breadcrumb-arrow li a:hover:before
 {
-    border-left-color: #F5D599;
+    border-left-color: #404040;
 }
 .breadcrumb-arrow li a:active
 {
-    background-color: #F5D599;
-    border: 1px solid #F5D599;
+    background-color:#404040;
+    border: 1px solid #404040;
 }
 .breadcrumb-arrow li a:active:after, .breadcrumb-arrow li a:active:before
 {
-    border-left-color: #F5D599;
+    border-left-color: #404040;
 }
 .breadcrumb-arrow li span
 {
-    color: #5A4020;
+    color: #fff;
 }
 .datepicker-dropdown
 {
@@ -277,5 +270,5 @@ body
 }
 .datepicker table tr td.highlighted
 {
-    background: #5A4020;
+    background:  #404040;
 }

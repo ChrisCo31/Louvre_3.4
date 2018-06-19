@@ -1,19 +1,19 @@
 {% block header %}
     <nav class="navbar navbar-default navbar-fixed-top">
         <div class="container-fluid">
-                <div class="navbar-header">
-                    <a class="navbar-brand" href="{{ path('booking_home') }}"><img src="{{ asset('images/hader.png') }}" width="240" alt="Visitors"/></a>
-                </div>
-                    <button type="button" class="btn btn-danger dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        {{ 'Layout.Base.Langue'|trans }}
-                    </button>
-                    <div class="dropdown-menu">
-                        <a class="dropdown-item" href="{{ path(app.request.get('_route'), app.request.get('_route_params')|merge({'_locale': 'fr'})) }}">
-                            <img src="{{ asset('images/flag-fr.png') }}"></a>
-                        <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="{{ path(app.request.get('_route'), app.request.get('_route_params')|merge({'_locale': 'en'})) }}">
-                            <img src="{{ asset('images/flag-en.png') }}"></a>
-                    </div>
+            <div class="navbar-header">
+                <a class="navbar-brand" href="{{ path('booking_home') }}"><img src="{{ asset('images/hader.png') }}" width="240" alt="Visitors"/></a>
+            </div>
+            <button type="button" class="btn btn-danger dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                {{ 'Layout.Base.Langue'|trans }}
+            </button>
+            <div class="dropdown-menu">
+                <a class="dropdown-item" href="{{ path(app.request.get('_route'), app.request.get('_route_params')|merge({'_locale': 'fr'})) }}">
+                    <img src="{{ asset('images/flag-fr.png') }}"></a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="{{ path(app.request.get('_route'), app.request.get('_route_params')|merge({'_locale': 'en'})) }}">
+                    <img src="{{ asset('images/flag-en.png') }}"></a>
+            </div>
             <div class=" navbar-right">
                 <h3> Musée du Louvre</h3>
                 <h4> Service de réservation en ligne</h4>

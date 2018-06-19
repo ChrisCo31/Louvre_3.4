@@ -42,15 +42,13 @@ class BookingManager
     public function generateTickets($reservation)
     {
         $this->GenerateTicket->generateTicket($reservation);
-        //appel la methode generateTicket($reservation) du service generateTicket
     }
     public function calculPrice($reservation)
     {
         $this->PriceCalculator->calculateTotalPrice($reservation);
-        //appel la methode calculateTotalPrice($reservation) du service PriceCalculator
     }
-    public function updateReservation($reservation){
-
+    public function updateReservation($reservation)
+    {
         $this->generateTickets();
         $this->calculPrice();
     }

@@ -82,10 +82,16 @@ Booking:
     Subject: Reservation for your visit to the Louvre Museum
     Title: Louvre Museum
     Subtitle: Reservation n° %codeCommande% for the %date%
+    Lastname: Lastname
+    Firstname: Firstname
+    Birthdate : Birthdate
+    Price: Price(€)
     Comment1: You have booked for the following people
     Comment2: The total cost of the visit is %priceToPay% €.
     Comment3: We remind you that half-day tickets can be used from 14h.
-    Comment4: An ID will be requested at the entrance of the Museum and we remind you that the reduced rate is granted subject to fulfill certain conditions
+    Comment4: An ID will be requested at the entrance of the Museum and we remind you that the reduced rate is granted subject to fulfill certain conditions.
+    Comment5: We wish you a pleasant visit.
+    Signature: The team of the Louvre Museum
   Success:
       Title: Your reservation is recorded
       Paragraphe1: You will receive your tickets by mail, they will be to print and to present at the entrance of the museum

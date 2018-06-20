@@ -1,28 +1,51 @@
-<body>
-<img src="https://i2.wp.com/blog.shanegraphique.com/wp-content/uploads/2016/04/011.jpg?resize=723%2C540" width="160"/>
-<h1>{{ 'Booking.Mail.Title'|trans }}</h1>
-
-<h3>{{ 'Booking.Mail.Subtitle'|trans({'%codeCommande%': reservation.token, '%date%': reservation.dateVisit|date('d/m/Y')}) }}</h3>
-
-<p>{{ 'Booking.Mail.Comment1'|trans }}</p>
-
-<b>Détails des billets :</b>
-<br />
-<br />
-<div class="well">
-    {% for ticket in tickets %}
-
-        <b>{{ ticket.lastname| upper}}</b>
-            {{ ticket.firstName| upper }}
-            {{ ticket.birthDate|date('d/m/Y') }}
-            {{ ticket.price }}
-        <br />
-        <hr/>
-    {% endfor %}
-</div>
-<p>{{ 'Booking.Mail.Comment2'|trans ({'%price%': reservation.PricetoPay}) }}</p>
-{% if reservation.duration %}
-    <p>{{ 'Booking.Mail.Comment3'|trans }}</p>
-{% endif %}
-<p>{{ 'Booking.Mail.Comment4'|trans }}</p>
-</body>
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <style>
+            table
+            {
+                border-collapse: collapse;
+            }
+            td
+            {
+                border: 1px solid ;
+                padding: 10px;
+                text-align: center;
+                background-color: #404040;
+                color: #fff;
+            }
+        </style>
+    </head>
+    <body>
+        <img src="https://i2.wp.com/blog.shanegraphique.com/wp-content/uploads/2016/04/011.jpg?" width="200" alt="logo"/>
+        <h1>{{ 'Booking.Mail.Title'|trans }}</h1>
+        <hr id="line">
+        <h3>{{ 'Booking.Mail.Subtitle'|trans({'%codeCommande%': reservation.token, '%date%': reservation.dateVisit|date('d/m/Y')}) }}</h3>
+        <hr id="line">
+        <h3>{{ 'Booking.Mail.Comment1'|trans }}</h3>
+        <table>
+            <tr>
+                <td>{{ 'Booking.Mail.Lastname'|trans }}</td>
+                <td>{{ 'Booking.Mail.Firstname'|trans }}</td>
+                <td>{{ 'Booking.Mail.Birthdate'|trans }}</td>
+                <td>{{ 'Booking.Mail.Price'|trans }}</td>
+            </tr>
+            {% for ticket in tickets %}
+                <tr>
+                    <td>{{ ticket.lastname| upper}}</td>
+                    <td>{{ ticket.firstName| upper }}</td>
+                    <td>{{ ticket.birthDate|date('d/m/Y') }}</td>
+                    <td>{{ ticket.price }}</td>
+                </tr>
+            {% endfor %}
+        </table>
+        <h3>{{ 'Booking.Mail.Comment2'|trans ({'%price%': reservation.PricetoPay}) }}</h3>
+        {% if reservation.duration %}
+            <h3>{{ 'Booking.Mail.Comment3'|trans }}</h3>
+        {% endif %}
+        <h3>{{ 'Booking.Mail.Comment4'|trans }}</h3>
+        <h3>{{ 'Booking.Mail.Comment5'|trans }}</h3>
+        <h3>{{ 'Booking.Mail.Signature'|trans }}</h3>
+    </body>
+</html>

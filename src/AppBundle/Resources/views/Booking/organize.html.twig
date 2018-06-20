@@ -6,29 +6,35 @@
 <div class="container">
     <div class="row">
         {% block li %}
-                <div class="row">
-                    <div class="col-lg-offset-2 col-lg-8 col-lg-offset-2">
-                        <ol class="breadcrumb breadcrumb-arrow">
-                            <li><a href="#">Organisation</a></li>
-                            <li><a href="#">Identification</a></li>
-                            <li><a href="#">Paiement</a></li>
-                            <li class="active"><span>Organisation</span></li>
-                        </ol>
-                    </div>
+            <div class="row bs-wizard" style="border-bottom:0;">
+                <div class="col-xs-3 bs-wizard-step active">
+                    <div class="text-center bs-wizard-stepnum">Organisation</div>
+                    <div class="progress"><div class="progress-bar"></div></div>
+                    <a class="bs-wizard-dot"></a>
                 </div>
-        {%  endblock %}
-        {% block formulaire %}
-            <div class="row">
-                <div class="col-lg-offset-1 col-lg-10 col-lg-offset-1">
-                    <div class="well">
-                        {{ form_start(form) }}
-                        {{ form_widget(form) }}
-                        {{ form_end(form) }}
-                    </div>
+                <div class="col-xs-3 bs-wizard-step disabled">
+                    <div class="text-center bs-wizard-stepnum">Identification</div>
+                    <div class="progress"><div class="progress-bar"></div></div>
+                    <a class="bs-wizard-dot"></a>
+                </div>
+                <div class="col-xs-3 bs-wizard-step disabled"><!-- complete -->
+                    <div class="text-center bs-wizard-stepnum">Paiement</div>
+                    <div class="progress"><div class="progress-bar"></div></div>
+                    <a class="bs-wizard-dot"></a>
+                </div>
+                <div class="col-xs-3 bs-wizard-step disabled"><!-- active -->
+                    <div class="text-center bs-wizard-stepnum">Recapitulatif</div>
+                    <div class="progress"><div class="progress-bar"></div></div>
+                    <a class="bs-wizard-dot"></a>
                 </div>
             </div>
+        {%  endblock %}
+        {% block form1 %}
+            <div class="well">
+                    {% include 'AppBundle:Booking:form1.html.twig' %}
+            </div>
         {% endblock %}
-
     </div>
 </div>
 {% endblock %}
+

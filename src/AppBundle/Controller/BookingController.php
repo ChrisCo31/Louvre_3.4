@@ -87,8 +87,8 @@ class BookingController extends Controller
         }
         return $this->render('AppBundle:Booking:identification.html.twig',
             ['reservation' => $reservation,
-                'form'        => $form->createView(),
-                'locale' =>$locale
+                'form'     => $form->createView(),
+                'locale'   =>$locale
             ]
         );
     }

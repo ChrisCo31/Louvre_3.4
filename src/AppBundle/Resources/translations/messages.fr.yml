@@ -39,7 +39,8 @@ Booking:
     Message.Bouton: Reservez maintenant !
    Organize:
     Accueil: Reservation
-    Visit: Organisation de votre visite
+    Visit: Etape 1
+    Visit2: Etape 2
     Message.Intro: veuillez remplir tous les champs
     Form.Nbticket: Nombre de billets
     Ticketmax: 10 tickets maximum

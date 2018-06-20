@@ -1,0 +1,44 @@
+{% block form1 %}
+    <div class="row">
+        <div class="col-md-12">
+            <h3>{{ 'Booking.Organize.Visit'|trans }}</h3>
+            <hr>
+        </div>
+    </div>
+    {{ form_start(form) }}
+    <div class="row">
+        <div class="col-lg-offset-1 col-lg-4 col-lg-offset-7">
+            <p> {{ form_label(form.nbTicket) }}
+                {{ form_widget(form.nbTicket) }}
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-offset-1 col-lg-6 col-lg-offset-5">
+            <p>
+                {{ form_label(form.dateVisit) }}
+                {{ form_widget(form.dateVisit) }}
+            </p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-offset-1 col-lg-6 col-lg-offset-5">
+            <p>
+                {{ form_label(form.duration) }}
+                {{ form_widget(form.duration) }}
+            </p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-offset-1 col-lg-8 col-lg-offset-3">
+            {{ form_widget(form.email) }}
+            {{ form_errors(form.email) }}
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-offset-9 col-lg-3">
+            {{ form_widget(form.suivant) }}
+        </div>
+    </div>
+    {{ form_rest(form) }}
+    {{ form_end(form) }}
+{% endblock %}

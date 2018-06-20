@@ -5,6 +5,7 @@ body
     padding-top: 60px;
     height: 100%
 }
+
 /* ----------------------------------Footer ---------------------- */
 section {
     padding: 60px 0;
@@ -54,7 +55,7 @@ section .section-title {
     min-width: 50px;
     margin-left: 275px;
 }
-/* ----------------------------------Body---------------------- */
+/* ---------------------------------- Content---------------------- */
 .section_1 /* Bloc texte page index */
 {
     margin-top: 220px;
@@ -63,6 +64,40 @@ section .section-title {
     background-color: #404040;
     border-radius: 50px 5px;
     opacity: 0.9;
+}
+.finalMess
+{
+    margin-top: 20px;
+    padding : 10px;
+    color: #fff;
+    background-color: #404040;
+    border-radius: 50px 5px;
+    opacity: 0.9;
+    text-align: center;
+    width:75%;
+}
+
+.rappel
+{
+    margin-top: 20px;
+    padding : 10px;
+    color: #fff;
+    background-color: #404040;
+    border-radius: 50px 5px;
+    opacity: 0.9;
+    text-align: center;
+    width:75%;
+}
+.price  /* Bloc price page paiement */
+{
+    margin-top: 20px;
+    margin-left: 150px;
+    padding : 10px;
+    color: #fbbd19;
+    background-color: #404040;
+    width:75%;
+    opacity: 0.9;
+    border-radius: 7px;
 }
 .panel-primary /* Bloc texte page index */
 {
@@ -96,6 +131,7 @@ section .section-title {
     opacity: 0.9;
     margin : auto;
 }
+/* ---------------------------------- Button ---------------------- */
 .btn-primary
 {
     margin-top: 30px;
@@ -124,7 +160,7 @@ section .section-title {
     border-color: #960018;
     margin-top: 40px;
 }
-
+/* ---------------------------------- Flash---------------------- */
 .alert-danger
 {
      color: #fff;
@@ -140,7 +176,6 @@ section .section-title {
     margin-top: 50px;
     margin-bottom: 50px;
 }
-
 /* ----------------------------------Breadcrumb---------------------- */
 .bs-wizard
 {
@@ -283,4 +318,8 @@ section .section-title {
 .form2
 {
     margin-top: 80px;
+}
+.recapF
+{
+    text-align: center;
 }

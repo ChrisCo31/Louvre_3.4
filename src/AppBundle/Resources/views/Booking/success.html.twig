@@ -1,5 +1,4 @@
 {% extends "AppBundle::layout.html.twig" %}
-
 {% block title %}
     {{ 'Booking.Index.Title'|trans }}
 {% endblock %}
@@ -29,33 +28,37 @@
         </div>
     {%  endblock %}
     <div class="container">
-        <div class="col-md-12">
-            <div class="date_reserve">
-                <div class="well">
-                    <div class="final">
-                        <h3 class="final">Votre reservation est enregistrée</h3>
-
-                        <p>Vous allez recevoir vos tickets par mail, ils seront à imprimer et à présenter à l'entrée du musée.</p>
-                        <p>Le mail de récap vous a été envoye à l'adresse suivante :<br/></p>
+        <div class="row">
+            <div class="row">
+                <div class="col-lg-offset-2 col-lg-10">
+                    <div class="finalMess">
+                        <h3 class="final">{{ 'Booking.Success.Title'|trans }}</h3>
+                        <hr id="line">
+                        <p>{{ 'Booking.Success.Paragraphe1'|trans }}</p>
+                        <p>{{ 'Booking.Success.Paragraphe2'|trans }}</p>
                         <b>{{ reservation.email }}<br/></b>
-                        <br/>
-                        <p>Si vous ne recevez pas de mail, veuillez nous contacter : <br/>
-                            Par mail : <b><a href="mailto:assistance@louvre.fr">assistance@louvre.fr</a></b>
-                        </p>
+                        <p>{{ 'Booking.Success.Paragraphe3'|trans }}</p>
+                        Par mail : <b><a href="mailto:assistance@louvre.fr">assistance@louvre.fr</a></b>
                         <br/>
                         <p>
-                            <b>Nous vous souhaitons une agréable visite au Louvre.</b>
+                            <b><p>{{ 'Booking.Success.Paragraphe4'|trans }}</p></b>
                         </p>
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="col-md-12">
-            <div class="infos">
-                <div class="well">
-                    <div class="pratique">
-                        <h3 class="final">Rappel des conditions de visite</h3>
-                    </div>
+            <div class="row">
+                <div class="col-lg-offset-2 col-lg-10">
+                        <div class="rappel">
+                                <h3 class="final"><p>{{ 'Booking.Success.Final'|trans }}</h3>
+                                <hr id="line">
+
+                                        <h4>{{ 'Booking.Index.Message.Hebdo'|trans }}</h4>
+                                        <li><h4>{{ 'Booking.Success.Half'|trans }}</h4></li>
+                                        <li><h4>{{ 'Booking.Success.Condition'|trans }}</h4></li>
+                                        <li><h4>{{ 'Booking.Index.Message.Ferie'|trans }}</h4></li>
+                                        <li><h4>{{ 'Booking.Index.Message.Reservation'|trans }}</h4></li>
+
+                        </div>
                 </div>
             </div>
         </div>

@@ -59,7 +59,8 @@ Booking:
     Date: JJ-MM-AA
     Email: Votre adresse email de contact :
     Duration: Vous avez choisi des billets :
-    Half: Billet demi-journée (valable à partir de 14h )
+    Half: Demi-journée (valable à partir de 14h )
+    Full : Journée complete
     Firstname: Prénom
     Lastname: Nom
     Birthdate: Date de naissance
@@ -92,4 +93,14 @@ Booking:
     Comment2: Le coût total de la visite est de %price% €.
     Comment3: Nous vous rappelons que les billets demi-journée sont utilisables à partir de 14h.
     Comment4: Une pièce d'identité sera demandée à l'entrée du Musée et nous vous rappelons que le tarif réduit est accordé sous reserve de remplir certaines conditions
+   Success:
+    Title: Votre reservation est enregistrée
+    Paragraphe1: Vous allez recevoir vos tickets par mail, ils seront à imprimer et à présenter à l'entrée du musée.
+    Paragraphe2: Le mail récapitulatif de votre achat vous a été envoye à l'adresse suivante :
+    Paragraphe3: Si vous ne recevez pas de mail, veuillez nous contacter :
+    Paragraphe4: Nous vous souhaitons une agreable visite au Louvre.
+    Final: Rappel des conditions de visite
+    Half: les billets demi journée ne permettent l'entree qu'à partir de 14h
+    Condition: Pour toutes réductions obtenues, vous devrez fournir un justificatif à l'entrée
+
 

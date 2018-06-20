@@ -86,6 +86,15 @@ Booking:
     Comment2: The total cost of the visit is %priceToPay% €.
     Comment3: We remind you that half-day tickets can be used from 14h.
     Comment4: An ID will be requested at the entrance of the Museum and we remind you that the reduced rate is granted subject to fulfill certain conditions
+  Success:
+      Title: Your reservation is recorded
+      Paragraphe1: You will receive your tickets by mail, they will be to print and to present at the entrance of the museum
+      Paragraphe2: The email summary of your purchase has been sent to the following address:
+      Paragraphe3: If you do not receive an email, please contact us:
+      Paragraphe4: We wish you a pleasant visit to the Louvre.
+      Final: Reminder of the conditions of visit
+      Half: half day tickets only allow entry from 14h
+      Condition: For all discounts, you will need to provide proof of receipt at the entrance
 
 
 

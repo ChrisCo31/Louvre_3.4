@@ -80,6 +80,7 @@ class Reservation
      * @Assert\Type(type="int")
      */
     private $priceToPay;
+    
     /**
      * Reservation constructor.
      */
@@ -90,6 +91,7 @@ class Reservation
         $this->setToken($this->generateToken());
        // if(!$this->getToken()) $this->setToken($this->generateToken());
     }
+    
     /**
      * Get id
      *
@@ -99,6 +101,7 @@ class Reservation
     {
         return $this->id;
     }
+    
     /**
      * Set email
      *
@@ -112,6 +115,7 @@ class Reservation
 
         return $this;
     }
+    
     /**
      * Get email
      *
@@ -121,6 +125,7 @@ class Reservation
     {
         return $this->email;
     }
+    
     /**
      * Set dateVisit
      *
@@ -134,6 +139,7 @@ class Reservation
 
         return $this;
     }
+    
     /**
      * Get dateVisit
      *
@@ -143,6 +149,7 @@ class Reservation
     {
         return $this->dateVisit;
     }
+    
     /**
      * Set dateReservation
      *
@@ -156,6 +163,7 @@ class Reservation
 
         return $this;
     }
+    
     /**
      * Get dateReservation
      *
@@ -165,6 +173,7 @@ class Reservation
     {
         return $this->dateReservation;
     }
+    
     /**
      * Set duration
      *
@@ -178,6 +187,7 @@ class Reservation
 
         return $this;
     }
+    
     /**
      * Get duration
      *
@@ -187,6 +197,7 @@ class Reservation
     {
         return $this->duration;
     }
+    
     /**
      * Set nbTicket
      *
@@ -200,6 +211,7 @@ class Reservation
 
         return $this;
     }
+    
     /**
      * Get nbTicket
      *
@@ -209,6 +221,7 @@ class Reservation
     {
         return $this->nbTicket;
     }
+    
     /**
      * Set token
      *
@@ -222,6 +235,7 @@ class Reservation
 
         return $this;
     }
+    
     /**
      * Get token
      *
@@ -231,6 +245,7 @@ class Reservation
     {
         return $this->token;
     }
+    
     /**
      * generate a random token
      *
@@ -242,6 +257,7 @@ class Reservation
         $token = substr(str_shuffle(str_repeat($alphabet, 10)), 0, 10);
         return $token;
     }
+    
     /**
      * Set priceToPay
      *
@@ -255,6 +271,7 @@ class Reservation
 
         return $this;
     }
+    
     /**
      * Get priceToPay
      *
@@ -264,6 +281,7 @@ class Reservation
     {
         return $this->priceToPay;
     }
+    
     /**
      * chek if the reservation has all tickets
      * @return bool
@@ -273,6 +291,7 @@ class Reservation
         if (count($this->getTickets()) == $this->getNbTicket() ) return true;
         return false;
     }
+    
     /**
      * Add ticket
      *
@@ -288,6 +307,7 @@ class Reservation
 
         return $this;
     }
+    
     /**
      * Remove ticket
      *
@@ -297,6 +317,7 @@ class Reservation
     {
         $this->tickets->removeElement($ticket);
     }
+    
     /**
      * Get tickets
      *
@@ -306,6 +327,7 @@ class Reservation
     {
         return $this->tickets;
     }
+    
     /**
      * Set transaction
      *
@@ -319,6 +341,7 @@ class Reservation
 
         return $this;
     }
+    
     /**
      * Get transaction
      *

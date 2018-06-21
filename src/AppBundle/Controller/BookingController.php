@@ -70,8 +70,6 @@ class BookingController extends Controller
         $locale = $request->getLocale();
         $bookingManager = $this->get('app.BookingManager');
         $reservation = $bookingManager->retrieveReservation();
-        // Flash Message
-        $this->get('session')->getFlashBag()->add('warning', $this->get('translator')->trans('Warning.Flash.Identification'));
         //formulaire ticket a remplir
         if(!$reservation->hasAllTicket()) $bookingManager->generateTickets($reservation);
         $form = $this->createForm(ReservationIdentifyType::class, $reservation);

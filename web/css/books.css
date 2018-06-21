@@ -146,6 +146,12 @@ section .section-title {
     background-color: #BB0B0B;
     border-color: #BB0B0B;
 }
+.btn-primary a
+{
+    color: #fff;
+    background-color: #BB0B0B;
+    border-color: #BB0B0B;
+}
 .btn-danger
 {
     color: #fff;

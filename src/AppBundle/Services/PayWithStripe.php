@@ -34,7 +34,10 @@ class PayWithStripe
     {
         \Stripe\Stripe::setApiKey("sk_test_qHjRSqkcpdP6N7Y8SfVPM79H");
         // recuperation du token
-        $token = $_POST['stripeToken'];
+        if(!empty($_POST['stripeToken']) AND (!empty($_POST['stripeToken'])))
+        {
+            $token = $_POST['stripeToken'];
+        }
         // creation du client
             try {
                 $charge =\Stripe\Charge::create(array(

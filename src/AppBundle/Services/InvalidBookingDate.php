@@ -31,9 +31,8 @@ class InvalidBookingDate
         if($dateVisit->format('Y-m-d') < $now->format('Y-m-d'))
         {
             return true;
-        } else {
-            return false;
         }
+            return false;
     }
     /**
      * @param $year

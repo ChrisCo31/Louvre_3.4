@@ -37,8 +37,7 @@ class MaxTicketSold
         if(($nbTicketSold + $nbTicketWanted ) > 1000)
         {
             return true;
-        } else {
-            return false;
         }
+            return false;
     }
 }

@@ -18,7 +18,6 @@ class SendEmail
 {
     private $mailer;
     private $templating;
-    private $mailer_address;
 
     public function __construct(\Swift_Mailer $mailer, EngineInterface $templating, $translator)
     {

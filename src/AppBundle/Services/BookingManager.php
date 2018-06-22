@@ -57,7 +57,7 @@ class BookingManager
             // Calcul de l'age
             $age = $ticket->getAge($birthDate); // on appelle la methode getAge de l'entite Ticket avec la date de naissance en parametre
             $price = $ticket->calculatePricePerTicket($age);
-            $affectPrice = $ticket->setPrice($price); // il serait plus judicieux d'hydrater les objets tickets avec leur prix à un autre endroit...
+            $ticket->setPrice($price);
             $totalPrice = $totalPrice + $price;
         }
         $totalPrice = $reservation->setPriceToPay($totalPrice);

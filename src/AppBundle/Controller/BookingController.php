@@ -56,7 +56,7 @@ class BookingController extends Controller
             $bookingManager = $this->get('app.BookingManager');
             // Methode qui place les donnees de la reservation dans une session
             $session = $bookingManager->saveReservation($reservation);
-            $retrieve = $bookingManager->retrieveReservation($session);
+            $bookingManager->retrieveReservation($session);
             return $this->redirectToRoute('booking_identification');
         }
         return $this->render('AppBundle:Booking:organize.html.twig', ['locale' =>$locale, 'form'=> $form->createView()]);
@@ -77,7 +77,7 @@ class BookingController extends Controller
         $form->handleRequest($request);
         if($form->isSubmitted() && $form->isValid())
         {
-            $totalPrice = $bookingManager->calculPrice($reservation);
+            $bookingManager->calculPrice($reservation);
             $ticket = $form->getData();
             $this->get('session')->set('ticket', $ticket);
             return $this->redirectToRoute('booking_payment');

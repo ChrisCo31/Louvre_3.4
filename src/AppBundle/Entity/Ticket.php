@@ -264,10 +264,8 @@ class Ticket
             if($discount AND ($age > self::HIGH_AGE_LIMIT_CHILD))
             {
                 return self::REDUCED_PRICE;
-            } else
-            {
-                return $this->givePriceFromAge($age);
             }
+                return $this->givePriceFromAge($age);
 
         }else
         {
@@ -275,10 +273,8 @@ class Ticket
             {
 
                 return ((self::REDUCED_PRICE)*(self::HALF_DAY));
-            } else
-            {
-                return (($this->givePriceFromAge($age))*(self::HALF_DAY));
             }
+                return (($this->givePriceFromAge($age))*(self::HALF_DAY));
         }
     }
     /**

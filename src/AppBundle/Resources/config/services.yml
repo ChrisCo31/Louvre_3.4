@@ -6,15 +6,8 @@ services:
         class: AppBundle\Services\MaxTicketSold
         arguments: ["@doctrine.orm.entity_manager"]
 
-    app.GenerateTicket:
-        class: AppBundle\Services\GenerateTicket
-        arguments: ["@doctrine.orm.entity_manager"]
-
     app.HalfDay:
         class: AppBundle\Services\HalfDay
-
-    app.PriceCalculator:
-        class: AppBundle\Services\PriceCalculator
 
     app.SendEmail:
         class: AppBundle\Services\SendEmail
@@ -34,7 +27,7 @@ services:
 
     app.BookingManager:
         class: AppBundle\Services\BookingManager
-        arguments: ["@Session", "@app.GenerateTicket", "@app.PriceCalculator"]
+        arguments: ["@Session", "@doctrine.orm.entity_manager"]
 
 
 

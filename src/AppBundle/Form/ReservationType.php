@@ -45,7 +45,7 @@ class ReservationType extends AbstractType
                     'attr'=>array('data-provide' => 'datepicker',
                         //'format' => \IntlDateFormatter::SHORT,
                         'class' => "js-datepicker",
-
+                        'data-date-format' => 'dd/mm/yyyy',
                         'data-date-autoclose' => true,
                         'data-date-start-date' => '0d',
                         'data-date-days-of-week-disabled' => '0,2',

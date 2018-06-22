@@ -77,7 +77,6 @@ class BookingController extends Controller
         $form->handleRequest($request);
         if($form->isSubmitted() && $form->isValid())
         {
-            // utilisation de la methode calculateTotalPrice du service PriceCalculator
             $totalPrice = $bookingManager->calculPrice($reservation);
             $ticket = $form->getData();
             $this->get('session')->set('ticket', $ticket);

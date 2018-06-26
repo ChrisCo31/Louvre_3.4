@@ -32,8 +32,8 @@
         {%  endblock %}
         <div class="row">
             {% block recap %}
-                <div class="col-md-offset-2 col-md-8 col-md-offset-2">
-                    <div class="well">
+                <div class="col-lg-offset-2 col-lg-8 col-lg-offset-2">
+                    <div class="section_org">
                         <h2> {{ 'Booking.Identification.Recap'|trans }} </h2>
                         <h3> {{ 'Booking.Payment.Token'|trans }} {{ reservation.token }} </h3>
                         <h3> {{ 'Booking.Identification.NumberTicketChosen'|trans }} {{ reservation.nbTicket }} </h3>
@@ -47,8 +47,8 @@
         </div>
         <div class="row">
             {% block formulaire %}
-            <div class="col-md-offset-2 col-md-8 col-md-offset-2 form2">
-                <div class="well">
+            <<div class="col-lg-offset-2 col-lg-8 col-lg-offset-2 form2">
+                <div class="section_org">
                      {% include 'AppBundle:Booking:form2.html.twig' %}
                 </div>
             </div>

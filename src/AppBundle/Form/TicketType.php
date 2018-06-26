@@ -51,7 +51,6 @@ class TicketType extends AbstractType
             'label' => 'Booking.Identification.Discount',
             'required' => false
         ));
-
     }
 
     /**

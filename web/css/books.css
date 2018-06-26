@@ -1,11 +1,15 @@
+html, body{
+    height: 100%;
+}
 body
 {
-    background: #404040 url("../images/Pyramid5.jpg") no-repeat ;
-    background-size: cover;
-    padding-top: 60px;
-    height: 100%
-}
+    background-image: url("../images/Pyramid5.jpg");
+    background-position: center center;
+    background-repeat:  no-repeat;
+    background-attachment: fixed;
+    background-size:  cover;
 
+}
 /* ----------------------------------Footer ---------------------- */
 section {
     padding: 60px 0;
@@ -55,6 +59,14 @@ section .section-title {
     min-width: 50px;
     margin-left: 275px;
 }
+@media screen and (max-width: 768px) {
+    .dropdown-menu {
+        background-color: #404040;
+        border-color: #252925;
+        text-align: center;
+        margin-left: 10px;
+    }
+}
 /* ---------------------------------- Content---------------------- */
 .section_1 /* Bloc texte page index */
 {
@@ -65,6 +77,15 @@ section .section-title {
     border-radius: 50px 5px;
     opacity: 0.9;
 }
+.section_org /* Bloc texte page organize*/
+ {
+     margin : auto;
+     padding : 30px;
+     color: #fff;
+     background-color: #404040;
+     border-radius: 50px 5px;
+     opacity: 0.9;
+ }
 .finalMess
 {
     margin-top: 20px;
@@ -90,14 +111,15 @@ section .section-title {
 }
 .price  /* Bloc price page paiement */
 {
+    margin: auto;
     margin-top: 20px;
-    margin-left: 150px;
     padding : 10px;
     color: #fbbd19;
+    border-color: #252925;
     background-color: #404040;
-    width:75%;
     opacity: 0.9;
     border-radius: 7px;
+    width : 900px;
 }
 .panel-primary /* Bloc texte page index */
 {
@@ -130,6 +152,7 @@ section .section-title {
     width : 900px;
     opacity: 0.9;
     margin : auto;
+    margin-top: 20px;
 }
 /* ---------------------------------- Button ---------------------- */
 .btn-primary
@@ -185,7 +208,7 @@ section .section-title {
 /* ----------------------------------Breadcrumb---------------------- */
 .bs-wizard
 {
-    margin-top: 60px;
+    margin-top: 110px;
     margin-bottom: 60px;
     border-bottom: solid 1px #e0e0e0;
     padding: 0 0 10px 0;
@@ -311,15 +334,12 @@ section .section-title {
     color: #fff;
     background-color: #BB0B0B;
     border-color: #BB0B0B;
-    margin-left: 700px;
+    margin-left: 60px;
 }
 #line
 {
-    width: 50%;
-}
-.headT
-{
-    text-align: center;
+    width: 40%;
+    margin-left: 60px;
 }
 .form2
 {

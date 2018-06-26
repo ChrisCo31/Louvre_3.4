@@ -4,8 +4,8 @@
 {% endblock %}
 {% block body %}
 <div class="container">
-    <div class="row">
-        {% block li %}
+    <div class="row-fluid">
+            {% block li %}
             <div class="row bs-wizard" style="border-bottom:0;">
                 <div class="col-xs-3 bs-wizard-step active">
                     <div class="text-center bs-wizard-stepnum">Organisation</div>
@@ -28,12 +28,20 @@
                     <a class="bs-wizard-dot"></a>
                 </div>
             </div>
-        {%  endblock %}
-        {% block form1 %}
-            <div class="well">
-                    {% include 'AppBundle:Booking:form1.html.twig' %}
-            </div>
-        {% endblock %}
+            {%  endblock %}
+            {% block form1 %}
+                <div class="col-lg-offset-1 col-lg-10 col-lg-offset-1">
+                    <div class="section_org">
+                            <div class="row">
+                                <div class="col-xs-offset-2 col-xs-8 col-md-offset-2 col-md-9 col-md-offset-1 col-lg-offset-2 col-lg-10">
+                                    <div class="row">
+                                {% include 'AppBundle:Booking:form1.html.twig' %}
+                                    </div>
+                                </div>
+                            </div>
+                    </div>
+                </div>
+            {% endblock %}
     </div>
 </div>
 {% endblock %}

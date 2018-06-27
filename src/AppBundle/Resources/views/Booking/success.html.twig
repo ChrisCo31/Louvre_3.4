@@ -3,63 +3,57 @@
     {{ 'Booking.Index.Title'|trans }}
 {% endblock %}
 {% block body %}
-    {% block li %}
-        <div class="row bs-wizard" style="border-bottom:0;">
-            <div class="col-xs-3 bs-wizard-step complete">
-                <div class="text-center bs-wizard-stepnum">Organisation</div>
-                <div class="progress"><div class="progress-bar"></div></div>
-                <a class="bs-wizard-dot"></a>
-            </div>
-            <div class="col-xs-3 bs-wizard-step complete">
-                <div class="text-center bs-wizard-stepnum">Identification</div>
-                <div class="progress"><div class="progress-bar"></div></div>
-                <a class="bs-wizard-dot"></a>
-            </div>
-            <div class="col-xs-3 bs-wizard-step complete"><!-- complete -->
-                <div class="text-center bs-wizard-stepnum">Paiement</div>
-                <div class="progress"><div class="progress-bar"></div></div>
-                <a class="bs-wizard-dot"></a>
-            </div>
-            <div class="col-xs-3 bs-wizard-step active"><!-- active -->
-                <div class="text-center bs-wizard-stepnum">Recapitulatif</div>
-                <div class="progress"><div class="progress-bar"></div></div>
-                <a class="bs-wizard-dot"></a>
-            </div>
-        </div>
-    {%  endblock %}
     <div class="container">
-        <div class="row">
-            <div class="row">
-                <div class="col-lg-offset-2 col-lg-10">
-                    <div class="finalMess">
-                        <h3 class="final">{{ 'Booking.Success.Title'|trans }}</h3>
-                        <hr id="line">
-                        <p>{{ 'Booking.Success.Paragraphe1'|trans }}</p>
-                        <p>{{ 'Booking.Success.Paragraphe2'|trans }}</p>
-                        <b>{{ reservation.email }}<br/></b>
-                        <p>{{ 'Booking.Success.Paragraphe3'|trans }}</p>
-                        Par mail : <b><a href="mailto:assistance@louvre.fr">assistance@louvre.fr</a></b>
-                        <br/>
-                        <p>
-                            <b><p>{{ 'Booking.Success.Paragraphe4'|trans }}</p></b>
-                        </p>
-                    </div>
+        <div class ="row">
+        {% block li %}
+            <div class="row bs-wizard" style="border-bottom:0;">
+                <div class="col-xs-3 bs-wizard-step complete">
+                    <div class="text-center bs-wizard-stepnum">Organisation</div>
+                    <div class="progress"><div class="progress-bar"></div></div>
+                    <a class="bs-wizard-dot"></a>
+                </div>
+                <div class="col-xs-3 bs-wizard-step complete">
+                    <div class="text-center bs-wizard-stepnum">Identification</div>
+                    <div class="progress"><div class="progress-bar"></div></div>
+                    <a class="bs-wizard-dot"></a>
+                </div>
+                <div class="col-xs-3 bs-wizard-step complete"><!-- complete -->
+                    <div class="text-center bs-wizard-stepnum">Paiement</div>
+                    <div class="progress"><div class="progress-bar"></div></div>
+                    <a class="bs-wizard-dot"></a>
+                </div>
+                <div class="col-xs-3 bs-wizard-step active"><!-- active -->
+                    <div class="text-center bs-wizard-stepnum">Recapitulatif</div>
+                    <div class="progress"><div class="progress-bar"></div></div>
+                    <a class="bs-wizard-dot"></a>
                 </div>
             </div>
+        {%  endblock %}
             <div class="row">
                 <div class="col-lg-offset-2 col-lg-10">
-                        <div class="rappel">
-                                <h3 class="final"><p>{{ 'Booking.Success.Final'|trans }}</h3>
-                                <hr id="line">
-
-                                        <h4>{{ 'Booking.Index.Message.Hebdo'|trans }}</h4>
-                                        <li><h4>{{ 'Booking.Success.Half'|trans }}</h4></li>
-                                        <li><h4>{{ 'Booking.Success.Condition'|trans }}</h4></li>
-                                        <li><h4>{{ 'Booking.Index.Message.Ferie'|trans }}</h4></li>
-                                        <li><h4>{{ 'Booking.Index.Message.Reservation'|trans }}</h4></li>
-
+                        <div class="finalMess">
+                            <h3 class="final">{{ 'Booking.Success.Title'|trans }}</h3>
+                            <p>{{ 'Booking.Success.Paragraphe1'|trans }}</p>
+                            <p>{{ 'Booking.Success.Paragraphe2'|trans }}</p>
+                            <b>{{ reservation.email }}<br/></b>
+                            <p>{{ 'Booking.Success.Paragraphe3'|trans }}</p>
+                            Par mail : <b><a href="mailto:assistance@louvre.fr">assistance@louvre.fr</a></b>
+                            <br/>
+                            <p>
+                                <b><p>{{ 'Booking.Success.Paragraphe4'|trans }}</p></b>
+                            </p>
                         </div>
-                </div>
+                    </div>
+                    <div class="col-lg-offset-2 col-lg-10">
+                            <div class="rappel">
+                                    <h3 class="final"><p>{{ 'Booking.Success.Final'|trans }}</h3>
+
+                                            <h4>{{ 'Booking.Index.Message.Hebdo'|trans }}</h4>
+                                            <h4>{{ 'Booking.Success.Half'|trans }}</h4>
+                                            <h4>{{ 'Booking.Success.Condition'|trans }}</h4>
+                                            <h4>{{ 'Booking.Index.Message.Ferie'|trans }}</h4>
+                                            <h4>{{ 'Booking.Index.Message.Reservation'|trans }}</h4>
+                    </div>
             </div>
         </div>
     </div>

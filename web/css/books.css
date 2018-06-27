@@ -66,7 +66,11 @@ section .section-title {
         text-align: center;
         margin-left: 10px;
     }
+    .container {
+        margin-left: 40px;
+    }
 }
+
 /* ---------------------------------- Content---------------------- */
 .section_1 /* Bloc texte page index */
 {
@@ -97,7 +101,6 @@ section .section-title {
     text-align: center;
     width:75%;
 }
-
 .rappel
 {
     margin-top: 20px;
@@ -119,7 +122,7 @@ section .section-title {
     background-color: #404040;
     opacity: 0.9;
     border-radius: 7px;
-    width : 900px;
+    width:75%;
 }
 .panel-primary /* Bloc texte page index */
 {

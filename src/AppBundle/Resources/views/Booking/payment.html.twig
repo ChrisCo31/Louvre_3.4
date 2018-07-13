@@ -8,22 +8,22 @@
     {% block li %}
         <div class="row bs-wizard" style="border-bottom:0;">
             <div class="col-xs-3 bs-wizard-step complete">
-                <div class="text-center bs-wizard-stepnum">Organisation</div>
+                <div class="text-center bs-wizard-stepnum">{{ 'Breadcrumb.Org'|trans }}</div>
                 <div class="progress"><div class="progress-bar"></div></div>
                 <a class="bs-wizard-dot"></a>
             </div>
             <div class="col-xs-3 bs-wizard-step complete">
-                <div class="text-center bs-wizard-stepnum">Identification</div>
+                <div class="text-center bs-wizard-stepnum">{{ 'Breadcrumb.Id'|trans }}</div>
                 <div class="progress"><div class="progress-bar"></div></div>
                 <a class="bs-wizard-dot"></a>
             </div>
             <div class="col-xs-3 bs-wizard-step active"><!-- complete -->
-                <div class="text-center bs-wizard-stepnum">Paiement</div>
+                <div class="text-center bs-wizard-stepnum">{{ 'Breadcrumb.Pay'|trans }}</div>
                 <div class="progress"><div class="progress-bar"></div></div>
                 <a class="bs-wizard-dot"></a>
             </div>
             <div class="col-xs-3 bs-wizard-step disabled"><!-- active -->
-                <div class="text-center bs-wizard-stepnum">Recapitulatif</div>
+                <div class="text-center bs-wizard-stepnum">{{ 'Breadcrumb.Recap'|trans }}</div>
                 <div class="progress"><div class="progress-bar"></div></div>
                 <a class="bs-wizard-dot"></a>
             </div>
@@ -33,10 +33,10 @@
     <div class="row">
             <div class="col-lg-offset-2 col-lg-8 col-lg-offset-2 section_2">
                 <h2> {{ 'Booking.Identification.Recap'|trans }} </h2>
-                <h4> {{ 'Booking.Payment.Token'|trans }} {{ reservation.token }} </h4>
-                <h4> {{ 'Booking.Identification.NumberTicketChosen'|trans }} {{ reservation.nbTicket }} </h4>
-                <h4> {{ 'Booking.Identification.InDateOf'|trans}} {{ reservation.dateVisit|date('d/m/Y')}} </h4>
-                <h4> {{ 'Booking.Identification.Email'|trans }} {{ reservation.email }} </h4>
+                <h3> {{ 'Booking.Payment.Token'|trans }} {{ reservation.token }} </h3>
+                <h3> {{ 'Booking.Identification.NumberTicketChosen'|trans }} {{ reservation.nbTicket }} </h3>
+                <h3> {{ 'Booking.Identification.InDateOf'|trans}} {{ reservation.dateVisit|date('d/m/Y')}} </h3>
+                <h3> {{ 'Booking.Identification.Email'|trans }} {{ reservation.email }} </h3>
             </div>
     </div>
             {% set T = 0 %}

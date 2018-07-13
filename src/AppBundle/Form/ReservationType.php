@@ -36,14 +36,12 @@ class ReservationType extends AbstractType
                  'required' => true,
                 ))
 
-            // integrer le date picker et les controles de vacances, feries et 1000 tickets
             ->add ('dateVisit', DateType::class, [
                     'label' => 'Booking.Organize.Date',
-                    'format' => \IntlDateFormatter::SHORT,
+                    'format' => 'dd/MM/yyyy' ,
                     'widget' => 'single_text',
                     'html5'=>false,
                     'attr'=>array('data-provide' => 'datepicker',
-                        //'format' => \IntlDateFormatter::SHORT,
                         'class' => "js-datepicker",
                         'data-date-format' => 'dd/mm/yyyy',
                         'data-date-autoclose' => true,

@@ -4,14 +4,20 @@ Warning:
     Organize.InvalidDate: Reservation is impossible for this day
     Organize.Half: The reservation is only possible for the half-day (from 14h)
     Identification: Please fill in the following fields accurately so that we can offer you the fairest price
+Breadcrumb:
+  Org: Organisation
+  Id: Identification
+  Pay: Payment
+  Recap: Summary
 Layout:
   Base:
-    Title: Louvre museum
+    Title: Louvre Museum
     Billet: Ticketing
     Exposition: Exposition
     Navbar:
           Fr: Franch language
           En: English language
+          Right : Online Booking Service
     Footer:
           Left.Pres: Site designed with
           Center1: Chrisco31 - 2018
@@ -36,13 +42,13 @@ Booking:
     Visit: Step 1
     Visit2: Step 2
     Message.Intro: Please complete all fields
-    Form.Nbticket: Nombre de billets
+    Form.Nbticket: Number of tickets
     Ticketmax: 10 tickets maximum
     Date: Date
     Duration: Day / half day ticket
     Half: Half Day
     Full: Full Day
-    Email: contact email
+    Email: Contact email
     Email.Rep: Confirm the e-mail
     Button: Continue
   Identification:
@@ -51,7 +57,7 @@ Booking:
     NumberTicketChosen: Number of ticket(s) desired :
     InDateOf: Date of the visit :
     Date: DD-MM-YY
-    Email: Your contact email address
+    Email: Your contact email address :
     Duration: You have chosen tickets :
     Half: Half-day ticket (valid from 14h)
     Firstname: Firstname

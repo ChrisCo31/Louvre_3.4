@@ -4,6 +4,11 @@ Warning:
     Organize.InvalidDate: la reservation est impossible pour cette journée
     Organize.Half: La reservation n'est possible que pour la demi-journee (a partir de 14h)
     Identification: Veuillez, s'il vous plait, remplir avec précision les champs suivants afin que nous vous proposions le prix le plus juste
+Breadcrumb:
+  Org: Organisation
+  Id: Identification
+  Pay: Paiement
+  Recap: Recapitulatif
 Alert:
   Flash:
      Organize.MaxSold: Journée compléte, réservation impossible
@@ -18,6 +23,7 @@ Layout:
     Navbar:
       Fr: Langue francaise
       En: Langue anglaise
+      Right: Service de réservation en ligne
     Footer:
       Left.Pres: Site conçu avec
       Center1: Chrisco31 - 2018

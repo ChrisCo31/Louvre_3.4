@@ -5,7 +5,13 @@
 {% endblock %}
 {% block body %}
 <div class="container">
+
     {% block li %}
+        <div class="col-lg-offset-2 col-lg-8 col-lg-offset-2 flash">
+            {% for message in app.session.flashbag.get('info') %}
+                <div class="alert alert-info">{{ message }}</div>
+            {% endfor %}
+        </div>
         <div class="row bs-wizard" style="border-bottom:0;">
             <div class="col-xs-3 bs-wizard-step complete">
                 <div class="text-center bs-wizard-stepnum">{{ 'Breadcrumb.Org'|trans }}</div>

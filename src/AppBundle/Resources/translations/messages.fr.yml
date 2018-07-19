@@ -3,7 +3,7 @@ Warning:
     Organize.MaxSold: Journée compléte, réservation impossible
     Organize.InvalidDate: la reservation est impossible pour cette journée
     Organize.Half: La reservation n'est possible que pour la demi-journee (a partir de 14h)
-    Identification: Veuillez, s'il vous plait, remplir avec précision les champs suivants afin que nous vous proposions le prix le plus juste
+    Paiement: Le paiement a échoué. Veuillez recommencer l'operation pour valider votre réservation
 Breadcrumb:
   Org: Organisation
   Id: Identification

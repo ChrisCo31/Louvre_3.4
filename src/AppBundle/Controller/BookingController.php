@@ -110,9 +110,17 @@ class BookingController extends Controller
             $em = $this->getDoctrine()->getManager();
             $em->persist($reservation);
             $em->flush();
-            if($transaction->getMessage("Transaction reussie"))
+
+            if($transaction->getMessage()==="Transaction reussie")
             {
                 return $this->redirectToRoute('booking_success');
+            } else
+            {
+               //$this->get('session')->getFlashBag()->add('warning', $this->get('translator')->trans('Warning.Flash.Paiement'));
+                $session = $request->getSession();
+                // Et on définit notre message
+                $session->getFlashBag()->add('info', $this->get('translator')->trans('Warning.Flash.Paiement'));
+
             }
         }
         return $this->render('AppBundle:Booking:payment.html.twig',[

@@ -3,7 +3,7 @@ Warning:
     Organize.MaxSold: Full day, reservation impossible
     Organize.InvalidDate: Reservation is impossible for this day
     Organize.Half: The reservation is only possible for the half-day (from 14h)
-    Identification: Please fill in the following fields accurately so that we can offer you the fairest price
+    Paiement: Payment has failed. Please try again to validate your reservation
 Breadcrumb:
   Org: Organisation
   Id: Identification

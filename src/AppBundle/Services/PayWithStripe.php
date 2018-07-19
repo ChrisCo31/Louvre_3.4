@@ -34,7 +34,8 @@ class PayWithStripe
     {
         \Stripe\Stripe::setApiKey("sk_test_qHjRSqkcpdP6N7Y8SfVPM79H");
         // recuperation du token
-        $token = $_POST['stripeToken'];
+        //$token = $_POST['stripeToken'];
+        $token = $request->get('stripeToken');
         // creation du client
             try {
                 $charge =\Stripe\Charge::create(array(
@@ -49,7 +50,7 @@ class PayWithStripe
                 $charge = \Stripe\Charge::all();
                 $idStripe = $charge['data'][0]['id'];
                 $idStripe = $transaction->setIdStripe($idStripe);
-                echo "vous avez un probleme avec votre carte !"; // mettre un message flash
+                //echo "vous avez un probleme avec votre carte !"; // mettre un message flash
                 return false;
             } catch (Exception $e) { // token utilise deux fois
                 // mettre un message d'erreur en flash
@@ -58,7 +59,7 @@ class PayWithStripe
                 // $message = $transaction->setMessage("Probleme avec la transaction");
                 $charge = \Stripe\Charge::all();
                 $idStripe = $transaction->setIdStripe($charge['data'][0]['id']);
-                echo "il y a eu un probleme de transaction !"; // mettre un message flash
+                //echo "il y a eu un probleme de transaction !"; // mettre un message flash
                 return false;
             }
            $charge = \Stripe\Charge::all();

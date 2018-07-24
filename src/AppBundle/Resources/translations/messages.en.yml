@@ -93,7 +93,7 @@ Booking:
     Birthdate : Birthdate
     Price: Price(€)
     Comment1: You have booked for the following people
-    Comment2: The total cost of the visit is %priceToPay% €.
+    Comment2: The total cost of the visit is %price% €.
     Comment3: We remind you that half-day tickets can be used from 14h.
     Comment4: An ID will be requested at the entrance of the Museum and we remind you that the reduced rate is granted subject to fulfill certain conditions.
     Comment5: We wish you a pleasant visit.
@@ -107,6 +107,5 @@ Booking:
       Final: Reminder of the conditions of visit
       Half: half day tickets only allow entry from 14h
       Condition: For all discounts, you will need to provide proof of receipt at the entrance
-
 
 

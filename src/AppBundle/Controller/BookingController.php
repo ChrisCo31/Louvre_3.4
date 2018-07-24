@@ -3,11 +3,6 @@
  * Created by PhpStorm.
  * User: mishi
  * Date: 14/02/2018
-<<<<<<< HEAD
- * Time: 14:56
-=======
- * Time: 16:56
->>>>>>> test
  */
 
 namespace AppBundle\Controller;

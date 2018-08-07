@@ -4,12 +4,13 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>{% block title %}Layout.Base.Title{% endblock %}</title>
+        <link rel="icon" type="image/x-icon" href="{{ asset('TheVisitorS.ico') }}" />
 
         {% block stylesheets %}
             <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
             <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.8.0/css/bootstrap-datepicker.min.css" />
             <link href="{{ asset('css/books.css') }}" rel="stylesheet">
-            <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+
         {% endblock %}
     </head>
     <body>

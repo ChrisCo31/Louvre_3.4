@@ -76,9 +76,10 @@ Booking:
     PricePerTicket: Ticketprice :
     PriceToPay: Total price to pay :
     FormStripe: # formulaire Stripe
-      Button: Payer
-      Title:  Musée du Louvre
-      Description : Paiement
+      Button: Pay
+      Title:  Louvre Museum
+      Description : Payment
+      Loc: En
   Form: # tableau de l'email de recap
     Lastname: Nom
     Firstname: Prenom

@@ -85,13 +85,15 @@
                                             <script
                                                     src="https://checkout.stripe.com/checkout.js" class="stripe-button"
                                                     data-key="pk_test_sJynCdb1Ux6jCwxVHaSEGE0h"
-                                                    data-amount="{{ reservation.priceToPay*100}}"
+                                                    data-amount= "{{ reservation.priceToPay*100}}"
                                                     data-name="{{ 'Booking.Payment.FormStripe.Title'|trans }}"
                                                     data-email="{{ reservation.email }}"
                                                     data-description="{{'Booking.Payment.FormStripe.Description'|trans }}"
-                                                    data-image="https://stripe.com/img/documentation/checkout/marketplace.png"
-                                                    data-locale="auto"
-                                                    data-label="{{ 'Booking.Payment.FormStripe.Button'|trans }}"
+                                                    data-image="http://www.louvre.crackthesky.fr/images/hader.png"
+                                                    data-locale="{{ 'Booking.Payment.FormStripe.Loc'|trans}}"
+                                                    data-allow-remember-me="false"
+                                                    data-label="{{'Booking.Payment.FormStripe.Button'|trans }}"
+                                                    data-panel-label="{{'Booking.Payment.FormStripe.Button'|trans }}"
                                                     data-currency="eur">
                                             </script>
                                         </div>

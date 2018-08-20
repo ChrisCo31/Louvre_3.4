@@ -86,6 +86,7 @@ Booking:
       Button: Payer
       Title:  Musée du Louvre
       Description : Paiement
+      Loc: Fr
    Form: # tableau de l'email de recap
     Lastname: Nom
     Firstname: Prenom
